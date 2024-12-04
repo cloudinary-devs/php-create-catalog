@@ -23,9 +23,6 @@ $dotenv->load();
 $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $cld = new Cloudinary($config);
 
-// Fetch all products from the database
-$products = getAllProducts($pdo);
-
 
 ?>
 
@@ -73,6 +70,9 @@ $products = getAllProducts($pdo);
     </div>
 </div>
 <?php
+
+// Fetch all products from the database
+$products = getAllProducts($pdo);
 // If no products are found
 if (!$products) {
     echo 'No products found. Click <a href="product_submission.php">Add Product</a> to start.';
@@ -156,7 +156,24 @@ if (!$products) {
             </p>
             </div>
     <?php endforeach; ?>
-</div>
 
+</div>
+<script>
+    // Wait until the page is fully loaded before starting the polling
+    window.onload = function() {
+        setInterval(() => {
+            fetch('/../webhooks/upload_status.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'completed') {
+                        fetch('clear_upload_status.php')
+                            .then(() => {
+                                // Refresh the page when the status is completed
+                                location.reload(); 
+                            });                    }
+                });
+        }, 3000); // Check every 3 seconds
+    }
+</script>
 </body>
 </html>

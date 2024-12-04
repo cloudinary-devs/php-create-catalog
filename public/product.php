@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Products</title>
-    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="/../static/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.css">
     <script src="https://unpkg.com/cloudinary-core/cloudinary-core-shrinkwrap.min.js"></script>
     <script src="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.js"></script>
@@ -69,15 +69,7 @@ if (!$product) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($product['name']); ?></title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
-</head>
-<body>
+
     <?php
     if ($product['image_public_id']) {
             $image_url = $cld->image($product['image_public_id'])
@@ -200,6 +192,23 @@ if (!$product) {
             </p>
         </div>
     </div>
-
+    <script>
+    // Wait until the page is fully loaded before starting the polling
+    window.onload = function() {
+        setInterval(() => {
+            fetch('/../webhooks/upload_status.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'completed') {
+                        // Clear the upload_status file so we don't catch the completed webhook again until there's another event
+                        fetch('clear_upload_status.php')
+                            .then(() => {
+                                // Refresh the page when the status is completed
+                                location.reload(); 
+                            });                    }
+                });
+        }, 3000); // Check every 3 seconds
+    }
+</script>
 </body>
 </html>

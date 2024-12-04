@@ -54,12 +54,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $product_video_url="invalid";
     }
 
-    $product_id = saveProduct($pdo, $name, $product_image_url, $product_video_url, $image_public_id,  $video_public_id, "approved", $video_moderation_status, $image_caption, $video_public_id_temp);
+    $product_id = saveProduct($pdo, $name, $product_image_url, $product_video_url, $image_public_id,  $video_public_id, $video_moderation_status, $image_caption, $video_public_id_temp);
     header("Location: products.php");
-    
+    exit;
 }
 ?>
-<div class="container" style="margin-top:-245px;">
+<div class="container" style="margin-top:-330px;">
     <div style="align-self: flex-start; text-align: left;">
     
     <p style="font-size:12px;">Add a new product to your catalog:</p>

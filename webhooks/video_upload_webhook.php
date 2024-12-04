@@ -1,8 +1,8 @@
 <?php
 // Set headers to prevent caching
-header('Cache-Control: no-cache, must-revalidate');
-header('Pragma: no-cache'); // For HTTP/1.0 compatibility
-header('Expires: 0'); // Ensures no caching
+header('Content-Type: text/event-stream');
+header('Cache-Control: no-cache');
+header('Connection: keep-alive');
 
 // Start output buffering
 ob_start();
@@ -50,8 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         WHERE id = ?";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute([$product_video_url, $video_public_id, $video_moderation_status, $rejection_reason, $product_id]);
-        
+                
                 echo "Product with ID $product_id successfully updated.";
+                file_put_contents('upload_status.json', json_encode(['status' => 'completed']));
+                http_response_code(200);
             } else {
                 echo "No matching record found for video_public_id_temp = $video_public_id.";
             }
@@ -61,15 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "An error occurred while updating the product.";
         }            // Now redirect after the processing is complete
     }
-    // Redirect after processing is complete
-    $displayPage = '../public/products.php';
-    if (!headers_sent()) {
-        file_put_contents('debug_log.txt', "Headers NOT sent, but cannot redirect.\n", FILE_APPEND);
-        header("Location: $displayPage", true, 302);
-        exit;
-    } else {
-        file_put_contents('debug_log.txt', "Headers already sent, cannot redirect.\n", FILE_APPEND);
-    }
+
 }
 
 // Clean output buffer and end the script
