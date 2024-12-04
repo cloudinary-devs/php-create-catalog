@@ -1,0 +1,9 @@
+{
+    "name": "sharonyelenik/php-user-profiles",
+    "description": "Create user profiles using the Cloudinary PHP SDK",
+    "type": "project",
+    "require": {
+        "cloudinary/cloudinary_php": "^2.14",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
