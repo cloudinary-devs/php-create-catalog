@@ -5,7 +5,7 @@ This app allows you to manage a catalog of products, each comprising a name, met
 You can:
 
 * Add new products.
-* View all products in a list.
+* View all products in the database.
 * View individual products in detail.
 * Edit product details.
 
@@ -23,9 +23,7 @@ You can:
 ### Product Videos
 
 * **Asynchronous Upload**: Videos are uploaded asynchronously.
-* **Content Moderation**: Videos undergo moderation for inappropriate content:
-    * Approved videos are displayed.
-    * Rejected videos trigger a message explaining the rejection reason.
+* **Content Moderation**: Videos undergo moderation for inappropriate content.
 * **Webhook Integration**: A Cloudinary webhook notifies the app upon moderation completion:
     * Approved videos are saved to the database for rendering.
     * Rejected videos are flagged with appropriate feedback.
@@ -50,7 +48,7 @@ You can:
 
 * **Credentials**
   * Create a `.env` file with your app's credentials in the root directory of your project. Include:
-    * **API environment variable**:<br/><br>Paste the **API environment variable** format from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console, replacing placeholders with your API key and secret.
+    * **API environment variable**:<br/>Paste the **API environment variable** format from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console, replacing placeholders with your API key and secret.
     * **Database configuration**:
         ```
         DB_NAME=<your_database_name>
@@ -62,7 +60,7 @@ You can:
     * **Confirm configuration**: Open the `config/cloudinary_config.php` file. Temporarily uncomment the echo statements, then run `php config/cloudinary_config.php` in the terminal. If your configuration is correct, the configuration object will be printed to the console.
 
 * **Database setup**
-  * Create a database and a table using the configuration provided in the `config/setup_db.php` file.
+  * Create a MySQL database and a table using the configuration provided in the `config/setup_db.php` file.
 * **Webhook notification configuration**
   * Add your app's notification URL with the suffix `webhooks/video_upload_webhook.php` on the [Notifications](https://console.cloudinary.com/settings/webhooks) page of the Cloudinary Console.
   * Select `Moderation` as the notification type. 
@@ -74,7 +72,7 @@ You can:
       * The **SKU** field, external ID `sku` and type **Text**.<p><img src="https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762662/docs/php_app_sku.png" width=200></p>
       * The **Price** field, external ID `price` and type **Number**.<p><img src="https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762789/docs/php_app_category.png" width=200></p>
       * The **Category** field, external ID `category` and type **Single-selection list**.<p><img src="https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762789/docs/php_app_category.png" width=200></p>
-        * Once the field is created, click **Manage list values** and add the following:
+        * After creating the **Category** field, click **Manage list values** and add the following:
           * **Clothes**, external ID `clothes`
           * **Accessories**, external ID `accessories`
           * **Footwear**, external ID `footwear`
