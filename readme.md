@@ -71,19 +71,15 @@ You can:
   * Make sure you have these structured metadata fields in your product environment.
     * In the Cloudinary Console, navigate to [Manage Structured Metadata](https://console.cloudinary.com/console/media_library/metadata_fields).
     * Create the following fields:
-      * The **SKU** field, external ID `sku` and type **Text**.
-        ![SKU](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/w_200/v1733762662/docs/php_app_sku.png)
-      * The **Price** field, external ID `price` and type **Number**.
-        ![Price](hhttps://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/w_200/v1733762789/docs/php_app_category.png)
-      * The **Category** field, external ID `category` and type **Single-selection list**.
-        ![Category](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/w_200/v1733762789/docs/php_app_category.pngg)
+      * The **SKU** field, external ID `sku` and type **Text**.<p>![SKU](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762662/docs/php_app_sku.png)</p>
+      * The **Price** field, external ID `price` and type **Number**.<p>![Price](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762789/docs/php_app_category.png)</p>
+      * The **Category** field, external ID `category` and type **Single-selection list**.<p>![Category](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762789/docs/php_app_category.png)</p>
         * Once the field is created, click **Manage list values** and add the following:
           * **Clothes**, external ID `clothes`
           * **Accessories**, external ID `accessories`
           * **Footwear**, external ID `footwear`
           * **Home & Living**, external ID `home_and_living`
-          * **Electronics**, external ID `electronics`
-        ![Category - list values](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762804/docs/php_app_category_list_values.png)
+          * **Electronics**, external ID `electronics`<p> ![Category - list values](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762804/docs/php_app_category_list_values.png)</p>
 
 
 * **Cloudinary add-ons**: Go to the [Add-ons](https://console.cloudinary.com/settings/addons) page of your Cloudinary Console Settings and register for the Cloudinary AI Content Analysis and Rekognition AI Video Moderation add-ons.
