@@ -60,7 +60,9 @@ You can:
     * **Confirm configuration**: Open the `config/cloudinary_config.php` file. Temporarily uncomment the echo statements, then run `php config/cloudinary_config.php` in the terminal. If your configuration is correct, the configuration object will be printed to the console.
 
 * **Database setup**
-  * Create a MySQL database and a table using the configuration provided in the `config/setup_db.php` file.
+  * Create a MySQL database matching the name in your `.env` file.
+  * Run `php config/setup_db.php` to set up the **products** table based on the specifications in the file.
+  
 * **Webhook notification configuration**
   * Add your app's notification URL with the suffix `webhooks/video_upload_webhook.php` on the [Notifications](https://console.cloudinary.com/settings/webhooks) page of the Cloudinary Console.
   * Select `Moderation` as the notification type. 
@@ -70,7 +72,7 @@ You can:
     * In the Cloudinary Console, navigate to [Manage Structured Metadata](https://console.cloudinary.com/console/media_library/metadata_fields).
     * Create the following fields:
       * The **SKU** field, external ID `sku` and type **Text**.<p><img src="https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762662/docs/php_app_sku.png" width=200></p>
-      * The **Price** field, external ID `price` and type **Number**.<p><img src="https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762789/docs/php_app_category.png" width=200></p>
+      * The **Price** field, external ID `price` and type **Number**.<p><img src="https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762777/docs/php_app_price.png" width=200></p>
       * The **Category** field, external ID `category` and type **Single-selection list**.<p><img src="https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762789/docs/php_app_category.png" width=200></p>
         * After creating the **Category** field, click **Manage list values** and add the following:
           * **Clothes**, external ID `clothes`
