@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $image_public_id = null;
         $image_caption = null;
     }
+
     // Handle Video Upload with Moderation
     if ($_FILES['product_video']['error'] == UPLOAD_ERR_OK) {
         $file = $_FILES['product_video']['tmp_name'];
@@ -52,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $video_moderation_status="pending";
     } else {
         $product_video_url="invalid";
+        $video_public_id = "invalid";
     }
 
     $product_id = saveProduct($pdo, $name, $product_image_url, $product_video_url, $image_public_id,  $video_public_id, $video_moderation_status, $image_caption, $video_public_id_temp);
@@ -111,18 +113,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>        
         <div style="display:flex;margin-bottom:10px;">
             <label for="product_image">Upload an Image <span style="margin-left:10px;" class="lozenge synchronous">Synchronous</span></label>
-            <input style="margin-left:10px;" type="file" name="product_image" id="product_image">
+            <input style="margin-left:10px;" type="file" name="product_image" id="product_image" required>
         </div>
 
         <!-- File input for video upload -->
         <div style="display:flex;">
             <label style="margin-left:-11px;" for="product_video">Upload a Video<span style="margin-left:10px;" class="lozenge asynchronous">Asynchronous</span></label>
-            <input style="margin-left:10px;" type="file" name="product_video" id="product_video" required>
+            <input style="margin-left:10px;" type="file" name="product_video" id="product_video" >
         </div>
 
         <button type="submit">Submit Product</button>
     </form>
 </div>
+<div id="toast" class="toast">We're adding your product to the catalog. Please wait.</div>
+<script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+        const toast = document.getElementById("toast");
+        toast.className = "toast show";
+        setTimeout(() => {
+            toast.className = toast.className.replace("show", "");
+        }, 3000); // Toast disappears after 3 seconds
+    });
+</script>
 
 </body>
 </html>

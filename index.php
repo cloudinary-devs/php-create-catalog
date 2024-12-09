@@ -33,7 +33,7 @@
 <!-- Navigation Bar -->
 <nav>
     <ul>
-        <li><a style="font-size:1.3rem;font-weight:75px;color:white;" href="">Catalog Creation App</a></li>
+        <li><a style="font-size:1.3rem;font-weight:75;color:white;" href="">Catalog Creation App</a></li>
         <li style="margin-left:60px;"><a href="public/products.php">View Products</a></li>
         <li><a href="public/product_submission.php">Add Product</a></li>
     </ul>

@@ -113,16 +113,14 @@ if (!$products) {
                 
             $video_url = null;
             $message = 'This video didn\'t meet our standards due to ' . $product['rejection_reason'] . ' in the image. Please try uploading a different one.';
-        }
-        elseif ($product['video_moderation_status']==='pending') {
+        } elseif ($product['video_moderation_status']==='pending' && 'video_public_id'!='invalid') {
             $video_url = null;  // No video if not set
             $message = "We're reviewing your video to ensure it meets our publication standards. Please refresh the page in a few minutes.";
         } elseif ($product['video_moderation_status']==='approved') {
             $video_url = $product['video_public_id']; 
             $message ="";
-        }
-        if ($product['video_public_id']==="invalid") {
-            $message="This video was invalid. Try uploading a different one.";
+        } elseif ($product['video_public_id']==="invalid") {
+            $message="No valid video uploaded. Upload one if you want, or skip it.";
         }
         ?>
         
@@ -139,7 +137,7 @@ if (!$products) {
             <?php endif; ?>
 
             <!-- Display product video if available -->
-            <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_moderation_status']!='rejected'): ?>
+            <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_public_id']!='invalid' && $product['video_moderation_status']!='rejected'): ?>
                 <div style="position:relative;max-width:230px;margin:0 auto;">
                     <video style="width:100%;height:auto;object-fit:contain;" id="doc-player-<?php echo $product['id']; ?>" controls muted class="cld-video-player cld-fluid"></video>
                 </div>

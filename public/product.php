@@ -15,7 +15,7 @@
 <!-- Navigation Bar -->
 <nav>
     <ul>
-    <li><a style="font-size:1.3rem;font-weight:75px;color:white;" href="../index.php">Catalog Creation App</a></li>
+    <li><a style="font-size:1.3rem;font-weight:75;color:white;" href="../index.php">Catalog Creation App</a></li>
         <li style="margin-left:60px;"><a href="products.php">View Products</a></li>
         <li><a href="product_submission.php">Add Product</a></li>    
     </ul>
@@ -118,7 +118,7 @@ if (!$product) {
             $message ="";
         }
         if ($product['video_public_id']==="invalid") {
-            $message="This video was invalid. Try uploading a different one.";
+            $message="No valid video uploaded. Upload one if you want, or skip it.";
         }
         
         ?>

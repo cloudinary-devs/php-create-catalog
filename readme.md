@@ -32,13 +32,22 @@ You can:
 * **Live Updates**: Product pages poll the database to automatically display updates once notifications are processed.
 * **Enhanced Video Playback**: Videos are rendered using Cloudinary's feature-rich Video Player.
 
+## Tech stack
+
+- **PHP**: 8.2.26
+  - The primary server-side language used to build the application.
+- **MySQL**: 8.0.40
+  - Relational database management system for handling data storage.
+- **Composer**: 2.x
+  - Dependency manager for PHP to manage libraries and packages.
+- **Docker**: For containerization, ensuring consistent development and production environments.
+  - Docker Compose: For managing multi-container Docker applications.
+- **Version Control**:
+  - **Git**: For version control, managing source code.
+  - **GitHub**: Repository hosting and collaboration platform.
+
 ## Setup instructions
 
-* **Database setup**
-  * Create a database and a table using the configuration provided in the `config/setup_db.php` file.
-* **Webhook notification configuration**
-  * Add your app's notification URL with the suffix `webhooks/video_upload_webhook.php` on the [Notifications](https://console.cloudinary.com/settings/webhooks) page of the Cloudinary Console.
-  * Select `Moderation` as the notification type. 
 * **Credentials**
   * Create a `.env` file with your app's credentials in the root directory of your project. Include:
     * **API environment variable**:<br/><br>Paste the **API environment variable** format from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console, replacing placeholders with your API key and secret.
@@ -50,42 +59,31 @@ You can:
         DB_HOST=<your_database_host>
         ```
     * **Cloud name**: Copy and paste your cloud name from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
-    * **API secret**: Copy and paste your API secret from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
+    * **Confirm configuration**: Open the `config/cloudinary_config.php` file. Temporarily uncomment the echo statements, then run `php config/cloudinary_config.php` in the terminal. If your configuration is correct, the configuration object will be printed to the console.
+
+* **Database setup**
+  * Create a database and a table using the configuration provided in the `config/setup_db.php` file.
+* **Webhook notification configuration**
+  * Add your app's notification URL with the suffix `webhooks/video_upload_webhook.php` on the [Notifications](https://console.cloudinary.com/settings/webhooks) page of the Cloudinary Console.
+  * Select `Moderation` as the notification type. 
 
 * **Structured metadata**:
   * Make sure you have these structured metadata fields in your product environment.
-    * In the Cloudinary Console, navigate to [Manage Structured Metadata](https://console.cloudinary.com/console/c-4f728d504d93a08dc460918da6983a/media_library/metadata_fields).
+    * In the Cloudinary Console, navigate to [Manage Structured Metadata](https://console.cloudinary.com/console/media_library/metadata_fields).
     * Create the following fields:
-      * The **SKU** field, external ID `sku` and type `text`.
-      * The **Price** field, external ID `price` and type `numeric`.
-      * The **Category** field, external ID `category` and type `single-select`, with list falues:
-        * **Clothes**, external ID `clothes`
-        * **Accessories**, external ID `accessories`
-        * **Footwear**, external ID `footwear`
-        * **Home & Living**, external ID `home_and_living`
-        * **Electronics**, external ID `electronics`
-
-## Configuration
-
-* **Install the Cloudinary PHP SDK**
-    * Use Composer to manage dependencies. 
-        1. Add the package to your `composer.json` file:
-            ```php
-            {
-            "require": {
-                "cloudinary/cloudinary_php": "^2"
-            }
-            }
-            ```
-        2. Run the following command to install the Cloudinary PHP SDK:
-            ```
-            composer install
-            ```
-* **Install the `phpdotenv` library**
-    * Use the `phpdotenv` library to import your credentials from the `.env` files: 
-        ```
-        composer require vlucas/phpdotenv
-        ```
+      * The **SKU** field, external ID `sku` and type **Text**.
+        ![SKU](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/w_200/v1733762662/docs/php_app_sku.png)
+      * The **Price** field, external ID `price` and type **Number**.
+        ![Price](hhttps://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/w_200/v1733762789/docs/php_app_category.png)
+      * The **Category** field, external ID `category` and type **Single-selection list**.
+        ![Category](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/w_200/v1733762789/docs/php_app_category.pngg)
+        * Once the field is created, click **Manage list values** and add the following:
+          * **Clothes**, external ID `clothes`
+          * **Accessories**, external ID `accessories`
+          * **Footwear**, external ID `footwear`
+          * **Home & Living**, external ID `home_and_living`
+          * **Electronics**, external ID `electronics`
+        ![Category - list values](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762804/docs/php_app_category_list_values.png)
 
 
-
+* **Cloudinary add-ons**: Go to the [Add-ons](https://console.cloudinary.com/settings/addons) page of your Cloudinary Console Settings and register for the Cloudinary AI Content Analysis and Rekognition AI Video Moderation add-ons.

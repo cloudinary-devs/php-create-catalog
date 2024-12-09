@@ -179,12 +179,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         <div style="display:flex;">
             <label for="product_video">Upload a New Video <span style="margin-left:0px;" class="lozenge asynchronous">Asynchronous</span></label>
-            <input style="margin-left:25px;" type="file" name="product_video" id="product_video">
+            <input style="margin-left:25px;" type="file" name="product_video" id="product_video" required>
         </div>
         
         <button type="submit">Update product</button>
     </form>
 </div>
         </div>
+        <div id="toast" class="toast">We're updating your product. Please wait.</div>
+        <script>
+            document.querySelector("form").addEventListener("submit", function (e) {
+                const toast = document.getElementById("toast");
+                toast.className = "toast show";
+                setTimeout(() => {
+                    toast.className = toast.className.replace("show", "");
+                }, 3000); // Toast disappears after 3 seconds
+            });
+        </script>
 </body>
 </html>
