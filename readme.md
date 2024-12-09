@@ -71,7 +71,7 @@ You can:
   * Make sure you have these structured metadata fields in your product environment.
     * In the Cloudinary Console, navigate to [Manage Structured Metadata](https://console.cloudinary.com/console/media_library/metadata_fields).
     * Create the following fields:
-      * The **SKU** field, external ID `sku` and type **Text**.<p>![SKU](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762662/docs/php_app_sku.png)</p>
+      * The **SKU** field, external ID `sku` and type **Text**.<p><img src="https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762662/docs/php_app_sku.png" width=200>
       * The **Price** field, external ID `price` and type **Number**.<p>![Price](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762789/docs/php_app_category.png)</p>
       * The **Category** field, external ID `category` and type **Single-selection list**.<p>![Category](https://cloudinary-res.cloudinary.com/image/upload/f_auto/q_auto/bo_1px_solid_grey/v1733762789/docs/php_app_category.png)</p>
         * Once the field is created, click **Manage list values** and add the following:
