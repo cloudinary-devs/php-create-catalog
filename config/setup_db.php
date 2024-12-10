@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS products (
     image_public_id VARCHAR(255),
     video_public_id VARCHAR(255),
     video_moderation_status ENUM('approved', 'pending', 'rejected') DEFAULT 'pending',
-    image_caption TEXT,  -- No default value for TEXT columns,
+    image_caption TEXT, 
     video_public_id_temp VARCHAR(255),
     rejection_reason VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -24,3 +24,4 @@ $pdo->exec($sql);
 
 echo "Products table created successfully!";
 ?>
+
