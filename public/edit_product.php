@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update This Product</title>
-    <link rel="stylesheet" href="../static/styles.css">
-</head>
-<body>
-<nav>
-    <ul>
-        <li><a style="font-size:1.3rem;font-weight:75px;color:white;" href="../index.php">Catalog Creation App</a></li>
-        <li><a href="products.php">View Products</a></li>
-    </ul>
-</nav>
-
 <?php
 
 require_once __DIR__ . '/../config/cloudinary_config.php';  // Make sure this file sets up the Cloudinary API
@@ -101,6 +85,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update This Product</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a style="font-size:1.3rem;font-weight:75px;color:white;" href="../index.php">Catalog Creation App</a></li>
+        <li><a href="products.php">View Products</a></li>
+    </ul>
+</nav>
 
 <div class="container" style="margin-top:-95px;">
     <div style="align-self: flex-start; text-align: left;">
@@ -132,21 +131,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="product-container" style="padding-left:80px;padding-right:80px;">
     <h2 style="margin-top:-10px;">Update This product</h2>
     <form action="edit_product.php?id=<?php echo $product['id']; ?>" method="POST" enctype="multipart/form-data">
-        <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" placeholder="Name" required>   
+        <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" placeholder="Name">   
         
         <div class="form-group" style="margin-left:-205px;margin-bottom:10px;">
             <label for="sku">Product SKU:</label>
-            <input type="text" id="sku" name="sku" value="<?php echo htmlspecialchars($sku); ?>" placeholder="Enter product SKU" required>
+            <input type="text" id="sku" name="sku" value="<?php echo htmlspecialchars($sku); ?>" placeholder="Enter product SKU">
         </div>
 
         <div class="form-group" style="margin-left:-205px;margin-bottom:10px;">
             <label for="price">Product Price ($):</label>
-            <input type="number" id="price" name="price" value="<?php echo htmlspecialchars($price); ?>" placeholder="Enter product price" step="0.01" required>
+            <input type="number" id="price" name="price" value="<?php echo htmlspecialchars($price); ?>" placeholder="Enter product price" step="0.01">
         </div>
 
         <div class="form-group" style="margin-left:-295px;margin-bottom:15px;">
             <label for="category">Category:</label>
-            <select id="category" name="category" required>
+            <select id="category" name="category" >
                 <option value="clothes" <?php echo ($category == 'clothes') ? 'selected' : ''; ?>>Clothes</option>
                 <option value="accessories" <?php echo ($category == 'accessories') ? 'selected' : ''; ?>>Accessories</option>
                 <option value="footwear" <?php echo ($category == 'footwear') ? 'selected' : ''; ?>>Footwear</option>
@@ -179,7 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         <div style="display:flex;">
             <label for="product_video">Upload a New Video <span style="margin-left:0px;" class="lozenge asynchronous">Asynchronous</span></label>
-            <input style="margin-left:25px;" type="file" name="product_video" id="product_video" required>
+            <input style="margin-left:25px;" type="file" name="product_video" id="product_video" >
         </div>
         
         <button type="submit">Update product</button>

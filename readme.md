@@ -60,8 +60,7 @@ You can:
     * **Confirm configuration**: Open the `config/cloudinary_config.php` file. Temporarily uncomment the echo statements, then run `php config/cloudinary_config.php` in the terminal. If your configuration is correct, the configuration object will be printed to the console.
 
 * **Database setup**
-  * Create a MySQL database matching the name in your `.env` file.
-  * Run `php config/setup_db.php` to set up the **products** table based on the specifications in the file.
+  * Run `php config/setup_db.php` to create the database and set up the **products** table based on the specifications in the file.
 
 * **Structured metadata**:
   * Run `php config/setup_metadata.php` to set up the **SKU**, **Price**, and **Category** structured metadata fields for this app in your product environment.
@@ -71,3 +70,10 @@ You can:
   * Select `Moderation` as the notification type. 
 
 * **Cloudinary add-ons**: Go to the [Add-ons](https://console.cloudinary.com/settings/addons) page of your Cloudinary Console Settings and register for the Cloudinary AI Content Analysis and Rekognition AI Video Moderation add-ons.
+
+* **Increase the file size limit in your php.ini file**:
+  * Make sure your `php.ini` file contains the following limits:
+    ```php
+    upload_max_filesiz=20m
+    post_max_size=20m
+    ```

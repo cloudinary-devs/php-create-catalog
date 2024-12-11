@@ -1063,3 +1063,1140 @@ Metadata:
     ]
 }
 
+Metadata:
+{
+    "asset_id": "d07acb725a64b850118eae8a3005bbdb",
+    "public_id": "chktokqluvhrgffnxs4m",
+    "format": "jpg",
+    "version": 1733350761,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-04T22:19:21Z",
+    "bytes": 246512,
+    "width": 1550,
+    "height": 1033,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "chktokqluvhrgffnxs4m",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733350761\/chktokqluvhrgffnxs4m.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733350761\/chktokqluvhrgffnxs4m.jpg",
+    "metadata": {
+        "category": "footwear",
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 123,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "123"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "DiD4nwImsyeIqN6cKCzEG9oo2iRoDFskKS1spykXbqyOJFsjoqc2oY0tS54AHEMlASkzKCMqo6kvHtugNyD2JoGp0yqkrR8jaqg0oTsmwg6aHXegyqchoXsmzC8Zp04mOqaapGuloCwYJViij6hkmlSmJSioJxOlSK+Dlj4hBSUCHqOoh6fzrtwq56AhqAAiFhIwKPgldKiYpM4q8KPNJxmjhSV+KhmqAhBfpEgnbiZFqiyePZnbpTe4kKOrpmifZBtNKM+mSy8NJLGQPynYKYWhOyIBHsonMSORK3Csdqg4pswlzKkIIxQsBairK0OlRiV6qYQqkY1Lm8yi5SG1p++VJyddJmAgwqOSLcYmOxxRJkgjuqPWqXmU7Z5CLh4p6qQ0p4OqKCqmm7wo4iiZq\/Qsu6h9KjunXSnQJVomCSxqqvYkhKbpHi+gFiX1L6UnwiOqpsQoJqiaGo4g8633qBMsDSr8pSaeYqQDJ7SUSxxBrCgm7CC0qsSoVqEvFWuqFaZIIysuYKOZGGEm4aFDKCukUqQHoBcn9pqEHSEjAx8ELLops51iKcalfCfoIkwob6QWJHcexKSDqf0tLaqJocIZQihRpN2dk6AuHE4nMB44qSYrviVDK\/gqfijmp9WlciaVHMQoWKI6pYUkQ6F0IbUdvCV1qV6ixCKLo9IrY6TOIlcjOyfGKoQm3h8QIKQcBip5KKueM6lvqUQlAhdfIjCSqSg\/lQIsABZApGMYz6JOn1sgOyFjKMmpZCbDpQcmE6n7p2miS6agIbWht6gKK5+oZ6hoqCklkqgjnb0kRR\/RIjurI6KtHoMqrqjhq72oji2ypNSgyiWeJk4vnqdeLlkoxqBcoYgaqpv9D2wgWB7mIYGpLR7XotEoXaD7qmih4ComI8GioSkkohQkPyptJY6ZsqaYJbGoDCDwpMAoeZjIoaCRFSi8l0Erlq2bIsogRK26KnEqTyhHsrOfs6PGpral\/5jRH70kD59GmCGmVyttMZwUficVoK0qOqrbpkuqAqgZqKSkliLUqRwvDyW9Iz4gzSO3IiGnQKgcq9afk6EUKBGgmiomrM0j8an\/IoogEq8hrNuq3JBam7IgGKjAGXuhMKwNq+6qM6QVoGAdOZ+8pz4gNR21pQkgZSpgqa0oFymCpFWdGqauqFMrJ6iZpOun\/ynxHFwkBRouq9YlE6VSKiAlJ6qkmK0aP6ZZpXAkBySBnn2qZyXbq0senyjDILGZC6SvI5sYS6crI9gcVavTKmIZYCDHKSebZaOEo2wRJaizrCKU+h5NoR0ooCaMIX4k4Ko0KnUqCSa8q6CpZiaAqg2e7KlaoCKry6nBoWYg1J2zKVooBBwMrP6lQSzOGg=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A group of people, some dressed formally in wedding attire, posing together in what appears to be a wedding setting with a decorative background."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "a89eb1ba796369f4cb1666fd57196e79335a122d6b7e50be6ef19878f53c15af",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_250,w_250\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 12055,
+            "id": "e4626b8cc5182a1f9359a875eed22d05",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_250,w_250\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733350761\/chktokqluvhrgffnxs4m",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_250,w_250\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733350761\/chktokqluvhrgffnxs4m",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "227bc8c6cd1784bc3c052c6e6a5558df",
+    "public_id": "y4pukekhlhsmxasxxebm",
+    "format": "jpg",
+    "version": 1733391468,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-05T09:37:48Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "y4pukekhlhsmxasxxebm",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733391468\/y4pukekhlhsmxasxxebm.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733391468\/y4pukekhlhsmxasxxebm.jpg",
+    "metadata": {
+        "category": "accessories",
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 122,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "222"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "921abfc845d001cc8db667b3f869d368e1dc95cadff4595c771b9038371b7a0b",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_250,w_250\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 9496,
+            "id": "e703ba5c006ef15f9cb451bd2e5d5188",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_250,w_250\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733391468\/y4pukekhlhsmxasxxebm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_250,w_250\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733391468\/y4pukekhlhsmxasxxebm",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "5bc59ec668dac6bcf817bbf97d16ce59",
+    "public_id": "tjwswmgf6l55es5aesl1",
+    "format": "jpg",
+    "version": 1733906067,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:34:27Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "tjwswmgf6l55es5aesl1",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906067\/tjwswmgf6l55es5aesl1.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906067\/tjwswmgf6l55es5aesl1.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "b4c36b1624e44ee14747da974d200e430ed763ef1c6d2cf852e0d73b4c9f351d",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "be64cbcaca45e7e10a1e74fa3cdb591b",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "5bc59ec668dac6bcf817bbf97d16ce59",
+    "public_id": "tjwswmgf6l55es5aesl1",
+    "format": "jpg",
+    "version": 1733906067,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:34:27Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "tjwswmgf6l55es5aesl1",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906067\/tjwswmgf6l55es5aesl1.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906067\/tjwswmgf6l55es5aesl1.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "b4c36b1624e44ee14747da974d200e430ed763ef1c6d2cf852e0d73b4c9f351d",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "96d53982e064304e4608dd4c757279f8",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "be64cbcaca45e7e10a1e74fa3cdb591b",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "5bc59ec668dac6bcf817bbf97d16ce59",
+    "public_id": "tjwswmgf6l55es5aesl1",
+    "format": "jpg",
+    "version": 1733906067,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:34:27Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "tjwswmgf6l55es5aesl1",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906067\/tjwswmgf6l55es5aesl1.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906067\/tjwswmgf6l55es5aesl1.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "b4c36b1624e44ee14747da974d200e430ed763ef1c6d2cf852e0d73b4c9f351d",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "96d53982e064304e4608dd4c757279f8",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "be64cbcaca45e7e10a1e74fa3cdb591b",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "5bc59ec668dac6bcf817bbf97d16ce59",
+    "public_id": "tjwswmgf6l55es5aesl1",
+    "format": "jpg",
+    "version": 1733906067,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:34:27Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "tjwswmgf6l55es5aesl1",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906067\/tjwswmgf6l55es5aesl1.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906067\/tjwswmgf6l55es5aesl1.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "b4c36b1624e44ee14747da974d200e430ed763ef1c6d2cf852e0d73b4c9f351d",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "96d53982e064304e4608dd4c757279f8",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "be64cbcaca45e7e10a1e74fa3cdb591b",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906067\/tjwswmgf6l55es5aesl1",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "a8be1665d5fa876dc7731809bd28fa72",
+    "public_id": "qjwwwm1i6cz5ta1slrln",
+    "format": "jpg",
+    "version": 1733906246,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:37:26Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "qjwwwm1i6cz5ta1slrln",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906246\/qjwwwm1i6cz5ta1slrln.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906246\/qjwwwm1i6cz5ta1slrln.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "7fc0b9a014e5b397c570b0a20b5f180912ae5bfecf87a274681289e927c2166d",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "b50ecfeeeb14ccecbe27d17ed24efe13",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906246\/qjwwwm1i6cz5ta1slrln",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906246\/qjwwwm1i6cz5ta1slrln",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "93bb4773908998768e4f989164f77f46",
+    "public_id": "oloiglbqoeqpnt4hdwzm",
+    "format": "jpg",
+    "version": 1733906345,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:39:05Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "oloiglbqoeqpnt4hdwzm",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "2a5d2bf07d038b7358824f07545cf1f3cb6abe0adbb7ad9dc674b739802bc556",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "4e40eda78f4e7f9592d5997193ba2003",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "93bb4773908998768e4f989164f77f46",
+    "public_id": "oloiglbqoeqpnt4hdwzm",
+    "format": "jpg",
+    "version": 1733906345,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:39:05Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "oloiglbqoeqpnt4hdwzm",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "2a5d2bf07d038b7358824f07545cf1f3cb6abe0adbb7ad9dc674b739802bc556",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "9e1075b3b16ad14ea171e1163eb692b9",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "4e40eda78f4e7f9592d5997193ba2003",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "93bb4773908998768e4f989164f77f46",
+    "public_id": "oloiglbqoeqpnt4hdwzm",
+    "format": "jpg",
+    "version": 1733906345,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:39:05Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "oloiglbqoeqpnt4hdwzm",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "2a5d2bf07d038b7358824f07545cf1f3cb6abe0adbb7ad9dc674b739802bc556",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "9e1075b3b16ad14ea171e1163eb692b9",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "4e40eda78f4e7f9592d5997193ba2003",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "93bb4773908998768e4f989164f77f46",
+    "public_id": "oloiglbqoeqpnt4hdwzm",
+    "format": "jpg",
+    "version": 1733906345,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:39:05Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "oloiglbqoeqpnt4hdwzm",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "2a5d2bf07d038b7358824f07545cf1f3cb6abe0adbb7ad9dc674b739802bc556",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "9e1075b3b16ad14ea171e1163eb692b9",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "4e40eda78f4e7f9592d5997193ba2003",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "93bb4773908998768e4f989164f77f46",
+    "public_id": "oloiglbqoeqpnt4hdwzm",
+    "format": "jpg",
+    "version": 1733906345,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:39:05Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "oloiglbqoeqpnt4hdwzm",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "2a5d2bf07d038b7358824f07545cf1f3cb6abe0adbb7ad9dc674b739802bc556",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "9e1075b3b16ad14ea171e1163eb692b9",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "4e40eda78f4e7f9592d5997193ba2003",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "93bb4773908998768e4f989164f77f46",
+    "public_id": "oloiglbqoeqpnt4hdwzm",
+    "format": "jpg",
+    "version": 1733906345,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:39:05Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "oloiglbqoeqpnt4hdwzm",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "2a5d2bf07d038b7358824f07545cf1f3cb6abe0adbb7ad9dc674b739802bc556",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "9e1075b3b16ad14ea171e1163eb692b9",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "4e40eda78f4e7f9592d5997193ba2003",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "93bb4773908998768e4f989164f77f46",
+    "public_id": "oloiglbqoeqpnt4hdwzm",
+    "format": "jpg",
+    "version": 1733906345,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T08:39:05Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "backup": true,
+    "asset_folder": "",
+    "display_name": "oloiglbqoeqpnt4hdwzm",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/v1733906345\/oloiglbqoeqpnt4hdwzm.jpg",
+    "metadata": {
+        "category": "clothes",
+        "category1": [
+            "footwear"
+        ],
+        "category5": [
+            "footwear"
+        ],
+        "cvqxugszx6iz5xqaqfld": [
+            "0001",
+            "hhciunfxmvmkq77bomzy",
+            "te8tmqzcb3demdodowcs"
+        ],
+        "hj1umnjspfqpm3vm7pgy": [
+            "siwh0ybroy3bnsmiksuf"
+        ],
+        "price": 111,
+        "price1": 1,
+        "price5": 1,
+        "rckbnmq2hdrhkpx8q8mr": [
+            "gxkeslnor1wj8hyux5cr"
+        ],
+        "sku": "111",
+        "sku1": "Array",
+        "sku2": "Array",
+        "sku5": "Array"
+    },
+    "info": {
+        "visual_search": {
+            "clip": {
+                "status": "complete",
+                "data": "KaqiJc0nOiANqeyo3yUhKJOgYqmUDGKnDCgLqvspD6WprWWLgxQ+nC0VeqdGnmutehtyqTEpGihCp2okhSTaotaoh6BjqgCa+KgTHjCp0y2vq+8qVKTHJJYnp6BMqsAkMikUps8qmaTemZgm1I+Sp3csninsomCmI6xPoewie6P8qcgeQp0zrhkqTCThpUWe66Y9qECmERziofqnKCWxIiim06hRKJYdAiDlI8onCSPKKxGWHSRKI\/u4ASN+KsykM5zIKK6sdanPpFok\/idyHp8bxKGelsAYhhh4GaqmWqjurEAjvaAAHGCmzxCBKHmoWqYaoDkp2pfrnpuoZ6XPmhqaaSZ0m5ghzyBiLd8d2KIVHRqe3KgAm8CcoadXKtucOpzPGL4kuSanqLQpVSZrp84ilyDJKtenfiUSKzYYjiUqjZYgRiKWplImMyjgLYgoWSg6KJkmuCU8qIwgq6ZOqcMohBUtK\/Kh2iNYKFGiIR1SJgklF50Gqn0VUJxgKWYkV5hbIYgg\/abmnyUhSitLIAGkih62lR6n6alFEBId0RqHKCkqmy0qJXIcTyYfrMMifKmjKdwp\/KTjJ7AkSKP9pfSmcCoopZ8TEil5oKieCafvJd0pGalkplsmdqQCA+emWyk9pfgmNCgFJles+qYDnRCiy5poGRIorqldJUyeEqSMpRsnpSWnp5ucbybHJ3ksbCUEpxeo1aVHI7CeZynepgQqBSScot0psCsRpdSlRShYJRib9ZXfJS6Zvp\/wqGkndiSnJ0ekjaMmInipN5sep9etaZd\/oA0ip6CZJkUiGiEvpPokTCZwmXmdhBQcqcOiXy1XpmIkZpy5JX4hGqbGHDggrjCiFfWlTyEsKEsmiqUFKsum6yfvoDMoravFJoKkf5ivqaue2yjEqLmmGx\/kngejrZ+QpUUmVB85qEIcpqvdDyshCiZSmlImvaYnp3mhwi9vpmupty26KVapn6bdrd4iFyKwJmegKBWvJUgkxaJFMp+dwCrTJ6qoi6TXqoyrPKEzIBunsqcSpeUo0K0oJNelIidLrGmiAqpaqOmpPykPHTwVQyxtJAChIKLGJMejv6iqqoemmKBgqCuOrKgIKGYrBicjqgsS+igipocjnqwEJf4iBaL6KhewiKJRKHIn2aNepHqhZCDjpmOm2qXam6gkqijeqoIiFCXsEMAkkKMAJXonZiUKJ5SggygWqnGkdigZoI+lV6mZoUunXapNpHwm1aVMpa+oJaB9I7SiAh0CJPeSNyzHoUMbACioKbgoV6ECrIeckp40qL6lMaXRHj+kkyYLKa4a5Jg+odiquqp0JxcmGyWPnU2scSg3ppqhUzFTpz8kNKOEnfslkxYgnA=="
+            }
+        },
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "2a5d2bf07d038b7358824f07545cf1f3cb6abe0adbb7ad9dc674b739802bc556",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 50796,
+            "id": "9e1075b3b16ad14ea171e1163eb692b9",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 27860,
+            "id": "4e40eda78f4e7f9592d5997193ba2003",
+            "url": "http:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "secure_url": "https:\/\/res.cloudinary.com\/yelenik\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733906345\/oloiglbqoeqpnt4hdwzm",
+            "extension": ""
+        }
+    ]
+}
+

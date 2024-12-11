@@ -89,8 +89,8 @@ if (!$products) {
             $image_url = $cld->image($product['image_public_id'])
                 ->resize(
                     Resize::fill()
-                        ->width(250)
-                        ->height(250)
+                        ->width(500)
+                        ->height(500)
                         ->gravity(Gravity::autoGravity())
                 )
                 ->overlay(

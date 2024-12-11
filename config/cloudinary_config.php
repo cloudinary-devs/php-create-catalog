@@ -1,10 +1,3 @@
-<html lang="HTML5">
-
-<head>
-    <title>PHP Cloudinary Profiles</title>
-</head>
-
-<body>
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -40,6 +33,3 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $cld = new Cloudinary($config);
 
 ?>
-</body>
-
-</html>

@@ -16,14 +16,15 @@ services:
     container_name: db
     image: mysql:8.1.0
     environment:
-      MYSQL_ROOT_PASSWORD: pwdpwd
-      MYSQL_DATABASE: lamp_db
+      MYSQL_ROOT_PASSWORD: mniSGh1!
+      MYSQL_DATABASE: php_products
     volumes:
       - ./mysql_data:/var/lib/mysql
     ports:
       - '3306:3306'
     networks:
       - app_network
+    command: --default-authentication-plugin=mysql_native_password
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin:latest

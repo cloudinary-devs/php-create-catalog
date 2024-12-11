@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Product</title>
-    <link rel="stylesheet" href="../static/styles.css">
-    <script src="https://upload-widget.cloudinary.com/global/all.js"></script>
-</head>
-
-<body class="product-submission-page">
-
-<!-- Navigation Bar -->
-<nav>
-    <ul>
-        <li><a style="font-size:1.3rem;font-weight:75px;color:white;" href="../index.php">Catalog Creation App</a></li>
-        <li style="margin-left:60px;"><a href="products.php">View Products</a></li>
-    </ul>
-</nav>
-
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../includes/database.php';
@@ -26,12 +6,12 @@ require_once __DIR__ . '/../config/cloudinary_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
-
     $sku = $_POST['sku'];
     $price = $_POST['price'];
     $category = $_POST['category'];
     $metadata = "sku=$sku|category=$category|price=$price";
     if ($_FILES['product_image']['error'] == UPLOAD_ERR_OK) {
+        
         $file = $_FILES['product_image']['tmp_name'];
         $cloudinary_result = $cld->uploadApi()->upload($file, ["detection" => "captioning", "metadata" => $metadata]);
         $product_image_url = $cloudinary_result['secure_url'];
@@ -54,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $product_video_url="invalid";
         $video_public_id = "invalid";
+        $video_moderation_status=null;
+        $video_public_id_temp=null;
     }
 
     $product_id = saveProduct($pdo, $name, $product_image_url, $product_video_url, $image_public_id,  $video_public_id, $video_moderation_status, $image_caption, $video_public_id_temp);
@@ -61,6 +43,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://upload-widget.cloudinary.com/global/all.js"></script>
+</head>
+
+<body class="product-submission-page">
+
+<!-- Navigation Bar -->
+<nav>
+    <ul>
+        <li><a style="font-size:1.3rem;font-weight:75px;color:white;" href="../index.php">Catalog Creation App</a></li>
+        <li style="margin-left:60px;"><a href="products.php">View Products</a></li>
+    </ul>
+</nav>
 <div class="container" style="margin-top:-330px;">
     <div style="align-self: flex-start; text-align: left;">
     

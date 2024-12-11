@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Products</title>
-    <link rel="stylesheet" href="/../static/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.css">
-    <script src="https://unpkg.com/cloudinary-core/cloudinary-core-shrinkwrap.min.js"></script>
-    <script src="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.js"></script>
-    
-</head>
-<body class="products-page">
-
-<!-- Navigation Bar -->
-<nav>
-    <ul>
-    <li><a style="font-size:1.3rem;font-weight:75;color:white;" href="../index.php">Catalog Creation App</a></li>
-        <li style="margin-left:60px;"><a href="products.php">View Products</a></li>
-        <li><a href="product_submission.php">Add Product</a></li>    
-    </ul>
-</nav>
-
 <?php
 require_once __DIR__ . '/../config/cloudinary_config.php';  // Make sure this file sets up the Cloudinary API
 require_once __DIR__ . '/../includes/database.php';
@@ -67,10 +44,7 @@ if (!$product) {
     echo "Product not found!";
     exit;
 }
-?>
 
-
-    <?php
     if ($product['image_public_id']) {
             $image_url = $cld->image($product['image_public_id'])
                 ->resize(
@@ -122,7 +96,28 @@ if (!$product) {
         }
         
         ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Products</title>
+    <link rel="stylesheet" href="/../static/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.css">
+    <script src="https://unpkg.com/cloudinary-core/cloudinary-core-shrinkwrap.min.js"></script>
+    <script src="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.js"></script>
+    
+</head>
+<body class="products-page">
 
+<!-- Navigation Bar -->
+<nav>
+    <ul>
+    <li><a style="font-size:1.3rem;font-weight:75;color:white;" href="../index.php">Catalog Creation App</a></li>
+        <li style="margin-left:60px;"><a href="products.php">View Products</a></li>
+        <li><a href="product_submission.php">Add Product</a></li>    
+    </ul>
+</nav>
 <div class="container" style="margin-top:50px;">
     <div style="align-self: flex-start; text-align: left;">
         <p style="font-size:12px;">View a product in your catalog, including:</p>
@@ -149,8 +144,6 @@ if (!$product) {
 
 
     <div class="products-page">
-        
-    <h2><?php echo htmlspecialchars($product['name']); ?></h2>
         <div class="product-card">
             <div class="product-image" style="position:relative;margin:10px auto;max-width:600px;border:1px solid grey;">
                 <p style="width:100%;height:auto;object-fit:contain;"><b>Description:</b> <?php echo $product['image_caption']; ?></p>
@@ -175,7 +168,7 @@ if (!$product) {
             <?php endif; ?>
 
             <!-- Display product video if available -->
-            <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_moderation_status']!='rejected'): ?>
+            <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_public_id']!='invalid' && $product['video_moderation_status']!='rejected'): ?>
                 <div style="position:relative;max-width:450px;margin:0 auto;">
                     <video style="width:100%;height:auto;object-fit:contain;" id="doc-player" controls muted class="cld-video-player cld-fluid"></video>
                 </div>
