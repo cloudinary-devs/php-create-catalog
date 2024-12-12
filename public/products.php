@@ -112,7 +112,7 @@ if (!$products) {
             $message = 'This video didn\'t meet our standards due to ' . $product['rejection_reason'] . ' in the image. Please try uploading a different one.';
         } elseif ($product['video_moderation_status']==='pending' && 'video_public_id'!='invalid') {
             $video_url = null;  // No video if not set
-            $message = "We're reviewing your video to ensure it meets our publication standards. Please refresh the page in a few minutes.";
+            $message = "We're reviewing your video to ensure it meets our publication standards. Please check back shortly for the result.";
         } elseif ($product['video_moderation_status']==='approved') {
             $video_url = $product['video_public_id']; 
             $message ="";
@@ -161,7 +161,6 @@ if (!$products) {
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'completed') {
-                        console.log('****HERE*****');
                         fetch('clear_upload_status.php')
                             .then(() => {
                                 console.log('Status is completed. Reloading page...');

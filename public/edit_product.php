@@ -36,12 +36,14 @@ $video_url = $product['product_video_url'];
 $video_public_id = $product['video_public_id'];
 $image_caption = $product['image_caption'];
 $video_moderation_status = $product['video_moderation_status'];
-$metadata_result = $api->asset($product['image_public_id']);
 
+    $video_public_id_temp = $product['video_public_id_temp'];
+
+$metadata_result = $api->asset($product['image_public_id']);
 
 $price = isset($metadata_result['metadata']['price']) ? $metadata_result['metadata']['price'] : '';
 $sku = isset($metadata_result['metadata']['sku']) ? $metadata_result['metadata']['sku'] : '';
-$category = isset($metadata_result['metadata']['category']) ? $metadata_result['metadata']['category'] : '';
+$category = isset($metadata_result['metadata']['category'][0]) ? $metadata_result['metadata']['category'][0] : '';
 
 $category_labels = [
     'clothes' => 'Clothes',
@@ -55,7 +57,7 @@ $category_labels = [
 $sku = !empty($_POST['sku']) ? $_POST['sku'] : $sku;
 $price = !empty($_POST['price']) ? $_POST['price'] : $price;
 $category = !empty($_POST['category']) ? $_POST['category'] : $category;
-$metadata = "sku=$sku|category=$category|price=$price";
+$metadata = "sku=$sku|category=[\"$category\"]|price=$price";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];

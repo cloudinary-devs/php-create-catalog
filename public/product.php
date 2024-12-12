@@ -51,7 +51,7 @@ if (!$product) {
         } catch (\Cloudinary\Api\Exception\NotFound $e) {
             // If the asset is not found, display an error message
             echo "Product not found!";
-            echo "<br/>";
+            echo "br/>";
             echo '<a href="products.php">Go back to Products</a>';
             exit;
         }
@@ -76,7 +76,7 @@ if (!$product) {
                 file_put_contents('metadata.txt', "Metadata:\n" . json_encode($metadata_result, JSON_PRETTY_PRINT) . "\n\n", FILE_APPEND);
                 $price=$metadata_result['metadata']['price'];
                 $sku=$metadata_result['metadata']['sku'];
-                $category=$metadata_result['metadata']['category'];
+                $category=$metadata_result['metadata']['category'][0];
                 $category_labels = [
                     'clothes' => 'Clothes',
                     'accessories' => 'Accessories',
@@ -95,7 +95,7 @@ if (!$product) {
         }
         elseif ($product['video_moderation_status']==='pending') {
             $video_url = null;  // No video if not set
-            $message = "We're reviewing your video to ensure it meets our publication standards. Please refresh the page in a few minutes.";
+            $message = "We're reviewing your video to ensure it meets our publication standards. Please check back shortly for the result.";
         } elseif ($product['video_moderation_status']==='approved') {
             $video_url = $product['video_public_id']; 
             $message ="";
@@ -163,7 +163,7 @@ if (!$product) {
                 <p style="width:100%;height:auto;object-fit:contain;">Price: $<?php echo htmlspecialchars($price); ?></p>
                 <?php
                     // Get the category value for the product
-                    $category_value = $metadata_result['metadata']['category'];
+                    $category_value = $metadata_result['metadata']['category'][0];
 
                     // Find the display text for the category using the mapping
                     $category_display = isset($category_labels[$category_value]) ? $category_labels[$category_value] : 'Unknown';

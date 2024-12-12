@@ -1,0 +1,996 @@
+Metadata:
+{
+    "asset_id": "0fb3b4da6d86a3cf1973348fb4a7cd8c",
+    "public_id": "amjcivm0biunw453tduo",
+    "format": "jpg",
+    "version": 1733913202,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T10:33:22Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733913202\/amjcivm0biunw453tduo.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733913202\/amjcivm0biunw453tduo.jpg",
+    "metadata": {
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "s81oevuzdbvdqq8i6voe": "demo"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "d29f76e6c7ec253837b18060634011009f74a7daf8ad31718c516a4786509840",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 118783,
+            "id": "f43ab7c0bb48a32214684fe8455dd7f3",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733913202\/amjcivm0biunw453tduo",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733913202\/amjcivm0biunw453tduo",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 65399,
+            "id": "07fcba2209a23ea015438400a14b7ada",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733913202\/amjcivm0biunw453tduo",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733913202\/amjcivm0biunw453tduo",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "d3f4133cbbc97cad8b918b0e413a3d79",
+    "public_id": "xepapmdsqlsy13k7cuwj",
+    "format": "jpg",
+    "version": 1733993435,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T08:50:35Z",
+    "bytes": 168311,
+    "width": 1000,
+    "height": 667,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733993435\/xepapmdsqlsy13k7cuwj.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733993435\/xepapmdsqlsy13k7cuwj.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 25,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "325"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A bustling Times Square at night, with large illuminated billboards, pedestrians, and a silver car in the foreground."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "ce1e004900eb4fc621b55f1289a5552dbf323faad2f936cecfcb5cf251de00af",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 100813,
+            "id": "fc1706911b7ddee28fda70930a01546c",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733993435\/xepapmdsqlsy13k7cuwj",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733993435\/xepapmdsqlsy13k7cuwj",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 100,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 100,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 100,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 100,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 100,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 100,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 100,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "0fb3b4da6d86a3cf1973348fb4a7cd8c",
+    "public_id": "amjcivm0biunw453tduo",
+    "format": "jpg",
+    "version": 1733913202,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T10:33:22Z",
+    "bytes": 449622,
+    "width": 1920,
+    "height": 1280,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733913202\/amjcivm0biunw453tduo.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733913202\/amjcivm0biunw453tduo.jpg",
+    "metadata": {
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "s81oevuzdbvdqq8i6voe": "demo"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person wearing a warm, gray coat and a fur-lined hat stands in a snowy forest, surrounded by trees covered in a blanket of white."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "d29f76e6c7ec253837b18060634011009f74a7daf8ad31718c516a4786509840",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 118783,
+            "id": "f43ab7c0bb48a32214684fe8455dd7f3",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733913202\/amjcivm0biunw453tduo",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1733913202\/amjcivm0biunw453tduo",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 65399,
+            "id": "07fcba2209a23ea015438400a14b7ada",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733913202\/amjcivm0biunw453tduo",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733913202\/amjcivm0biunw453tduo",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "10803c00e03e9c11c2940eb1a8a909f1",
+    "public_id": "wlasseokplx0gx1rrpcn",
+    "format": "jpg",
+    "version": 1733914038,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T10:47:18Z",
+    "bytes": 1880775,
+    "width": 4460,
+    "height": 2973,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733914038\/wlasseokplx0gx1rrpcn.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733914038\/wlasseokplx0gx1rrpcn.jpg",
+    "metadata": {
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "s81oevuzdbvdqq8i6voe": "demo"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A person's hand holding a red handbag in front of a brick wall."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "e7fd7baf75ec75e518647014d3e0902af238191efad25a60593ea21691d23406",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 95821,
+            "id": "5c6d541daa3fb7ce8ceb10ac265b3375",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733914038\/wlasseokplx0gx1rrpcn",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733914038\/wlasseokplx0gx1rrpcn",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "d3f4133cbbc97cad8b918b0e413a3d79",
+    "public_id": "xepapmdsqlsy13k7cuwj",
+    "format": "jpg",
+    "version": 1733993435,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T08:50:35Z",
+    "bytes": 168311,
+    "width": 1000,
+    "height": 667,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733993435\/xepapmdsqlsy13k7cuwj.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733993435\/xepapmdsqlsy13k7cuwj.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 25,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "325"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A bustling Times Square at night, with large illuminated billboards, pedestrians, and a silver car in the foreground."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "ce1e004900eb4fc621b55f1289a5552dbf323faad2f936cecfcb5cf251de00af",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 100813,
+            "id": "fc1706911b7ddee28fda70930a01546c",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733993435\/xepapmdsqlsy13k7cuwj",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733993435\/xepapmdsqlsy13k7cuwj",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 100,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 113966,
+            "id": "5acf6ee20e215d57d0f25da9e1646355",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "6537851cd031a6f6136f3cd3ba0ec73e",
+    "public_id": "hslu4tgiaqht0wmdkdwe",
+    "format": "jpg",
+    "version": 1733919493,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-11T12:18:13Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733919493\/hslu4tgiaqht0wmdkdwe.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1733919493\/hslu4tgiaqht0wmdkdwe.jpg",
+    "metadata": {
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "s81oevuzdbvdqq8i6voe": "demo"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "244309bddb767db957219eabdafaba30fd2b387f6f0a4be8c7b2032c73882cf0",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "12d3b5619983d650de583a59d528187c",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733919493\/hslu4tgiaqht0wmdkdwe",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1733919493\/hslu4tgiaqht0wmdkdwe",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "da65f9bd215e2423dae953d6df2bf064",
+    "public_id": "tkcagibuprlzga6wmqix",
+    "format": "png",
+    "version": 1734007438,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T12:43:58Z",
+    "bytes": 147954,
+    "width": 520,
+    "height": 693,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734007438\/tkcagibuprlzga6wmqix.png",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734007438\/tkcagibuprlzga6wmqix.png",
+    "metadata": {
+        "category": [
+            "clothes"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 50,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "888"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "A young man with short dark hair wearing a burgundy sweater stands against a plain white background, his hands clasped in front of him with a calm, thoughtful expression on his face."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "4f6d79a44807da6beb7a2c34458c78c18bb2042f13e4852297de5c8e0c5359f8",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "png",
+            "bytes": 217882,
+            "id": "fb746c44e053f5cda89590d10812111e",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734007438\/tkcagibuprlzga6wmqix",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734007438\/tkcagibuprlzga6wmqix",
+            "extension": ""
+        }
+    ]
+}
+
+Metadata:
+{
+    "asset_id": "9741deae59eb127100434189d7d6287a",
+    "public_id": "nwu0lvtq3gf7sdygzyff",
+    "format": "jpg",
+    "version": 1734004720,
+    "resource_type": "image",
+    "type": "upload",
+    "created_at": "2024-12-12T11:58:40Z",
+    "bytes": 110491,
+    "width": 1080,
+    "height": 1080,
+    "folder": "",
+    "access_mode": "public",
+    "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/v1734004720\/nwu0lvtq3gf7sdygzyff.jpg",
+    "metadata": {
+        "category": [
+            "accessories"
+        ],
+        "color_id": [
+            "color1",
+            "color2"
+        ],
+        "colors_id": [
+            "color1",
+            "color2"
+        ],
+        "g0btpgkczvarsmkwli2e": [
+            "ojnfizxyivpox6opxspo"
+        ],
+        "price": 99,
+        "s81oevuzdbvdqq8i6voe": "demo",
+        "sku": "221"
+    },
+    "last_updated": {
+        "metadata_updated_at": "2024-12-12T13:31:24+00:00",
+        "updated_at": "2024-12-12T13:31:24+00:00"
+    },
+    "info": {
+        "detection": {
+            "captioning": {
+                "status": "complete",
+                "data": {
+                    "caption": "Beautifully wrapped gold gifts with red ribbons, accompanied by vibrant red roses, resting on a wooden surface."
+                },
+                "schema_version": 1,
+                "model_version": 4
+            }
+        }
+    },
+    "next_cursor": "80bb763316d507153554d4c6274583bfede89f8d11c2704d1ecc3a7790bfbc98",
+    "derived": [
+        {
+            "transformation": "c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 113966,
+            "id": "5acf6ee20e215d57d0f25da9e1646355",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_700,w_700\/l_cloudinary_logo\/c_scale,w_200\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        },
+        {
+            "transformation": "c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/",
+            "format": "jpg",
+            "bytes": 68984,
+            "id": "b763e3d0db58a0480c10b4bbb2d80385",
+            "url": "http:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "secure_url": "https:\/\/res.cloudinary.com\/demo\/image\/upload\/c_fill,g_auto,h_500,w_500\/l_cloudinary_logo\/c_scale,w_50\/fl_layer_apply,g_north_east,x_10,y_10\/v1734004720\/nwu0lvtq3gf7sdygzyff",
+            "extension": ""
+        }
+    ]
+}
+
