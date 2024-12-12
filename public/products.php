@@ -23,7 +23,13 @@ $dotenv->load();
 $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $cld = new Cloudinary($config);
 
-
+// Fetch all products from the database
+$products = getAllProducts($pdo);
+// If no products are found
+if (!$products) {
+    echo 'No products found. Click <a href="product_submission.php">Add Product</a> to start.';
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,16 +75,7 @@ $cld = new Cloudinary($config);
     </ul>
     </div>
 </div>
-<?php
 
-// Fetch all products from the database
-$products = getAllProducts($pdo);
-// If no products are found
-if (!$products) {
-    echo 'No products found. Click <a href="product_submission.php">Add Product</a> to start.';
-    exit;
-}
-?>
 <h2 style="margin-top:-5px;">Product Catalog</h2>
 <!-- products List -->
 <div class="products-container">
@@ -164,8 +161,10 @@ if (!$products) {
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'completed') {
+                        console.log('****HERE*****');
                         fetch('clear_upload_status.php')
                             .then(() => {
+                                console.log('Status is completed. Reloading page...');
                                 // Refresh the page when the status is completed
                                 location.reload(); 
                             });                    }

@@ -9,9 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sku = $_POST['sku'];
     $price = $_POST['price'];
     $category = $_POST['category'];
-    $metadata = "sku=$sku|category=$category|price=$price";
+    $metadata = "sku=$sku|category=[\"$category\"]|price=$price";
     if ($_FILES['product_image']['error'] == UPLOAD_ERR_OK) {
-        
         $file = $_FILES['product_image']['tmp_name'];
         $cloudinary_result = $cld->uploadApi()->upload($file, ["detection" => "captioning", "metadata" => $metadata]);
         $product_image_url = $cloudinary_result['secure_url'];
@@ -62,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <li style="margin-left:60px;"><a href="products.php">View Products</a></li>
     </ul>
 </nav>
-<div class="container" style="margin-top:-330px;">
+<div class="container" style="margin-top:-300px;">
     <div style="align-self: flex-start; text-align: left;">
     
     <p style="font-size:12px;">Add a new product to your catalog:</p>

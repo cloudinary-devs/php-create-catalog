@@ -46,6 +46,15 @@ if (!$product) {
 }
 
     if ($product['image_public_id']) {
+        try {
+            $resource = $api->asset($product['image_public_id']);
+        } catch (\Cloudinary\Api\Exception\NotFound $e) {
+            // If the asset is not found, display an error message
+            echo "Product not found!";
+            echo "<br/>";
+            echo '<a href="products.php">Go back to Products</a>';
+            exit;
+        }
             $image_url = $cld->image($product['image_public_id'])
                 ->resize(
                     Resize::fill()
