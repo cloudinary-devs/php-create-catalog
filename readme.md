@@ -1,6 +1,6 @@
-## PHP Catalog Creation App
+## PHP Product Catalog App
 
-This app allows you to manage a catalog of products, each comprising a name, metadata (SKU, price, and category), an automatically generated description, an image, and a video.
+This app allows you to manage a catalog of products, each comprising a name, metadata (description, SKU, price, and category), an image with automatically generated alt text, and a video.
 
 You can:
 
@@ -16,7 +16,7 @@ You can:
 * **Synchronous Upload**: Images are uploaded synchronously.
 * **Database Integration**: Image names and their Cloudinary public IDs are saved in the database.
 * **Dynamic Delivery**: Public IDs are used to generate delivery URLs with transformations like resizing, cropping, and overlay.
-* **AI-Generated Descriptions**: Descriptions are auto-generated using Cloudinary's AI Content Analysis add-on for auto-captioning.
+* **AI-Generated Image Alt Text**: Descriptions are auto-generated using Cloudinary's AI Content Analysis add-on for image alt text.
 * **Metadata Management**: User-entered information is saved as metadata in Cloudinary and retrieved on product display pages.
 
 
@@ -62,8 +62,8 @@ You can:
 * **Database setup**
   * Run `php config/setup_db.php` to create the database and set up the **products** table based on the specifications in the file.
 
-* **Structured metadata**:
-  * Run `php config/setup_metadata.php` to set up the **SKU**, **Price**, and **Category** structured metadata fields for this app in your product environment.
+* **Structured metadata and image overlay**:
+  * Run `php config/setup_metadata.php` to configure the **SKU**, **Price**, and **Category** structured metadata fields for your product environment and upload the image overlay used for delivering images.
   
 * **Webhook notification configuration**
   * Add your app's notification URL with the suffix `webhooks/video_upload_webhook.php` on the [Notifications](https://console.cloudinary.com/settings/webhooks) page of the Cloudinary Console.

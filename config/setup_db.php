@@ -33,7 +33,9 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
-
+    $sql = "DELETE FROM products
+ORDER BY id DESC
+LIMIT 1;";
     // Execute the SQL query to create the table (only if it doesn't already exist)
     $pdo->exec($sql);
 } catch (PDOException $e) {

@@ -40,7 +40,7 @@ $video_moderation_status = $product['video_moderation_status'];
     $video_public_id_temp = $product['video_public_id_temp'];
 
 $metadata_result = $api->asset($product['image_public_id']);
-
+$description = isset($metadata_result['metadata']['description']) ? $metadata_result['metadata']['description'] : '';
 $price = isset($metadata_result['metadata']['price']) ? $metadata_result['metadata']['price'] : '';
 $sku = isset($metadata_result['metadata']['sku']) ? $metadata_result['metadata']['sku'] : '';
 $category = isset($metadata_result['metadata']['category'][0]) ? $metadata_result['metadata']['category'][0] : '';
@@ -54,10 +54,11 @@ $category_labels = [
 ];
 
 // Add error handling for metadata
+$description = !empty($_POST['description']) ? $_POST['description'] : $description;
 $sku = !empty($_POST['sku']) ? $_POST['sku'] : $sku;
 $price = !empty($_POST['price']) ? $_POST['price'] : $price;
 $category = !empty($_POST['category']) ? $_POST['category'] : $category;
-$metadata = "sku=$sku|category=[\"$category\"]|price=$price";
+$metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$description";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
@@ -110,10 +111,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <ul style="font-size:10px;">
         <li style="margin-top:-3px;">Anything not edited will retain the existing data.</li>
         <li style="margin-top:3px;">The user-input name of the product is updated in the database and displayed wherever the product is rendered.</li>
-        <li style="margin-top:3px;">The SKU, price, and category <a href="https://cloudinary.com/documentation/structured_metadata">structured metadata</a> are uploaded for the image and video within Cloudinary.</li>
+        <li style="margin-top:3px;">The description SKU, price, and category <a href="https://cloudinary.com/documentation/structured_metadata">structured metadata</a> are uploaded for the image and video within Cloudinary.</li>
         <li style="margin-top:3px;">If a new image is selected, it's <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_image_upload">uploaded</a> synchronously:
             <ul>
-                <li style="margin-top:3px;">A description is auto-generated using <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a> add-on.</li>
+                <li style="margin-top:3px;">Image alt text is auto-generated using <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a> add-on.</li>
                 <li style="margin-top:3px;">The new public ID is stored in the database for use when rendering the image.</li>
             </ul>
         </li>
@@ -135,8 +136,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form action="edit_product.php?id=<?php echo $product['id']; ?>" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" placeholder="Name">   
         
-        <div class="form-group" style="margin-left:-205px;margin-bottom:10px;">
-            <label for="sku">Product SKU:</label>
+        <div class="form-group">
+            <label for="description">Product Description:</label>
+            <input style="width:340px;" type="text" id="description" name="description" value="<?php echo htmlspecialchars($description); ?>" placeholder="Enter product description">
+        </div>
+        
+        <div class="form-group" style="margin-left:-115px;margin-bottom:10px;">
+            <label style="margin-left:-100px;" for="sku">Product SKU:</label>
             <input type="text" id="sku" name="sku" value="<?php echo htmlspecialchars($sku); ?>" placeholder="Enter product SKU">
         </div>
 

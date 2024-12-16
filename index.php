@@ -44,7 +44,7 @@
 <div class="container">
     <H4>Overview</H4>
 
-    <p>This app helps you manage a catalog of products, each featuring a name, metadata (SKU, price, and category), an image with an AI-generated description, and a video that undergoes content moderation for appropriateness.</p>
+    <p>This app helps you manage a catalog of products, each featuring a name, metadata (description, SKU, price, and category), an image with AI-generated alt text, and a video that undergoes content moderation for appropriateness.</p>
     <p>You can:</p>
 
     <ul>
@@ -73,7 +73,7 @@
     <ul>
         <li><b>Synchronous Upload</b>: Upload images synchronously using the <a href="https://cloudinary.com/documentation/image_upload_api_reference#upload">Upload API</a> endpoint.</li>
         <li><b>Dynamic Delivery</b>: Use public IDs stored in the database to <a href="https://cloudinary.com/documentation/php_image_manipulation#direct_url_building">generate delivery URLs</a> with <a href="https://cloudinary.com/documentation/transformation_reference#c_fill"> transformations like resizing and cropping</a>. <a href="https://cloudinary.com/documentation/transformation_reference#g_gravity">Automatic gravity</a> ensures the important parts of the image stay in focus, while <a href="https://cloudinary.com/documentation/transformation_reference#l_layer">overlays</a> are applied for branding.</li>
-        <li><b>AI-Generated Descriptions</b>: Automatically generate image descriptions with <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a>.</li>
+        <li><b>AI-Generated alt text</b>: Automatically generate image descriptions with <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a>.</li>
         <li><b>Metadata Management</b>: Save user-provided metadata in Cloudinary and retrieve it for display using the <a href="https://cloudinary.com/documentation/admin_api#get_details_of_a_single_resource_by_public_id">resource</a> endpoint of the Admin API.</li>
     </ul>
 

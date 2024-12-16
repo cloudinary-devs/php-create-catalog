@@ -1,5 +1,6 @@
 
 <?php
+
 // Include Cloudinary configuration
 require_once __DIR__ . '/cloudinary_config.php';
 
@@ -19,6 +20,20 @@ $dotenv->load();
 // Initialize Cloudinary configuration using the CLOUDINARY_URL from environment variables
 $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $api = new AdminApi($config);
+try {
+    // Prepare and add a "String" metadata field (e.g., SKU)
+    $stringMetadataField = new StringMetadataField('description');
+    $stringMetadataField->setLabel('Description');
+    $stringMetadataField->setExternalId('description');
+    $stringMetadataField->setMandatory(true); // Makes this field required
+    $stringMetadataField->setDefaultValue(['Product']); // Sets a default value
+    $api->addMetadataField($stringMetadataField);
+    echo "String metadata field added successfully.\n";
+} catch (ApiError $e) {
+    echo 'API Error (String field): ' . $e->getMessage();
+} catch (Exception $e) {
+    echo 'Error (String field): ' . $e->getMessage();
+}
 
 try {
     // Prepare and add a "Set" metadata field with predefined categories
@@ -77,11 +92,13 @@ try {
     echo "Listing all metadata fields:\n";
     $fields = $api->listMetadataFields();
     echo '<pre><code>';
-    print_r($fields);
+    //print_r($fields);
     echo '</code></pre>';
 } catch (ApiError $e) {
     echo 'API Error (List fields): ' . $e->getMessage();
 } catch (Exception $e) {
     echo 'Error (List fields): ' . $e->getMessage();
 }
+$response=$cld->uploadApi()->upload("https://cloudinary-res.cloudinary.com/image/upload/v1629994483/new_cloudinary_logo_square.png",['public_id' => 'cloudinary_logo1']);
+print_r($response);
 ?>

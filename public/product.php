@@ -63,7 +63,7 @@ if (!$product) {
                         ->gravity(Gravity::autoGravity())
                 )
                 ->overlay(
-                    Overlay::source(Source::image("cloudinary_logo")->resize(Resize::scale()->width(200)))
+                    Overlay::source(Source::image("cloudinary_logo1")->resize(Resize::scale()->width(100)))
                         ->position(
                             (new Position())
                                 ->gravity(Gravity::compass(Compass::northEast()))
@@ -73,7 +73,7 @@ if (!$product) {
                 )
                 ->toUrl();
                 $metadata_result = $api->asset($product['image_public_id']);
-                file_put_contents('metadata.txt', "Metadata:\n" . json_encode($metadata_result, JSON_PRETTY_PRINT) . "\n\n", FILE_APPEND);
+                $description=$metadata_result['metadata']['description'];
                 $price=$metadata_result['metadata']['price'];
                 $sku=$metadata_result['metadata']['sku'];
                 $category=$metadata_result['metadata']['category'][0];
@@ -132,14 +132,14 @@ if (!$product) {
         <p style="font-size:12px;">View a product in your catalog, including:</p>
         <ul style="font-size:10px;">
             <li style="margin-top:-3px;">The user-input name of the product retrieved from the database.</li>
-            <li style="margin-top:3px;">The image description, auto-generated on upload using the <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon" target="_blank">Cloudinary's AI Content Analysis</a> add-on retrieved from the database.</li>
-            <li style="margin-top:3px;">The image and video <a href="https://cloudinary.com/documentation/structured_metadata" target="_blank">structured metadata</a>, including SKU, price, and category, retrieved from Cloudinary.</li>
+            <li style="margin-top:3px;"><a href="https://cloudinary.com/documentation/structured_metadata" target="_blank">Structured metadata</a>, including description, SKU, price, and category, retrieved from Cloudinary and displayed.</li>
             <li style="margin-top:3px;">The image, whose <a href="https://cloudinary.com/documentation/php_image_manipulation#direct_url_building" target="_blank">delivery URL is generated</a> using the public ID retrieved from the database. Transformations applied to the image include:
                 <ul>
                     <li style="margin-top:3px;"><a href="https://cloudinary.com/documentation/transformation_reference#c_fill" target="_blank">Resizing and cropping</a> to square dimensions, with automatic focus on the important parts using the <a href="https://cloudinary.com/documentation/transformation_reference#g_gravity" target="_blank">gravity</a> parameter.</li>
                     <li style="margin-top:3px;">An <a href="https://cloudinary.com/documentation/transformation_reference#l_layer" target="_blank">image overlay</a> for branding.</li>
                 </ul>
             </li>
+            <li style="margin-top:3px;">The image alt text, auto-generated on upload using the <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon" target="_blank">Cloudinary's AI Content Analysis</a> add-on retrieved from the database.</li>
             <li style="margin-top:3px;">The video, depending on its <a href="https://cloudinary.com/documentation/moderate_assets" target="_blank">moderation</a> status:
                 <ul>
                     <li style="margin-top:3px;"><b>Pending</b>: A message is displayed to inform you of the moderation status.</li>
@@ -154,11 +154,11 @@ if (!$product) {
 
     <div class="products-page">
         <div class="product-card">
-            <div class="product-image" style="position:relative;margin:10px auto;max-width:600px;border:1px solid grey;">
-                <p style="width:100%;height:auto;object-fit:contain;"><b>Description:</b> <?php echo $product['image_caption']; ?></p>
-            </div>
+            <h2 ><?php echo htmlspecialchars($product['name']); ?></h2>
+            
                         <!-- Display product image if available -->
             <div class="product-image" style="position:relative;margin:10px auto;max-width:300px;border:1px solid grey;">
+            <p style="width:100%;height:auto;object-fit:contain;">Description: <?php echo htmlspecialchars($description); ?></p>
                 <p style="width:100%;height:auto;object-fit:contain;">SKU: <?php echo htmlspecialchars($sku); ?></p>
                 <p style="width:100%;height:auto;object-fit:contain;">Price: $<?php echo htmlspecialchars($price); ?></p>
                 <?php
@@ -170,15 +170,23 @@ if (!$product) {
                 ?>
                 <p style="width:100%;height:auto;object-fit:contain;">Category: <?php echo htmlspecialchars($category_display); ?></p>
             </div>
+            <div style="display:flex;justify-content:left;">
+                <p style="width:47%;margin-bottom:2px;color:black;font-size:.8rem;"><b>Image</b></p>
+            </div>
                 <?php if ($image_url): ?>
-                <img class="product-image" src="<?php echo $image_url; ?>" alt="product Image">
+                <img class="product-image" src="<?php echo $image_url; ?>" alt="<?php echo $product['image_caption']; ?>">
             <?php else: ?>
                 <p>No image available.</p>
             <?php endif; ?>
-
+            <div class="product-image" style="position:relative;margin:10px auto;max-width:600px;margin-top:-8px;margin-bottom:20px;border:1px solid grey;padding-left:4px;padding-right:4px;">
+                <p style="width:100%;height:auto;object-fit:contain;"><b>Alt text:</b> <?php echo $product['image_caption']; ?></p>
+            </div>
             <!-- Display product video if available -->
+            <div style="display:flex;justify-content:left;">
+                <p style="width:20%;margin-bottom:0;color:black;font-size:.8rem;"><b>Video</b></p>
+            </div>
             <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_public_id']!='invalid' && $product['video_moderation_status']!='rejected'): ?>
-                <div style="position:relative;max-width:450px;margin:0 auto;">
+                <div style="position:relative;max-width:85%;margin:0 auto;">
                     <video style="width:100%;height:auto;object-fit:contain;" id="doc-player" controls muted class="cld-video-player cld-fluid"></video>
                 </div>
                 <script>
@@ -187,7 +195,9 @@ if (!$product) {
                     player.source('<?php echo $product['video_public_id']; ?>');
                 </script>
             <?php elseif (isset($message)): ?>
-                <p><?php echo htmlspecialchars($message); ?></p>
+                <div style="background:lightgrey;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;border: 1px solid grey;width:84%;height:128px;display:flex;align-items:center;justify-content:center;">
+                    <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>
+                </div>
             <?php endif; ?>
             <p>
                 <a href="edit_product.php?id=<?php echo $product['id']; ?>">Edit</a>

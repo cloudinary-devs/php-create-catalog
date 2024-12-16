@@ -5,11 +5,12 @@ require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../config/cloudinary_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $description = $_POST['description'];
     $name = $_POST['name'];
     $sku = $_POST['sku'];
     $price = $_POST['price'];
     $category = $_POST['category'];
-    $metadata = "sku=$sku|category=[\"$category\"]|price=$price";
+    $metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$description";
     if ($_FILES['product_image']['error'] == UPLOAD_ERR_OK) {
         $file = $_FILES['product_image']['tmp_name'];
         $cloudinary_result = $cld->uploadApi()->upload($file, ["detection" => "captioning", "metadata" => $metadata]);
@@ -67,10 +68,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p style="font-size:12px;">Add a new product to your catalog:</p>
     <ul style="font-size:10px;">
         <li style="margin-top:-3px;">The user-input name of the product is saved to the database and displayed wherever the product is rendered.</li>
-        <li style="margin-top:3px;">The SKU, price, and category is saved with the uploaded image and video as <a href="https://cloudinary.com/documentation/structured_metadata">structured metadata</a>.</li>
+        <li style="margin-top:3px;">The description SKU, price, and category is saved with the uploaded image and video as <a href="https://cloudinary.com/documentation/structured_metadata">structured metadata</a>.</li>
         <li style="margin-top:3px;">The image is <a href ="https://cloudinary.com/documentation/php_image_and_video_upload#php_image_upload">uploaded</a> synchronously: </li> 
             <ul>
-                <li style="margin-top:3px;">An description is auto-generated using <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a> add-on.</li>
+                <li style="margin-top:3px;">Image alt text is auto-generated using <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a> add-on.</li>
                 <li style="margin-top:3px;">Its public ID is stored in the database for use when rendering the image.</li>
             </ul>
         </li>
@@ -90,10 +91,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h2 style="margin-top:-10px;">Add a Product</h2>
     <form action="product_submission.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Name" required>
+
+        <div class="form-group">
+                <label  for="description">Product Description:</label>
+                <input style="width:305px;" type="text" id="description" name="description" placeholder="Enter product description" required>
+            </div>
         
-        <div class="form-group" style="margin-left:-175px;margin-bottom:10px;">
-                <label for="sku">Product SKU:</label>
-                <input type="text" id="sku" name="sku" placeholder="Enter product SKU" required>
+        <div class="form-group" >
+                <label style="margin-left:-50px;" for="sku">Product SKU:</label>
+                <input style="width:300px;" type="text" id="sku" name="sku" placeholder="Enter product SKU" required>
             </div>
 
         <div class="form-group" style="margin-left:-175px;margin-bottom:10px;">
