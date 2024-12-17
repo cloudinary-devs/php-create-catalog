@@ -59,11 +59,11 @@ You can:
     * **Cloud name**: Copy and paste your cloud name from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
     * **Confirm configuration**: Open the `config/cloudinary_config.php` file. Temporarily uncomment the echo statements, then run `php config/cloudinary_config.php` in the terminal. If your configuration is correct, the configuration object will be printed to the console.
 
+* **Structured metadata and image overlay**:
+  * Run `php config/setup_metadata.php` to configure the **Description**, **SKU**, **Price**, and **Category** structured metadata fields for your product environment and upload the image overlay used for delivering images and sample image and video for the first product in the app.
+
 * **Database setup**
   * Run `php config/setup_db.php` to create the database and set up the **products** table based on the specifications in the file.
-
-* **Structured metadata and image overlay**:
-  * Run `php config/setup_metadata.php` to configure the **SKU**, **Price**, and **Category** structured metadata fields for your product environment and upload the image overlay used for delivering images.
   
 * **Webhook notification configuration**
   * Add your app's notification URL with the suffix `webhooks/video_upload_webhook.php` on the [Notifications](https://console.cloudinary.com/settings/webhooks) page of the Cloudinary Console.
@@ -72,8 +72,9 @@ You can:
 * **Cloudinary add-ons**: Go to the [Add-ons](https://console.cloudinary.com/settings/addons) page of your Cloudinary Console Settings and register for the Cloudinary AI Content Analysis and Rekognition AI Video Moderation add-ons.
 
 * **Increase the file size limit in your php.ini file**:
-  * Make sure your `php.ini` file contains the following limits:
+  * Update your `php.ini` file with the following limits:
     ```php
-    upload_max_filesiz=20m
+    upload_max_filesize=20m
     post_max_size=20m
     ```
+  **Note:** This solution is intended for demo purposes only. For production environments, consider optimizing images and videos on the client side to prevent server overload.

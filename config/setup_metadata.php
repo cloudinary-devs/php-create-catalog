@@ -26,9 +26,11 @@ try {
     $stringMetadataField->setLabel('Description');
     $stringMetadataField->setExternalId('description');
     $stringMetadataField->setMandatory(true); // Makes this field required
-    $stringMetadataField->setDefaultValue(['Product']); // Sets a default value
+    $stringMetadataField->setDefaultValue(['Product description']); // Sets a default value
     $api->addMetadataField($stringMetadataField);
     echo "String metadata field added successfully.\n";
+    echo "*************DESCRIPTION";
+    print_r($stringMetadataField);
 } catch (ApiError $e) {
     echo 'API Error (String field): ' . $e->getMessage();
 } catch (Exception $e) {
@@ -99,6 +101,20 @@ try {
 } catch (Exception $e) {
     echo 'Error (List fields): ' . $e->getMessage();
 }
+
+// Upload sample image overlay
 $response=$cld->uploadApi()->upload("https://cloudinary-res.cloudinary.com/image/upload/v1629994483/new_cloudinary_logo_square.png",['public_id' => 'cloudinary_logo1']);
-print_r($response);
+
+//Upload sample video
+$response=$cld->uploadApi()->upload("https://res.cloudinary.com/demo/video/upload/v1734386637/txoeiqssuhb3polntpmt.mp4",['resource_type' => 'video', 'public_id' => 'txoeiqssuhb3polntpmt']);
+
+//Upload sample image with metadata
+$sku="9090";
+$category="footwear";
+$price=200;
+$description="Comfortable and durable shoes designed for style and all-day wear.";
+$metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$description";
+$response=$cld->uploadApi()->upload("https://res.cloudinary.com/demo/image/upload/v1734386880/yghbrqxh4jlozcluaq4c.jpg",['public_id' => 'yghbrqxh4jlozcluaq4c', "metadata" => $metadata]);
+
+
 ?>

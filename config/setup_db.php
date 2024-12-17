@@ -37,7 +37,7 @@ try {
     // Execute the SQL query to create the table (only if it doesn't already exist)
     $pdo->exec($sql);
 
-    // Insert the specified row into the products table
+    // Insert the a sample product in the products table
     $insertQuery = "
     INSERT INTO products 
     (name, product_image_url, product_video_url, image_public_id, video_public_id, video_moderation_status, image_caption, video_public_id_temp, rejection_reason, created_at, updated_at)
