@@ -33,11 +33,37 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
-    $sql = "DELETE FROM products
-ORDER BY id DESC
-LIMIT 1;";
+
     // Execute the SQL query to create the table (only if it doesn't already exist)
     $pdo->exec($sql);
+
+    // Insert the specified row into the products table
+    $insertQuery = "
+    INSERT INTO products 
+    (name, product_image_url, product_video_url, image_public_id, video_public_id, video_moderation_status, image_caption, video_public_id_temp, rejection_reason, created_at, updated_at)
+    VALUES 
+    (:name, :product_image_url, :product_video_url, :image_public_id, :video_public_id, :video_moderation_status, :image_caption, :video_public_id_temp, :rejection_reason, :created_at, :updated_at)
+    ";
+
+    $stmt = $pdo->prepare($insertQuery);
+
+    // Bind values for the row
+    $stmt->execute([
+        ':name' => 'Sneakers',
+        ':product_image_url' => 'https://res.cloudinary.com/demo/image/upload/v1734386880/yghbrqxh4jlozcluaq4c.jpg',
+        ':product_video_url' => 'https://res.cloudinary.com/demo/video/upload/v1734386637/txoeiqssuhb3polntpmt.mp4',
+        ':image_public_id' => 'yghbrqxh4jlozcluaq4c',
+        ':video_public_id' => 'txoeiqssuhb3polntpmt',
+        ':video_moderation_status' => 'approved',
+        ':image_caption' => 'A pair of gray and neon green athletic shoes with a mesh-like pattern are displayed on a metal railing, with a blurred outdoor landscape visible in the background.',
+        ':video_public_id_temp' => 'txoeiqssuhb3polntpmt',
+        ':rejection_reason' => NULL,
+        ':created_at' => '2024-12-17 00:03:59',
+        ':updated_at' => '2024-12-17 00:08:02'
+    ]);
+
+    echo "Table created (if it didn't exist) and row inserted successfully!";
+
 } catch (PDOException $e) {
     die("Error: " . $e->getMessage());
 }
