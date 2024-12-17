@@ -81,7 +81,7 @@ if (!$product) {
                     'clothes' => 'Clothes',
                     'accessories' => 'Accessories',
                     'footwear' => 'Footwear',
-                    'home-living' => 'Home & Living',
+                    'home_and_living' => 'Home & Living',
                     'electronics' => 'Electronics',
                 ];
         } else {
@@ -186,14 +186,23 @@ if (!$product) {
                 <p style="width:20%;margin-bottom:0;color:black;font-size:.8rem;"><b>Video</b></p>
             </div>
             <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_public_id']!='invalid' && $product['video_moderation_status']!='rejected'): ?>
-                <div style="position:relative;max-width:85%;margin:0 auto;">
-                    <video style="width:100%;height:auto;object-fit:contain;" id="doc-player" controls muted class="cld-video-player cld-fluid"></video>
-                </div>
-                <script>
-                    // Initialize the Cloudinary video player with a unique ID
-                    const player = cloudinary.videoPlayer('doc-player', { cloudName: '<?php echo $_ENV['CLOUDINARY_CLOUD_NAME']; ?>' });
-                    player.source('<?php echo $product['video_public_id']; ?>');
-                </script>
+                <div style="position:relative;max-width:64%;margin:0 auto;">
+    <video 
+        id="doc-player" 
+        controls 
+        muted 
+        class="cld-video-player" 
+        style="width:100%;height:100%;"
+    ></video>
+</div>
+<script>
+    // Initialize the Cloudinary video player with a unique ID
+    const player = cloudinary.videoPlayer('doc-player', { 
+        cloudName: '<?php echo $_ENV['CLOUDINARY_CLOUD_NAME']; ?>',
+        fluid: true // Ensures the player adjusts to the container
+    });
+    player.source('<?php echo $product['video_public_id']; ?>');
+</script>
             <?php elseif (isset($message)): ?>
                 <div style="background:lightgrey;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;border: 1px solid grey;width:84%;height:128px;display:flex;align-items:center;justify-content:center;">
                     <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>

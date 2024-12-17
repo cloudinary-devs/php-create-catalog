@@ -133,7 +133,7 @@ if (!$products) {
                 'clothes' => 'Clothes',
                 'accessories' => 'Accessories',
                 'footwear' => 'Footwear',
-                'home-living' => 'Home & Living',
+                'home_and_living' => 'Home & Living',
                 'electronics' => 'Electronics',
             ];
         ?>
@@ -173,7 +173,7 @@ if (!$products) {
                     <p style="width:38%;margin-bottom:0;color:black;font-size:.7rem;"><b>Video</b></p>
                 </div>
                 <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_public_id']!='invalid' && $product['video_moderation_status']!='rejected'): ?>
-                    <div style="position:relative;max-width:230px;margin:0 auto;">
+                    <div style="position:relative;max-width:450px;margin:0 auto;">
                         <video style="width:100%;height:auto;object-fit:contain;" id="doc-player-<?php echo $product['id']; ?>" controls muted class="cld-video-player cld-fluid"></video>
                     </div>
                     <script>
