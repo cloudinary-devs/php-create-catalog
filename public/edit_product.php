@@ -36,20 +36,21 @@ $video_url = $product['product_video_url'];
 $video_public_id = $product['video_public_id'];
 $image_caption = $product['image_caption'];
 $video_moderation_status = $product['video_moderation_status'];
+$video_public_id_temp = $product['video_public_id_temp'];
 
-    $video_public_id_temp = $product['video_public_id_temp'];
-
+// Get the exiting metadata values. Use those as defaults.
 $metadata_result = $api->asset($product['image_public_id']);
 $description = isset($metadata_result['metadata']['description']) ? $metadata_result['metadata']['description'] : '';
 $price = isset($metadata_result['metadata']['price']) ? $metadata_result['metadata']['price'] : '';
 $sku = isset($metadata_result['metadata']['sku']) ? $metadata_result['metadata']['sku'] : '';
 $category = isset($metadata_result['metadata']['category'][0]) ? $metadata_result['metadata']['category'][0] : '';
 
+// Map list value external IDs to display values.
 $category_labels = [
     'clothes' => 'Clothes',
     'accessories' => 'Accessories',
     'footwear' => 'Footwear',
-    'home-living' => 'Home & Living',
+    'home_and_living' => 'Home & Living',
     'electronics' => 'Electronics',
 ];
 
@@ -78,10 +79,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_FILES['product_video']['error'] == UPLOAD_ERR_OK) {
         $file = $_FILES['product_video']['tmp_name'];
         $cloudinary_result = $cld->uploadApi()->upload($file, ['resource_type' => 'video', 'moderation' => 'aws_rek_video', "metadata" => $metadata]);
-        $video_url = $cloudinary_result['secure_url'];
-        $video_public_id = 'pending';  // Save the public ID of the video
-        $video_moderation_status = 'pending';
-        $video_public_id_temp = $cloudinary_result['public_id'];
+        $video_url = $cloudinary_result['secure_url']; // Save the original video URL
+        $video_public_id = 'pending';  // Initialize public ID, to be updated after moderation
+        $video_moderation_status = 'pending'; // Initialize moderation status
+        $video_public_id_temp = $cloudinary_result['public_id']; // Save the public ID of the video temporarily until it passes moderation
     } 
     updateproduct($pdo, $name, $image_url, $video_url, $image_public_id, $video_public_id, $video_moderation_status, $image_caption, $video_public_id_temp, $product['id']);
     header("Location: products.php");
@@ -133,6 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="products-page">
 <div class="product-container" style="padding-left:80px;padding-right:80px;">
     <h2 style="margin-top:-10px;">Update This product</h2>
+    <!--Initialize the form with current values-->
     <form action="edit_product.php?id=<?php echo $product['id']; ?>" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" placeholder="Name">   
         
@@ -161,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="electronics" <?php echo ($category == 'electronics') ? 'selected' : ''; ?>>Electronics</option>
             </select>
         </div>          
-        
+        <!--Display image and video, or a message if they don't exist-->
         <?php if (!empty($product['product_image_url'])): ?>
             <label>Current Image:</label>
             <img src="<?php echo htmlspecialchars($product['product_image_url']); ?>" alt="product Image" style="max-width: 200px; height: auto; margin-bottom: 15px;">
@@ -188,11 +190,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="product_video">Upload a New Video <span style="margin-left:0px;" class="lozenge asynchronous">Asynchronous</span></label>
             <input style="margin-left:25px;" type="file" name="product_video" id="product_video" >
         </div>
-        
+        <!--Submit the updates-->
         <button type="submit">Update product</button>
     </form>
 </div>
         </div>
+        <!--Confirmation toast message-->
         <div id="toast" class="toast">We're updating your product. Please wait.</div>
         <script>
             document.querySelector("form").addEventListener("submit", function (e) {

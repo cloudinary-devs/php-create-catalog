@@ -52,6 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->execute([$product_video_url, $video_public_id, $video_moderation_status, $rejection_reason, $product_id]);
                 
                 echo "Product with ID $product_id successfully updated.";
+
+                // Set moderation status to "completed," triggering a page refresh to display the video or rejection message.
                 file_put_contents('upload_status.json', json_encode(['status' => 'completed']));
                 http_response_code(200);
             } else {

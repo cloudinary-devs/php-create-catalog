@@ -81,10 +81,12 @@ if (!$products) {
 <h2 style="margin-top:-5px;">Product Catalog</h2>
 <!-- products List -->
 <div class="products-container">
+    <!-- Loop through all the products in the database -->
     <?php foreach ($products as $product): ?>
         <?php
         // Process image and video URLs for each product
         if ($product['image_public_id']) {
+            // Create the image transformation to smart-crop the image to a square and overlay a watermark.
             $image_url = $cld->image($product['image_public_id'])
                 ->resize(
                     Resize::fill()
@@ -107,9 +109,8 @@ if (!$products) {
             $image_url = null;  // No image if not set
         }
 
-        
+        // Handle video moderation status:
         if ($product['video_moderation_status']==='rejected') {
-                
             $video_url = null;
             $message = 'This video didn\'t meet our standards due to ' . $product['rejection_reason'] . ' in the image. Please try uploading a different one.';
             $color="red";
@@ -124,6 +125,7 @@ if (!$products) {
             $message="No valid video uploaded. Upload one if you want, or skip it.";
             $color="orange";
         }
+        // Get the metadata from Cloudianry to display.
         $metadata_result = $api->asset($product['image_public_id']);
             $description=$metadata_result['metadata']['description'];
             $price=$metadata_result['metadata']['price'];
@@ -174,9 +176,10 @@ if (!$products) {
                 </div>
                 <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_public_id']!='invalid' && $product['video_moderation_status']!='rejected'): ?>
                     <div style="position:relative;max-width:450px;margin:0 auto;">
-                        <video style="width:100%;height:auto;object-fit:contain;" id="doc-player-<?php echo $product['id']; ?>" controls muted class="cld-video-player cld-fluid"></video>
+                        <video style="width:101%;height:auto;object-fit:contain;" id="doc-player-<?php echo $product['id']; ?>" controls muted class="cld-video-player cld-fluid"></video>
                     </div>
                     <script>
+                        // Render the video using Cloudinary's Video Player.
                         // Initialize the Cloudinary video player with a unique ID
                         const player_<?php echo $product['id']; ?> = cloudinary.videoPlayer('doc-player-<?php echo $product['id']; ?>', { cloudName: '<?php echo $_ENV['CLOUDINARY_CLOUD_NAME']; ?>' });
                         player_<?php echo $product['id']; ?>.source('<?php echo $product['video_public_id']; ?>');
@@ -196,13 +199,14 @@ if (!$products) {
 
 </div>
 <script>
-    // Wait until the page is fully loaded before starting the polling
+    // Poll the webhooks/upload_status.json file to check if video moderation is completed.
     window.onload = function() {
         setInterval(() => {
             fetch('/../webhooks/upload_status.json')
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'completed') {
+                        // Clear the upload_status file so we don't catch the completed webhook again until there's another event
                         fetch('clear_upload_status.php')
                             .then(() => {
                                 console.log('Status is completed. Reloading page...');

@@ -5,19 +5,24 @@ require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../config/cloudinary_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Capture metadata values entered in the form.
     $description = $_POST['description'];
     $name = $_POST['name'];
     $sku = $_POST['sku'];
     $price = $_POST['price'];
     $category = $_POST['category'];
+    // Set up metadata entries for submission to cloudinary
     $metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$description";
+
     if ($_FILES['product_image']['error'] == UPLOAD_ERR_OK) {
         $file = $_FILES['product_image']['tmp_name'];
+        // Upload image to Cloudinary
         $cloudinary_result = $cld->uploadApi()->upload($file, ["detection" => "captioning", "metadata" => $metadata]);
-        $product_image_url = $cloudinary_result['secure_url'];
-        $image_public_id = $cloudinary_result['public_id'];
-        $image_caption = $cloudinary_result['info']['detection']['captioning']['data']['caption'] ?? null;
+        $product_image_url = $cloudinary_result['secure_url']; // Save the image delivery URL from the response
+        $image_public_id = $cloudinary_result['public_id']; // Save the image public ID from the response
+        $image_caption = $cloudinary_result['info']['detection']['captioning']['data']['caption'] ?? null; // Save the image alt text from the response
     } else {
+        // If there's no image, set values to null.
         $product_image_url = null;
         $image_public_id = null;
         $image_caption = null;
@@ -26,18 +31,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Handle Video Upload with Moderation
     if ($_FILES['product_video']['error'] == UPLOAD_ERR_OK) {
         $file = $_FILES['product_video']['tmp_name'];
+        // Upload video to Cloudinary. Set metadata and mark the video for moderation.
         $cloudinary_result = $cld->uploadApi()->upload($file, ['resource_type' => 'video', 'moderation' => 'aws_rek_video', "metadata" => $metadata]);
-        $product_video_url = null;
+        // Set initial values, pending moderation
+        $product_video_url = null; 
         $video_public_id = "pending";
-        $video_public_id_temp=$cloudinary_result['public_id'];
         $video_moderation_status="pending";
+        // Save the video public ID temporarily until moderation status is confirmed.
+        $video_public_id_temp=$cloudinary_result['public_id'];        
     } else {
+        // Set values in case there's no video.
         $product_video_url="invalid";
         $video_public_id = "invalid";
         $video_moderation_status=null;
         $video_public_id_temp=null;
     }
-
+    // Save the values in the database.
     $product_id = saveProduct($pdo, $name, $product_image_url, $product_video_url, $image_public_id,  $video_public_id, $video_moderation_status, $image_caption, $video_public_id_temp);
     header("Location: products.php");
     exit;
@@ -90,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="product-container">
     <h2 style="margin-top:-10px;">Add a Product</h2>
     <form action="product_submission.php" method="POST" enctype="multipart/form-data">
+        <!-- Add name and other metadata -->
         <input type="text" name="name" placeholder="Name" required>
 
         <div class="form-group">
@@ -117,6 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="electronics">Electronics</option>
             </select>
         </div>        
+        <!-- File input for image upload -->
         <div style="display:flex;margin-bottom:10px;">
             <label for="product_image">Upload an Image <span style="margin-left:10px;" class="lozenge synchronous">Synchronous</span></label>
             <input style="margin-left:10px;" type="file" name="product_image" id="product_image" required>
@@ -127,10 +138,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label style="margin-left:-11px;" for="product_video">Upload a Video<span style="margin-left:10px;" class="lozenge asynchronous">Asynchronous</span></label>
             <input style="margin-left:10px;" type="file" name="product_video" id="product_video" >
         </div>
-
+        <!-- Submit the new product -->
         <button type="submit">Submit Product</button>
     </form>
 </div>
+<!-- Show confirmation message -->
 <div id="toast" class="toast">We're adding your product to the catalog. Please wait.</div>
 <script>
     document.querySelector("form").addEventListener("submit", function (e) {

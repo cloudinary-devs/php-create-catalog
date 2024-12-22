@@ -21,7 +21,7 @@ $dotenv->load();
 $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $api = new AdminApi($config);
 try {
-    // Prepare and add a "String" metadata field (e.g., SKU)
+    // Prepare and add a "String" metadata field (e.g., Description)
     $stringMetadataField = new StringMetadataField('description');
     $stringMetadataField->setLabel('Description');
     $stringMetadataField->setExternalId('description');
@@ -29,8 +29,6 @@ try {
     $stringMetadataField->setDefaultValue(['Product description']); // Sets a default value
     $api->addMetadataField($stringMetadataField);
     echo "String metadata field added successfully.\n";
-    echo "*************DESCRIPTION";
-    print_r($stringMetadataField);
 } catch (ApiError $e) {
     echo 'API Error (String field): ' . $e->getMessage();
 } catch (Exception $e) {
@@ -105,10 +103,10 @@ try {
 // Upload sample image overlay
 $response=$cld->uploadApi()->upload("https://cloudinary-res.cloudinary.com/image/upload/v1629994483/new_cloudinary_logo_square.png",['public_id' => 'cloudinary_logo1']);
 
-//Upload sample video
+// Upload sample video
 $response=$cld->uploadApi()->upload("https://res.cloudinary.com/demo/video/upload/v1734386637/txoeiqssuhb3polntpmt.mp4",['resource_type' => 'video', 'public_id' => 'txoeiqssuhb3polntpmt']);
 
-//Upload sample image with metadata
+// Upload sample image with metadata
 $sku="9090";
 $category="footwear";
 $price=200;

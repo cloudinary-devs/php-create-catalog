@@ -21,12 +21,9 @@ use Cloudinary\Api\Admin\AdminApi;
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
-$config = new Configuration($_ENV['CLOUDINARY_URL']);
-$cld = new Cloudinary($config);
-
 // Initialize Configuration
 $config = new Configuration($_ENV['CLOUDINARY_URL']);
-
+$cld = new Cloudinary($config);
 $api = new AdminAPI($config);
 
 
@@ -46,6 +43,7 @@ if (!$product) {
 }
 
     if ($product['image_public_id']) {
+        // Make sure there's a matching image in your Cloudinary product environment.
         try {
             $resource = $api->asset($product['image_public_id']);
         } catch (\Cloudinary\Api\Exception\NotFound $e) {
@@ -55,6 +53,7 @@ if (!$product) {
             echo '<a href="products.php">Go back to Products</a>';
             exit;
         }
+            // Create the image transformation to smart-crop the image to a square and overlay a watermark.
             $image_url = $cld->image($product['image_public_id'])
                 ->resize(
                     Resize::fill()
@@ -72,6 +71,8 @@ if (!$product) {
                         )
                 )
                 ->toUrl();
+
+                // Get the metadata from Cloudianry to display.
                 $metadata_result = $api->asset($product['image_public_id']);
                 $description=$metadata_result['metadata']['description'];
                 $price=$metadata_result['metadata']['price'];
@@ -87,9 +88,8 @@ if (!$product) {
         } else {
             $image_url = null;  // No image if not set
         }
-
+        // Handle video moderation status:
         if ($product['video_moderation_status']==='rejected') {
-                
             $video_url = null;
             $message = 'This video didn\'t meet our standards due to ' . $product['rejection_reason'] . ' in the image. Please try uploading a different one.';
         }
@@ -156,7 +156,7 @@ if (!$product) {
         <div class="product-card">
             <h2 ><?php echo htmlspecialchars($product['name']); ?></h2>
             
-                        <!-- Display product image if available -->
+            <!-- Display metadata -->
             <div class="product-image" style="position:relative;margin:10px auto;max-width:300px;border:1px solid grey;">
             <p style="width:100%;height:auto;object-fit:contain;">Description: <?php echo htmlspecialchars($description); ?></p>
                 <p style="width:100%;height:auto;object-fit:contain;">SKU: <?php echo htmlspecialchars($sku); ?></p>
@@ -170,6 +170,7 @@ if (!$product) {
                 ?>
                 <p style="width:100%;height:auto;object-fit:contain;">Category: <?php echo htmlspecialchars($category_display); ?></p>
             </div>
+            <!-- Display product image if available -->
             <div style="display:flex;justify-content:left;">
                 <p style="width:47%;margin-bottom:2px;color:black;font-size:.8rem;"><b>Image</b></p>
             </div>
@@ -183,7 +184,7 @@ if (!$product) {
             </div>
             <!-- Display product video if available -->
             <div style="display:flex;justify-content:left;">
-                <p style="width:20%;margin-bottom:0;color:black;font-size:.8rem;"><b>Video</b></p>
+                <p style="width:43%;margin-bottom:0;color:black;font-size:.8rem;"><b>Video</b></p>
             </div>
             <?php if ($product['video_public_id'] && $product['video_public_id']!='pending' && $product['video_public_id']!='invalid' && $product['video_moderation_status']!='rejected'): ?>
                 <div style="position:relative;max-width:64%;margin:0 auto;">
@@ -196,7 +197,8 @@ if (!$product) {
     ></video>
 </div>
 <script>
-    // Initialize the Cloudinary video player with a unique ID
+    // Render the video with Cloudinary's Video Player.
+    // Initialize the Cloudinary video player with a unique ID.
     const player = cloudinary.videoPlayer('doc-player', { 
         cloudName: '<?php echo $_ENV['CLOUDINARY_CLOUD_NAME']; ?>',
         fluid: true // Ensures the player adjusts to the container
@@ -214,7 +216,7 @@ if (!$product) {
         </div>
     </div>
     <script>
-    // Wait until the page is fully loaded before starting the polling
+    // Poll the webhooks/upload_status.json file to check if video moderation is completed.
     window.onload = function() {
         setInterval(() => {
             fetch('/../webhooks/upload_status.json')

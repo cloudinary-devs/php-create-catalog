@@ -16,7 +16,6 @@ function saveProduct($pdo, $name, $image_url, $video_url, $image_public_id, $vid
 }
 
 function updateProduct($pdo, $name, $image_url, $video_url, $image_public_id, $video_public_id, $video_moderation_status, $image_caption, $video_public_id_temp, $product_id) {
-    // Fixed query: removed trailing comma before WHERE clause
     $sql = "UPDATE products SET name = ?, product_image_url = ?, product_video_url = ?, image_public_id = ?, video_public_id = ?, video_moderation_status = ?, image_caption = ?, video_public_id_temp = ? WHERE id = ?";
     
     $stmt = $pdo->prepare($sql);
