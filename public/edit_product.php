@@ -65,9 +65,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
 
     // Upload new product image
-    if ($_FILES['product_image']['error'] == UPLOAD_ERR_OK) {
-        $file = $_FILES['product_image']['tmp_name'];
-        $cloudinary_result = $cld->uploadApi()->upload($file, ["detection" => "captioning", "metadata" => $metadata]);
+    if (!empty($_POST['image_url'])) {
+        $product_image_url = $_POST['image_url']; // Retrieve the secure URL from the form submission
+        // Upload image to Cloudinary
+        $cloudinary_result = $cld->uploadApi()->upload($product_image_url, ["detection" => "captioning", "metadata" => $metadata]);
         $image_url = $cloudinary_result['secure_url'];  // Save the original image URL
         $image_public_id = $cloudinary_result['public_id'];  // Save the public ID of the image
         $image_caption = $cloudinary_result['info']['detection']['captioning']['data']['caption'];
@@ -75,10 +76,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = $api->update($image_public_id, ["metadata" => $metadata]);
     } 
     
-    // Upload new product video
-    if ($_FILES['product_video']['error'] == UPLOAD_ERR_OK) {
-        $file = $_FILES['product_video']['tmp_name'];
-        $cloudinary_result = $cld->uploadApi()->upload($file, ['resource_type' => 'video', 'moderation' => 'aws_rek_video', "metadata" => $metadata]);
+    // Handle Video Upload with Moderation
+    if (!empty($_POST['video_url'])) {
+        $product_video_url = $_POST['video_url'];
+        // Upload video to Cloudinary. Set metadata and mark the video for moderation.
+        $cloudinary_result = $cld->uploadApi()->upload($product_video_url, ['resource_type' => 'video', 'moderation' => 'aws_rek_video', "metadata" => $metadata]);
         $video_url = $cloudinary_result['secure_url']; // Save the original video URL
         $video_public_id = 'pending';  // Initialize public ID, to be updated after moderation
         $video_moderation_status = 'pending'; // Initialize moderation status
@@ -113,6 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <li style="margin-top:-3px;">Anything not edited will retain the existing data.</li>
         <li style="margin-top:3px;">The user-input name of the product is updated in the database and displayed wherever the product is rendered.</li>
         <li style="margin-top:3px;">The description SKU, price, and category <a href="https://cloudinary.com/documentation/structured_metadata">structured metadata</a> are uploaded for the image and video within Cloudinary.</li>
+        <li style="margin-top:3px;">A new image and video are selected using the <a href="https://cloudinary.com/documentation/upload_widget">Upload Widget</a>, and are uploaded to a temporary location for further handling.</li>
         <li style="margin-top:3px;">If a new image is selected, it's <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_image_upload">uploaded</a> synchronously:
             <ul>
                 <li style="margin-top:3px;">Image alt text is auto-generated using <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a> add-on.</li>
@@ -133,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="products-page">
 <div class="product-container" style="padding-left:80px;padding-right:80px;">
-    <h2 style="margin-top:-10px;">Update This product</h2>
+    <h2>Update This product</h2>
     <!--Initialize the form with current values-->
     <form action="edit_product.php?id=<?php echo $product['id']; ?>" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" placeholder="Name">   
@@ -163,48 +166,156 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="electronics" <?php echo ($category == 'electronics') ? 'selected' : ''; ?>>Electronics</option>
             </select>
         </div>          
-        <!--Display image and video, or a message if they don't exist-->
-        <?php if (!empty($product['product_image_url'])): ?>
-            <label>Current Image:</label>
-            <img src="<?php echo htmlspecialchars($product['product_image_url']); ?>" alt="product Image" style="max-width: 200px; height: auto; margin-bottom: 15px;">
-        <?php else: ?>
-            <p>No product image available.</p>
-        <?php endif; ?>
-        
+       <!-- Display image and video, or a message if they don't exist -->
         <div style="display:flex;">
-            <label style="margin-bottom:25px;" for="product_image">Upload a New Image <span style="margin-left:0px;" class="lozenge synchronous">Synchronous</span></label>
-            <input style="margin-left:25px;" type="file" name="product_image" id="product_image">
+            <div style="padding-right:10px;">
+                <label>Current Image:</label>
+                <div>
+                    <?php if (!empty($product['product_image_url'])): ?>
+                        <img src="<?php echo htmlspecialchars($product['product_image_url']); ?>" alt="Product Image" style="max-width: 200px; height: auto; margin-bottom: 15px;">
+                    <?php else: ?>
+                        <p>No product image available.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <div id="new_image_section" style="padding-left:10px;">
+                <!-- New image preview will be inserted here -->
+            </div>
         </div>
         
-        <?php if (!empty($product['product_video_url'])): ?>
-            <label>Current Video:</label>
-            <video controls style="max-width: 200px; height: auto; margin-bottom: 15px;">
-                <source src="<?php echo htmlspecialchars($product['product_video_url']); ?>" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        <?php else: ?>
-            <p>No product video available.</p>
-        <?php endif; ?>
-        
         <div style="display:flex;">
-            <label for="product_video">Upload a New Video <span style="margin-left:0px;" class="lozenge asynchronous">Asynchronous</span></label>
-            <input style="margin-left:25px;" type="file" name="product_video" id="product_video" >
+            <button type="button" id="upload_image_button">Upload Image</button>
+            <input type="hidden" name="image_url" id="image_url">
         </div>
-        <!--Submit the updates-->
-        <button type="submit">Update product</button>
-    </form>
+        
+        <div style="display:flex;padding-right:10px;">
+            <div>
+                <label>Current Video:</label>
+                <div>
+                    <?php if (!empty($product['product_video_url'])): ?>
+                        <video controls style="max-width: 200px; height: auto; margin-bottom: 15px;">
+                            <source src="<?php echo htmlspecialchars($product['product_video_url']); ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <?php else: ?>
+                        <p>No product video available.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <div id="new_video_section" style="padding-left:10px;">
+                <!-- New video preview will be inserted here -->
+            </div>
+        </div>
+
+        <div style="display:flex;">
+            <button type="button" id="upload_video_button">Upload Video</button>
+            <input type="hidden" name="video_url" id="video_url">
+        </div>
+
+        <!-- Submit the updates -->
+<button id="update" type="submit">Update product</button>
+        </form>
+        </div>
+
+<div id="spinner" style="display:none;margin-top:20px;justify-content:center; align-items:center;">
+    <div class="loader"></div>
 </div>
-        </div>
-        <!--Confirmation toast message-->
-        <div id="toast" class="toast">We're updating your product. Please wait.</div>
-        <script>
-            document.querySelector("form").addEventListener("submit", function (e) {
-                const toast = document.getElementById("toast");
-                toast.className = "toast show";
-                setTimeout(() => {
-                    toast.className = toast.className.replace("show", "");
-                }, 3000); // Toast disappears after 3 seconds
-            });
-        </script>
+
+<!-- Confirmation toast message -->
+
+    
+<div id="toast" style="right:-30px;" class="toast">We're updating your product. Please wait.</div>
+
+<!-- Include the Cloudinary Upload Widget library -->
+<script src="https://upload-widget.cloudinary.com/global/all.js"></script>
+
+<script>
+    // Configure the upload widget for images
+    const imageWidget = cloudinary.createUploadWidget({
+        cloudName: 'hzxyensd5', // Replace with your Cloudinary cloud name
+        uploadPreset: 'php-product-catalog-demo', // Replace with your upload preset
+        sources: ['local', 'url'], // Allow uploads from local files and URLs
+        resourceType: 'image', // Specify resource type as image
+        maxFileSize: 5000000, // Set a max file size (optional)
+        folder: 'products/images', // Optional folder path
+    }, (error, result) => {
+        if (!error && result && result.event === "success") {
+            console.log('Image uploaded successfully:', result.info.secure_url);
+            document.getElementById('image_url').value = result.info.secure_url;
+            // Update the image preview
+            // Display the new image alongside the current one
+            const newImageSection = document.getElementById("new_image_section");
+            newImageSection.innerHTML = `
+                <label>New Image:</label>
+                <div>
+                    <img src="${result.info.secure_url}" alt="New Product Image" style="max-width: 200px; height: auto; margin-bottom: 15px;">
+                </div>
+            `;
+        }
+    });
+
+    // Configure the upload widget for videos
+    const videoWidget = cloudinary.createUploadWidget({
+        cloudName: 'hzxyensd5', // Replace with your Cloudinary cloud name
+        uploadPreset: 'php-product-catalog-demo', // Replace with your upload preset
+        sources: ['local', 'url'], // Allow uploads from local files and URLs
+        resourceType: 'video', // Specify resource type as video
+        maxFileSize: 50000000, // Set a max file size (optional)
+        folder: 'products/videos', // Optional folder path
+    }, (error, result) => {
+        if (!error && result && result.event === "success") {
+            console.log('Video uploaded successfully:', result.info.secure_url);
+            document.getElementById('video_url').value = result.info.secure_url;
+            // Display the new video alongside the current one
+            const newVideoSection = document.getElementById("new_video_section");
+            newVideoSection.innerHTML = `
+                <label>New Video:</label>
+                <div>
+                    <video controls style="max-width: 200px; height: auto; margin-bottom: 15px;">
+                        <source src="${result.info.secure_url}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            `;
+        }
+    });
+
+    // Open the image upload widget
+    document.getElementById('upload_image_button').addEventListener('click', () => {
+        imageWidget.open();
+    });
+
+    // Open the video upload widget
+    document.getElementById('upload_video_button').addEventListener('click', () => {
+        videoWidget.open();
+    });
+
+    document.querySelector("form").addEventListener("submit", function (e) {
+        const toast = document.getElementById("toast");
+        const spinner = document.getElementById("spinner");
+
+        // Show the toast
+        toast.className = "toast show";
+
+        // Show the spinner
+        spinner.style.display = "flex";
+
+        // Disable the submit button to prevent multiple submissions
+        document.getElementById("update").disabled = true;
+
+        // Hide the toast after 3 seconds
+        setTimeout(() => {
+            toast.className = toast.className.replace("show", "");
+        }, 3000); // Toast disappears after 3 seconds
+
+        // Optionally, handle redirection after the spinner shows
+        setTimeout(() => {
+            window.location.href = './products.php'; // Redirect after the spinner is shown
+        }, 1000); // Adjust delay to make sure the spinner has time to appear before redirecting
+    });
+</script>
+
 </body>
 </html>

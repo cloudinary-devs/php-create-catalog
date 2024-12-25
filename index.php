@@ -18,18 +18,33 @@
         p, li {
             font-size: 10px;            
         }
-        li{
-            margin-top:3px;
+        li {
+            margin-top: 3px;
         }
-        H4{
-            
-            margin-bottom:-3px;
+        h4 {
+            margin-bottom: -3px;
         }
+        .action-buttons {
+            margin-top: 20px;
+        }
+        .action-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .action-buttons button:hover {
+            background-color: #0056b3;
+        }
+
     </style>
 </head>
 
 <body>
-    
 <!-- Navigation Bar -->
 <nav>
     <ul>
@@ -38,11 +53,31 @@
         <li><a href="public/product_submission.php">Add Product</a></li>
     </ul>
 </nav>
+
 <p style="height:50px;"></p>
-<H2>Welcome to the Product Catalog Creation App!</H2>
-<H4 style="margin-top:-3px;">Click <a href="public/product_submission.php">Add Product</a> to start.</H4>
+<h2>Welcome to the Product Catalog Creation App!</h2>
+<div class="action-buttons" style="display:flex;justify-content:center;flex-direction:column;margin-top:-10px;">
+        <h4>You must click this button before running the app for the first time</h4>
+        <button id="setupButton" onclick="window.location.href='../config/setup_metadata.php'">Set Up Metadata and Upload Samples</button>
+        <div id="spinner" style="display:none;margin-top:20px;justify-content:center; align-items:center;">
+        <div class="loader"></div>
+</div>
+    </div>
+    <script>
+    document.getElementById('setupButton').addEventListener('click', function () {
+        // Show the spinner
+        document.getElementById('spinner').style.display = 'flex';
+
+        // Disable the button to prevent multiple clicks
+        this.disabled = true;
+
+        // Redirect to the setup script
+        window.location.href = '../config/setup_metadata.php';
+    });
+</script>
+<h4 >Click <a href="public/product_submission.php">Add Product</a> to start.</h4>
 <div class="container">
-    <H4>Overview</H4>
+    <h4>Overview</h4>
 
     <p>This app helps you manage a catalog of products, each featuring a name, metadata (description, SKU, price, and category), an image with AI-generated alt text, and a video that undergoes content moderation for appropriateness.</p>
     <p>You can:</p>
@@ -54,8 +89,7 @@
         <li>Edit product details.</li>
     </ul>
 
-
-    <H4>Database Integration</H4>
+    <h4>Database Integration</h4>
     <ul>
         <li>The database securely stores product information, including:
             <ul>
@@ -82,14 +116,16 @@
     <ul>
         <li><b>Asynchronous Upload</b>: Upload videos asynchronously with the <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_video_upload">Upload API</a>.</li>
         <li><b>Content Moderation</b>: Moderate videos for inappropriate content using <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_video_upload">Amazon Rekognition Video Moderation</a>.</li>
-        <li><b>Webhook Integration</b>: A <a href="https://cloudinary.com/documentation/notifications">Cloudinary webhook</a> notifies the app when moderation is complete:
             <ul>
                 <li>Approved videos are saved to the database and displayed.</li>
                 <li>Rejected videos are excluded, with a message explaining the reason.</li>
             </ul>
-        </li>
-        <li><b>Live Updates</b>: Product pages poll the database to automatically show updates after notifications.</li>
         <li><b>Enhanced Video Playback</b>: Render videos using Cloudinary's <a href="https://cloudinary.com/documentation/cloudinary_video_player">Video Player</a>.</li>
+        <li><b>Optional</b>:</li>
+            <ul>
+                <li><b>Webhook Integration</b>: A <a href="https://cloudinary.com/documentation/notifications">Cloudinary webhook</a> notifies the app when moderation is complete:</li>
+                <li><b>Live Updates</b>: Product pages poll the database to automatically show updates after notifications.</li>
+            </ul>
     </ul>
 
     <p>Explore the app's features and manage your catalog seamlessly!</p>

@@ -26,6 +26,22 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $cld = new Cloudinary($config);
 $api = new AdminAPI($config);
 
+// Assuming $api is your Cloudinary API instance
+try {
+    // Attempt to fetch the metadata field by its ID
+    $metadataField = $api->MetadataFieldByFieldId("sku");
+
+    // If no exception is thrown, proceed with the rest of your app logic
+    echo "Metadata field 'sku' exists.";
+
+} catch (Exception $e) {
+    // If the metadata field doesn't exist or another error occurs
+    echo "You need to set up your Cloudinary metadata before using the app. ";
+    echo 'Go back to the main page <a href="index.php">and click <strong>Set Up Metadata and Upload Samples</strong></a>.';
+
+    // Stop further execution of the page
+    exit();
+}
 
 // Get product ID from URL
 $product_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;

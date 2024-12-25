@@ -1,6 +1,4 @@
-
 <?php
-
 // Include Cloudinary configuration
 require_once __DIR__ . '/cloudinary_config.php';
 
@@ -26,7 +24,7 @@ try {
     $stringMetadataField->setLabel('Description');
     $stringMetadataField->setExternalId('description');
     $stringMetadataField->setMandatory(true); // Makes this field required
-    $stringMetadataField->setDefaultValue(['Product description']); // Sets a default value
+    $stringMetadataField->setDefaultValue('Product description'); // Sets a default value
     $api->addMetadataField($stringMetadataField);
     echo "String metadata field added successfully.\n";
 } catch (ApiError $e) {
@@ -63,7 +61,7 @@ try {
     $stringMetadataField->setLabel('SKU');
     $stringMetadataField->setExternalId('sku');
     $stringMetadataField->setMandatory(true); // Makes this field required
-    $stringMetadataField->setDefaultValue(['1234']); // Sets a default value
+    $stringMetadataField->setDefaultValue('1234'); // Sets a default value
     $api->addMetadataField($stringMetadataField);
     echo "String metadata field added successfully.\n";
 } catch (ApiError $e) {
@@ -78,7 +76,7 @@ try {
     $intMetadataField->setLabel('Price');
     $intMetadataField->setExternalId('price');
     $intMetadataField->setMandatory(true); // Makes this field required
-    $intMetadataField->setDefaultValue([10]); // Sets a default value
+    $intMetadataField->setDefaultValue(10); // Sets a default value
     $api->addMetadataField($intMetadataField);
     echo "Int metadata field added successfully.\n";
 } catch (ApiError $e) {
@@ -101,10 +99,10 @@ try {
 }
 
 // Upload sample image overlay
-$response=$cld->uploadApi()->upload("https://cloudinary-res.cloudinary.com/image/upload/v1629994483/new_cloudinary_logo_square.png",['public_id' => 'cloudinary_logo1']);
+$response=$cld->uploadApi()->upload("https://github.com/cloudinary-devs/cld-docs-assets/blob/main/assets/images/cloudinary_logo1.png?raw=true",['public_id' => 'cloudinary_logo1']);
 
 // Upload sample video
-$response=$cld->uploadApi()->upload("https://res.cloudinary.com/demo/video/upload/v1734386637/txoeiqssuhb3polntpmt.mp4",['resource_type' => 'video', 'public_id' => 'txoeiqssuhb3polntpmt']);
+$response=$cld->uploadApi()->upload("https://github.com/cloudinary-devs/cld-docs-assets/raw/refs/heads/main/assets/videos/shoes_video_sample.mp4",['resource_type' => 'video', 'public_id' => 'txoeiqssuhb3polntpmt']);
 
 // Upload sample image with metadata
 $sku="9090";
@@ -112,7 +110,9 @@ $category="footwear";
 $price=200;
 $description="Comfortable and durable shoes designed for style and all-day wear.";
 $metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$description";
-$response=$cld->uploadApi()->upload("https://res.cloudinary.com/demo/image/upload/v1734386880/yghbrqxh4jlozcluaq4c.jpg",['public_id' => 'yghbrqxh4jlozcluaq4c', "metadata" => $metadata]);
+$response=$cld->uploadApi()->upload("https://github.com/cloudinary-devs/cld-docs-assets/blob/main/assets/images/shoes_image_sample.jpg?raw=true",['public_id' => 'yghbrqxh4jlozcluaq4c', "metadata" => $metadata]);
 
-
+// Redirect to the index page
+header('Location: ../index.php');
+exit;
 ?>
