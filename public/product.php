@@ -32,7 +32,6 @@ try {
     $metadataField = $api->MetadataFieldByFieldId("sku");
 
     // If no exception is thrown, proceed with the rest of your app logic
-    echo "Metadata field 'sku' exists.";
 
 } catch (Exception $e) {
     // If the metadata field doesn't exist or another error occurs
@@ -75,7 +74,7 @@ if (!$product) {
                     Resize::fill()
                         ->width(700)
                         ->height(700)
-                        ->gravity(Gravity::autoGravity())
+                        ->gravity(Gravity::center())
                 )
                 ->overlay(
                     Overlay::source(Source::image("cloudinary_logo1")->resize(Resize::scale()->width(100)))

@@ -48,9 +48,19 @@ You can:
 
 ## Setup instructions
 
-* **Credentials**<br/>In the `.env` file located in the root directory of your project, replace the **<your_api_key>**, **<your_api_secret>**, and **<your_cloud_name>** placeholders with your actual **API key**, **API secret**, and **Cloud name** credentials from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
+* **Credentials**
+  * Create a `.env` file with your app's credentials in the root directory of your project. Include:
+    * **API environment variable**:<br/>Paste the **API environment variable** format from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console, replacing placeholders with your API key and secret.
+    * **Database configuration**:
+        ```
+        DB_NAME=<your_database_name>
+        DB_USER=<your_database_user>
+        DB_PASS=<your_database_password>
+        DB_HOST=<your_database_host>
+        ```
+    * **Cloud name**: Copy and paste your cloud name from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
   
-* **Cloudinary add-ons**<br/>Go to the [Add-ons](https://console.cloudinary.com/settings/addons) page of your Cloudinary Console Settings and register for the **Cloudinary AI Content Analysis** and **Rekognition AI Video Moderation** add-ons.
+* **Cloudinary add-ons**: Go to the [Add-ons](https://console.cloudinary.com/settings/addons) page of your Cloudinary Console Settings and register for the Cloudinary AI Content Analysis and Rekognition AI Video Moderation add-ons.
 
 ## Optional configurations
 

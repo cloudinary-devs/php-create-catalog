@@ -40,7 +40,7 @@
         .action-buttons button:hover {
             background-color: #0056b3;
         }
-
+        li{color:grey;}
     </style>
 </head>
 

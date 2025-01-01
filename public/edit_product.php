@@ -184,8 +184,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
         
-        <div style="display:flex;">
-            <button type="button" id="upload_image_button">Upload Image</button>
+        <div style="display:flex;margin-top:-20px;margin-bottom:20px;">
+            <button type="button" id="upload_image_button">Upload New Image</button>
             <input type="hidden" name="image_url" id="image_url">
         </div>
         
@@ -210,23 +210,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <div style="display:flex;">
-            <button type="button" id="upload_video_button">Upload Video</button>
+            <button type="button" id="upload_video_button" style="margin-top:-10px;margin-bottom:20px;">Upload New Video</button>
             <input type="hidden" name="video_url" id="video_url">
         </div>
 
         <!-- Submit the updates -->
-<button id="update" type="submit">Update product</button>
+<button id="update" style="margin-bottom:70px;"type="submit">Update product</button>
         </form>
         </div>
 
-<div id="spinner" style="display:none;margin-top:20px;justify-content:center; align-items:center;">
+<div id="spinner" style="display:none;margin-top:-50px;justify-content:center; align-items:center;">
     <div class="loader"></div>
 </div>
 
 <!-- Confirmation toast message -->
 
     
-<div id="toast" style="right:-30px;" class="toast">We're updating your product. Please wait.</div>
+<div id="toast" style="right:-30px;margin-top:-50px;" class="toast">We're updating your product. Please wait.</div>
 
 <!-- Include the Cloudinary Upload Widget library -->
 <script src="https://upload-widget.cloudinary.com/global/all.js"></script>

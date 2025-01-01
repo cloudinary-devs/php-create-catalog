@@ -30,7 +30,6 @@ try {
     $metadataField = $api->MetadataFieldByFieldId("sku");
 
     // If no exception is thrown, proceed with the rest of your app logic
-    echo "Metadata field 'sku' exists.";
 
 } catch (Exception $e) {
     // If the metadata field doesn't exist or another error occurs
