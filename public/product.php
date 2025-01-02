@@ -74,7 +74,7 @@ if (!$product) {
                     Resize::fill()
                         ->width(700)
                         ->height(700)
-                        ->gravity(Gravity::center())
+                        ->gravity(Gravity::auto())
                 )
                 ->overlay(
                     Overlay::source(Source::image("cloudinary_logo1")->resize(Resize::scale()->width(100)))

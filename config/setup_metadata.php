@@ -98,6 +98,21 @@ try {
     echo 'Error (List fields): ' . $e->getMessage();
 }
 
+try {
+    // Create upload preset if it doesn't yet exist.
+    $result = $api
+    ->createUploadPreset([
+        "name" => "php_demo_preset", 
+        "unsigned" => true, 
+        "tags" => "php_demo",
+        "detection" => "captioning"
+    ]);
+} catch (ApiError $e) {
+    echo 'API Error : ' . $e->getMessage();
+} catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage();
+}
+
 // Upload sample image overlay
 $response=$cld->uploadApi()->upload("https://github.com/cloudinary-devs/cld-docs-assets/blob/main/assets/images/cloudinary_logo1.png?raw=true",['public_id' => 'cloudinary_logo1']);
 

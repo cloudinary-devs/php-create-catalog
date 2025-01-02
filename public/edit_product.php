@@ -64,27 +64,28 @@ $metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$descrip
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
 
-    // Upload new product image
+    // Update product image
     if (!empty($_POST['image_url'])) {
         $product_image_url = $_POST['image_url']; // Retrieve the secure URL from the form submission
-        // Upload image to Cloudinary
-        $cloudinary_result = $cld->uploadApi()->upload($product_image_url, ["detection" => "captioning", "metadata" => $metadata]);
-        $image_url = $cloudinary_result['secure_url'];  // Save the original image URL
-        $image_public_id = $cloudinary_result['public_id'];  // Save the public ID of the image
+        $image_public_id = $_POST['image_id']; // Retrieve the public ID from the form submission
+        // Update metadata
+        $cloudinary_result = $cld->uploadApi()->explicit($image_public_id, ["type"=>"upload","metadata" => $metadata]);
+        $image_url = $cloudinary_result['secure_url'];  // Save the new image URL
+        $image_public_id = $cloudinary_result['public_id'];  // Save the new public ID of the image
         $image_caption = $cloudinary_result['info']['detection']['captioning']['data']['caption'];
     } else {
         $result = $api->update($image_public_id, ["metadata" => $metadata]);
     } 
     
-    // Handle Video Upload with Moderation
+    // Handle Video Moderation and Metadata
     if (!empty($_POST['video_url'])) {
         $product_video_url = $_POST['video_url'];
-        // Upload video to Cloudinary. Set metadata and mark the video for moderation.
-        $cloudinary_result = $cld->uploadApi()->upload($product_video_url, ['resource_type' => 'video', 'moderation' => 'aws_rek_video', "metadata" => $metadata]);
-        $video_url = $cloudinary_result['secure_url']; // Save the original video URL
+        // Hold the video public ID temporarily until moderation status is confirmed.
+        $video_public_id_temp = $_POST['video_id'];
+        // Set metadata and mark the video for moderation.
+        $cloudinary_result = $cld->uploadApi()->explicit($video_public_id_temp, ['type' => 'upload', 'resource_type' => 'video', 'moderation' => 'aws_rek_video', "metadata" => $metadata]);
         $video_public_id = 'pending';  // Initialize public ID, to be updated after moderation
         $video_moderation_status = 'pending'; // Initialize moderation status
-        $video_public_id_temp = $cloudinary_result['public_id']; // Save the public ID of the video temporarily until it passes moderation
     } 
     updateproduct($pdo, $name, $image_url, $video_url, $image_public_id, $video_public_id, $video_moderation_status, $image_caption, $video_public_id_temp, $product['id']);
     header("Location: products.php");
@@ -114,20 +115,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <ul style="font-size:10px;">
         <li style="margin-top:-3px;">Anything not edited will retain the existing data.</li>
         <li style="margin-top:3px;">The user-input name of the product is updated in the database and displayed wherever the product is rendered.</li>
-        <li style="margin-top:3px;">The description SKU, price, and category <a href="https://cloudinary.com/documentation/structured_metadata">structured metadata</a> are uploaded for the image and video within Cloudinary.</li>
-        <li style="margin-top:3px;">A new image and video are selected using the <a href="https://cloudinary.com/documentation/upload_widget">Upload Widget</a>, and are uploaded to a temporary location for further handling.</li>
-        <li style="margin-top:3px;">If a new image is selected, it's <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_image_upload">uploaded</a> synchronously:
+        <li style="margin-top:3px;">A new image and video are uploaded from the client-side to your product environment using the <a href="https://cloudinary.com/documentation/upload_widget">Upload Widget</a>.</li>
+        <li style="margin-top:3px;">The Upload Widget specifies an <a href="https://cloudinary.com/documentation/admin_api#upload_presets">upload preset</a> which calls <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a> add-on to generate image alt text automatically.</li>
+        <li style="margin-top:3px;">When the product is submitted, the image and video, if new ones are specified, are updated using the  <a href ="https://cloudinary.com/documentation/image_upload_api_reference#explicit">explicit</a> endpoint of the Upload API:</li> 
             <ul>
-                <li style="margin-top:3px;">Image alt text is auto-generated using <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a> add-on.</li>
-                <li style="margin-top:3px;">The new public ID is stored in the database for use when rendering the image.</li>
+                <li><b>Image & Video</b></li>
+                    <ul>
+                        <li style="margin-top:3px;">User-provided <a href="https://cloudinary.com/documentation/structured_metadata">structured metadata</a> is added.
+                    </ul>
             </ul>
-        </li>
-        <li style="margin-top:3px;">If a new video is selected, it's <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_video_upload">uploaded</a> asynchronously:
             <ul>
-                <li style="margin-top:3px;">The video is reviewed using <a href="https://cloudinary.com/documentation/aws_rekognition_video_moderation_addon#banner">Amazon Rekognition Video Moderation</a> to ensure only appropriate content is displayed.</li>
-                <li style="margin-top:3px;">Its public ID is temporarily recorded in the database.</li>
-                <li style="margin-top:3px;">The updated video won't be displayed and its information won't be stored until a webhook notification is received indicating the video has been approved.</li>
-                <li style="margin-top:3px;">If the new video is rejected, a message will be displayed explaining why.</li>
+                <li><b>Video</b></li>
+                    <ul>
+                        <li style="margin-top:3px;">The video is marked for <a href="https://cloudinary.com/documentation/aws_rekognition_video_moderation_addon#banner">Amazon Rekognition Video Moderation</a>.</li>
+                        <li style="margin-top:3px;">Its public ID is temporarily recorded in the database.</li>
+                        <li style="margin-top:3px;">The video won't be displayed and its information stored until a webhook notification is received that the video has been approved.</li>
+                        <li style="margin-top:3px;">If the new video is rejected, a message will be displayed explaining why.</li>
+                    </ul>
             </ul>
         </li>
     </ul>
@@ -187,6 +191,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div style="display:flex;margin-top:-20px;margin-bottom:20px;">
             <button type="button" id="upload_image_button">Upload New Image</button>
             <input type="hidden" name="image_url" id="image_url">
+            <input type="hidden" name="image_id" id="image_id">
         </div>
         
         <div style="display:flex;padding-right:10px;">
@@ -212,6 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div style="display:flex;">
             <button type="button" id="upload_video_button" style="margin-top:-10px;margin-bottom:20px;">Upload New Video</button>
             <input type="hidden" name="video_url" id="video_url">
+            <input type="hidden" name="video_id" id="video_id">
         </div>
 
         <!-- Submit the updates -->
@@ -234,8 +240,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <script>
     // Configure the upload widget for images
     const imageWidget = cloudinary.createUploadWidget({
-        cloudName: 'hzxyensd5', // Replace with your Cloudinary cloud name
-        uploadPreset: 'php-product-catalog-demo', // Replace with your upload preset
+        cloudName: '<?php echo $_ENV['CLOUDINARY_CLOUD_NAME']; ?>', // Replace with your Cloudinary cloud name
+        uploadPreset: 'php_demo_preset', // Replace with your upload preset
         sources: ['local', 'url'], // Allow uploads from local files and URLs
         resourceType: 'image', // Specify resource type as image
         maxFileSize: 5000000, // Set a max file size (optional)
@@ -244,7 +250,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!error && result && result.event === "success") {
             console.log('Image uploaded successfully:', result.info.secure_url);
             document.getElementById('image_url').value = result.info.secure_url;
-            // Update the image preview
+            document.getElementById('image_id').value = result.info.public_id;
             // Display the new image alongside the current one
             const newImageSection = document.getElementById("new_image_section");
             newImageSection.innerHTML = `
@@ -258,8 +264,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Configure the upload widget for videos
     const videoWidget = cloudinary.createUploadWidget({
-        cloudName: 'hzxyensd5', // Replace with your Cloudinary cloud name
-        uploadPreset: 'php-product-catalog-demo', // Replace with your upload preset
+        cloudName: '<?php echo $_ENV['CLOUDINARY_CLOUD_NAME']; ?>', // Replace with your Cloudinary cloud name
+        uploadPreset: 'php_demo_preset', // Replace with your upload preset
         sources: ['local', 'url'], // Allow uploads from local files and URLs
         resourceType: 'video', // Specify resource type as video
         maxFileSize: 50000000, // Set a max file size (optional)
@@ -268,6 +274,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!error && result && result.event === "success") {
             console.log('Video uploaded successfully:', result.info.secure_url);
             document.getElementById('video_url').value = result.info.secure_url;
+            document.getElementById('video_id').value = result.info.public_id;
             // Display the new video alongside the current one
             const newVideoSection = document.getElementById("new_video_section");
             newVideoSection.innerHTML = `

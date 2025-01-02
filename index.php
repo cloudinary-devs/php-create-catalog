@@ -95,8 +95,8 @@
             <ul>
                 <li style="margin-top:5px;">User-entered product names.</li>
                 <li>Auto-generated Cloudinary <a href="https://cloudinary.com/documentation/cloudinary_glossary#public_id">public IDs</a> for images and videos.</li>
-                <li>Video moderation statuses.</li>
-                <li>AI-generated image captions.</li>
+                <li>Video moderation status.</li>
+                <li>AI-generated image alt texts.</li>
             </ul>
         </li>
         <li style="margin-top:5px;">Storing this information ensures consistent access for app features.</li>
@@ -105,26 +105,28 @@
     <H4>Product Images</H4>
 
     <ul>
-        <li><b>Synchronous Upload</b>: Upload images synchronously using the <a href="https://cloudinary.com/documentation/image_upload_api_reference#upload">Upload API</a> endpoint.</li>
-        <li><b>Dynamic Delivery</b>: Use public IDs stored in the database to <a href="https://cloudinary.com/documentation/php_image_manipulation#direct_url_building">generate delivery URLs</a> with <a href="https://cloudinary.com/documentation/transformation_reference#c_fill"> transformations like resizing and cropping</a>. <a href="https://cloudinary.com/documentation/transformation_reference#g_gravity">Automatic gravity</a> ensures the important parts of the image stay in focus, while <a href="https://cloudinary.com/documentation/transformation_reference#l_layer">overlays</a> are applied for branding.</li>
-        <li><b>AI-Generated alt text</b>: Automatically generate image descriptions with <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a>.</li>
-        <li><b>Metadata Management</b>: Save user-provided metadata in Cloudinary and retrieve it for display using the <a href="https://cloudinary.com/documentation/admin_api#get_details_of_a_single_resource_by_public_id">resource</a> endpoint of the Admin API.</li>
+        <li><b>Client-Side Upload</b>: Images are uploaded directly from the client side using the <a href="https://cloudinary.com/documentation/upload_widget">Upload Widget</a>, eliminating backend dependencies.</li>
+        <li><b>Synchronous Processing with AI-Generated Alt Text</b>: Images are processed immediately automatically generating alt text using <a href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon">Cloudinary's AI Content Analysis</a>.</li>
+        <li><b>Dynamic Delivery</b>: Public IDs are stored in the database to <a href="https://cloudinary.com/documentation/php_image_manipulation#direct_url_building">generate delivery URLs</a> with <a href="https://cloudinary.com/documentation/transformation_reference#c_fill"> transformations like resizing and cropping</a>. <a href="https://cloudinary.com/documentation/transformation_reference#g_gravity">Automatic gravity</a> ensures the important parts of the image stay in focus, while <a href="https://cloudinary.com/documentation/transformation_reference#l_layer">overlays</a> are applied for branding.</li>
+        <li><b>Metadata Management</b>: User-provided metadata is saved in Cloudinary and retrieved for display using the <a href="https://cloudinary.com/documentation/admin_api#get_details_of_a_single_resource_by_public_id">resource</a> endpoint of the Admin API.</li>
     </ul>
 
     <H4>Product Videos</H4>
 
     <ul>
-        <li><b>Asynchronous Upload</b>: Upload videos asynchronously with the <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_video_upload">Upload API</a>.</li>
-        <li><b>Content Moderation</b>: Moderate videos for inappropriate content using <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_video_upload">Amazon Rekognition Video Moderation</a>.</li>
+        <li><b>Client-Side Upload</b>: Videos are uploaded directly from the client side using the <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_video_upload">Upload API</a>, bypassing backend processes.</li>
+        <li><b>Asynchronous Processing with Content Moderation</b>: Videos are moderated in the background using <a href="https://cloudinary.com/documentation/php_image_and_video_upload#php_video_upload">Amazon Rekognition Video Moderation</a>, allowing users to continue using the app during processing.</li>
             <ul>
                 <li>Approved videos are saved to the database and displayed.</li>
                 <li>Rejected videos are excluded, with a message explaining the reason.</li>
             </ul>
-        <li><b>Enhanced Video Playback</b>: Render videos using Cloudinary's <a href="https://cloudinary.com/documentation/cloudinary_video_player">Video Player</a>.</li>
-        <li><b>Optional</b>:</li>
+        <li><b>Enhanced Video Playback</b>: Videos are rendered using Cloudinary's <a href="https://cloudinary.com/documentation/cloudinary_video_player">Video Player</a>.</li>
+    </ul>
+        
+    <H4>Optional</H4>
             <ul>
-                <li><b>Webhook Integration</b>: A <a href="https://cloudinary.com/documentation/notifications">Cloudinary webhook</a> notifies the app when moderation is complete:</li>
-                <li><b>Live Updates</b>: Product pages poll the database to automatically show updates after notifications.</li>
+                <li><b>Webhook Integration</b>: Receive real-time <a href="https://cloudinary.com/documentation/notifications">notifications</a> when moderation results are ready.</li>
+                <li><b>Live Updates</b>: Product pages auto-refresh to display newly approved videos without manual intervention.</li>
             </ul>
     </ul>
 

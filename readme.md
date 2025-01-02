@@ -13,23 +13,25 @@ You can:
 
 ### Product Images
 
-* **Synchronous Upload**: Images are uploaded synchronously.
-* **Database Integration**: Image names and their Cloudinary public IDs are saved in the database.
-* **Dynamic Delivery**: Public IDs are used to generate delivery URLs with transformations like resizing, cropping, and overlay.
-* **AI-Generated Image Alt Text**: Descriptions are auto-generated using Cloudinary's AI Content Analysis add-on for image alt text.
-* **Metadata Management**: User-entered information is saved as metadata in Cloudinary and retrieved on product display pages.
-
+* **Client-Side Upload**: Images are uploaded directly from the client side using the [Upload Widget](https://cloudinary.com/documentation/upload_widget), eliminating backend dependencies. 
+* **Synchronous Processing with AI-Generated Image Alt Text**: Images are processed immediately on upload.
+* **Database Integration**: Image names and Cloudinary public IDs are stored in the database for easy management.
+* **Dynamic Delivery**: Public IDs are used to create delivery URLs with transformations like resizing, cropping, and overlay effects.
+* **Metadata Management**: User-provided data is saved as metadata in Cloudinary and retrieved for product display.
 
 ### Product Videos
 
-* **Asynchronous Upload**: Videos are uploaded asynchronously.
-* **Content Moderation**: Videos undergo moderation for inappropriate content.
-    * Approved videos are rendered on the page when manually refreshed.
+* **Client-Side Upload**: Videos are uploaded directly from the client side using the [Upload Widget](https://cloudinary.com/documentation/upload_widget), bypassing backend processes.
+* **Asynchronous Processing**: Videos are moderated in the background, allowing users to continue using the app during processing.
+* **Content Moderation**: Videos are reviewed for inappropriate content.
+    * Approved videos are displayed after a manual page refresh.
     * Rejected videos are flagged with actionable feedback.
 * **Enhanced Video Playback**: Videos are rendered using Cloudinary's feature-rich Video Player.
-* **Optional**:
-    * **Webhook Integration**: Receive real-time notifications for moderation results.
-    * **Live Updates**: Product pages auto-refresh to automatically display the latest approved videos.
+  
+#### **Optional Features**:
+
+* **Webhook Integration**: Receive real-time notifications when moderation results are ready.
+* **Live Updates**: Product pages auto-refresh to display newly approved videos without manual intervention.
 
 
 ## Tech stack
@@ -64,9 +66,17 @@ You can:
 
 ## Optional configurations
 
-Setting up a webhook ensures that your video renders automatically once the asynchronous upload and moderation process is complete. Without a webhook, you’ll need to manually refresh the page to see the video after processing.
+Enable webhook notifications to automate video rendering after the asynchronous moderation process. Without a webhook, users must manually refresh the page to view the processed video.
 
 * **Webhook notification configuration**
-  * Add your app's notification URL with the suffix `webhooks/video_upload_webhook.php` on the [Notifications](https://console.cloudinary.com/settings/webhooks) page of the Cloudinary Console.
-    * To try out your app locally, you need to set up a secure tunnel connecting the internet to your locally running application so that the webhooks sent by Cloudinary on upload are caught and handled by the app. You can use a tool such as [Ngrok](https://ngrok.com/) to do this. Otherwise, you need to deploy the app using a service such as [Vercel](https://vercel.com/). Whichever method you choose, make a note of your app's domain (for example, `a-b-c-d.ngrok-free.app` or `a-b-c-d.vercel.app`). By default, the app runs on port 8000. If you're using Docker, the default port is 80.
-  * Select `Moderation` as the notification type. 
+  * **Set up the webhook**
+    * Add your app's notification URL with the suffix `webhooks/video_upload_webhook.php` on the [Notifications](https://console.cloudinary.com/settings/webhooks) page of the Cloudinary Console.
+    * Select `Moderation` as the **Notification Type**. 
+  * **Testing locally**
+    To test your app locally: 
+    * Use a tool like [Ngrok](https://ngrok.com/) to create up a secure tunnel connecting the internet to your locally running app.
+    * Alternatively, deploy the app using a service like [Vercel](https://vercel.com/). 
+    **Note:** 
+      * Make a note of your app's domain (for example, `a-b-c-d.ngrok-free.app` or `a-b-c-d.vercel.app`). 
+      * By default, the app runs on port 8000. If you're using Docker, the default port is 80.
+  
