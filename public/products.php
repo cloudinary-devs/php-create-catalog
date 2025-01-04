@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL & ~E_DEPRECATED);
 require_once __DIR__ . '/../config/cloudinary_config.php';  // Make sure this file sets up the Cloudinary API
 require_once __DIR__ . '/../includes/database.php';
 require_once __DIR__ . '/../includes/functions.php';
@@ -23,8 +24,6 @@ $dotenv->load();
 $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $cld = new Cloudinary($config);
 $api = new AdminAPI($config);
-
-error_reporting(E_ALL & ~E_DEPRECATED);
 
 // Assuming $api is your Cloudinary API instance
 try {
