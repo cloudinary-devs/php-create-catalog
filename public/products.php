@@ -28,10 +28,7 @@ $api = new AdminAPI($config);
 // Assuming $api is your Cloudinary API instance
 try {
     // Attempt to fetch the metadata field by its ID
-    $metadataField = $api->MetadataFieldByFieldId("sku");
-    $metadataField = $api->MetadataFieldByFieldId("category");
-    $metadataField = $api->MetadataFieldByFieldId("description");
-    $metadataField = $api->MetadataFieldByFieldId("price");
+    $metadataField = $api->MetadataFieldByFieldId("skuX78615h");
 
     // If no exception is thrown, proceed with the rest of your app logic
 
@@ -207,7 +204,7 @@ if (!$products) {
         $metadata_result = $api->asset($product['image_public_id']);
             $description=$metadata_result['metadata']['description'];
             $price=$metadata_result['metadata']['price'];
-            $sku=$metadata_result['metadata']['sku'];
+            $sku=$metadata_result['metadata']['skuX78615h'];
             $category=$metadata_result['metadata']['category'][0];
             $category_labels = [
                 'clothes' => 'Clothes',

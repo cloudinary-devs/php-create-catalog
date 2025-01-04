@@ -124,7 +124,7 @@ $sku="9090";
 $category="footwear";
 $price=200;
 $description="Comfortable and durable shoes designed for style and all-day wear.";
-$metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$description";
+$metadata = "skuX78615h=$sku|category=[\"$category\"]|price=$price|description=$description";
 $response=$cld->uploadApi()->upload("https://github.com/cloudinary-devs/cld-docs-assets/blob/main/assets/images/shoes_image_sample.jpg?raw=true",['public_id' => 'yghbrqxh4jlozcluaq4c', "metadata" => $metadata]);
 
 // Redirect to the index page

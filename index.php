@@ -1,3 +1,6 @@
+<?php
+error_reporting(E_ALL & ~E_DEPRECATED);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
