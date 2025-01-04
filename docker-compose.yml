@@ -6,36 +6,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - '80:80'
-    depends_on:
-      - db
     volumes:
       - ./:/var/www/html
     networks:
       - app_network
-  db:
-    container_name: db
-    image: mysql:8.1.0
     environment:
-      MYSQL_ROOT_PASSWORD: mniSGh1!
-      MYSQL_DATABASE: php_products
-    volumes:
-      - ./mysql_data:/var/lib/mysql
-    ports:
-      - '3306:3306'
-    networks:
-      - app_network
-    command: --default-authentication-plugin=mysql_native_password
-  phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin:latest
-    ports:
-      - '8080:80'
-    depends_on:
-      - db
-    environment:
-      PMA_HOST: db
-    networks:
-      - app_network
+      DATABASE_URL: sqlite:///var/www/html/database.sqlite3 
+
 networks:
   app_network:
     driver: bridge

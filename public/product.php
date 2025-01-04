@@ -107,10 +107,68 @@ if (!$product) {
         if ($product['video_moderation_status']==='rejected') {
             $video_url = null;
             $message = 'This video didn\'t meet our standards due to ' . $product['rejection_reason'] . ' in the image. Please try uploading a different one.';
+            $color="red";
         }
-        elseif ($product['video_moderation_status']==='pending') {
-            $video_url = null;  // No video if not set
-            $message = "We're reviewing your video to ensure it meets our publication standards. Please check back shortly for the result.";
+        // As a fallback for not using a webhook, we need to check pending videos to find out if they've been approved.
+        elseif ($product['video_moderation_status']==='pending' && 'video_public_id'!='invalid') {
+            // Retrieve information including moderation status using the resource method of the Admin API.
+            $info = $api->asset($product['video_public_id_temp'], ["resource_type" => "video"]);
+            $video_moderation_status = $info['moderation_status'];
+            // If it's still pending, keep the message.
+            if ($video_moderation_status === 'pending'){
+                $video_url = null;  // No video if not set
+                $message = "We're reviewing your video to ensure it meets our publication standards. Please check back shortly for the result.";
+                $color="purple";
+            }
+            // If the video is approved, prepare the public ID & URL for rendering & saving in the database.
+            elseif ($video_moderation_status === 'approved'){
+                $video_url = $info['public_id']; 
+                $video_public_id = $info['public_id'];
+                $product_video_url = $info['secure_url'];
+                $rejection_reason = null;
+            // If the video is rejected, set the public ID & URL to null, set message with rejection reason, prepare to save in the database.
+            } elseif ($video_moderation_status === 'rejected') {
+                $video_public_id = null;
+                $product_video_url = null;
+                $rejection_reason = $info['moderation'][0]['response']['moderation_labels'][0]['moderation_label']['name'];
+                $video_url = null;
+                $message = 'This video didn\'t meet our standards due to ' . $product['rejection_reason'] . ' in the image. Please try uploading a different one.';
+            }
+    
+            // If the video has been approved or rejected, we need to save the changes in the databse.
+            if ($video_moderation_status === 'approved' || $video_moderation_status === 'rejected') {
+                try {
+                    // Find the record to update based on video_public_id_temp
+                    $sql = "SELECT id FROM products WHERE video_public_id_temp = ?";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute([$info['public_id']]);
+                    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+                    
+                    if ($product) {
+                        // Get the product ID of the matching record
+                        $product_id = $product['id'];
+                    
+                        // Update the database with video information
+                        $sql = "UPDATE products 
+                                SET product_video_url = ?, video_public_id = ?, video_moderation_status = ?, rejection_reason = ?
+                                WHERE id = ?";
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->execute([$product_video_url, $video_public_id, $video_moderation_status, $rejection_reason, $product_id]);
+                            
+    
+            
+                    } else {
+                        echo "No matching record found for video_public_id_temp = $video_public_id.";
+                    }
+                } catch (PDOException $e) {
+                    // Handle database errors
+                    error_log("Database error: " . $e->getMessage());
+                    echo "An error occurred while updating the product.";
+                }           
+                echo '<script>location.reload();</script>';
+    
+            }
+    
         } elseif ($product['video_moderation_status']==='approved') {
             $video_url = $product['video_public_id']; 
             $message ="";
@@ -222,7 +280,7 @@ if (!$product) {
 </script>
             <?php elseif (isset($message)): ?>
                 <div style="background:lightgrey;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;border: 1px solid grey;width:84%;height:128px;display:flex;align-items:center;justify-content:center;">
-                    <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>
+                    <p style="color:<?php echo $color; ?>;"><?php echo htmlspecialchars($message); ?></p>
                 </div>
             <?php endif; ?>
             <p>
