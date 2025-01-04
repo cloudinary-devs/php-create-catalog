@@ -24,6 +24,8 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $cld = new Cloudinary($config);
 $api = new AdminAPI($config);
 
+error_reporting(E_ALL & ~E_DEPRECATED);
+
 // Assuming $api is your Cloudinary API instance
 try {
     // Attempt to fetch the metadata field by its ID
