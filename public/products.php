@@ -28,6 +28,9 @@ $api = new AdminAPI($config);
 try {
     // Attempt to fetch the metadata field by its ID
     $metadataField = $api->MetadataFieldByFieldId("sku");
+    $metadataField = $api->MetadataFieldByFieldId("category");
+    $metadataField = $api->MetadataFieldByFieldId("description");
+    $metadataField = $api->MetadataFieldByFieldId("price");
 
     // If no exception is thrown, proceed with the rest of your app logic
 

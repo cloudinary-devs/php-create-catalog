@@ -57,9 +57,9 @@ try {
 
 try {
     // Prepare and add a "String" metadata field (e.g., SKU)
-    $stringMetadataField = new StringMetadataField('sku');
+    $stringMetadataField = new StringMetadataField('skuX78615h');
     $stringMetadataField->setLabel('SKU');
-    $stringMetadataField->setExternalId('sku');
+    $stringMetadataField->setExternalId('skuX78615h');
     $stringMetadataField->setMandatory(true); // Makes this field required
     $stringMetadataField->setDefaultValue('1234'); // Sets a default value
     $api->addMetadataField($stringMetadataField);

@@ -42,7 +42,7 @@ $video_public_id_temp = $product['video_public_id_temp'];
 $metadata_result = $api->asset($product['image_public_id']);
 $description = isset($metadata_result['metadata']['description']) ? $metadata_result['metadata']['description'] : '';
 $price = isset($metadata_result['metadata']['price']) ? $metadata_result['metadata']['price'] : '';
-$sku = isset($metadata_result['metadata']['sku']) ? $metadata_result['metadata']['sku'] : '';
+$sku = isset($metadata_result['metadata']['skuX78615h']) ? $metadata_result['metadata']['skuX78615h'] : '';
 $category = isset($metadata_result['metadata']['category'][0]) ? $metadata_result['metadata']['category'][0] : '';
 
 // Map list value external IDs to display values.
@@ -59,7 +59,7 @@ $description = !empty($_POST['description']) ? $_POST['description'] : $descript
 $sku = !empty($_POST['sku']) ? $_POST['sku'] : $sku;
 $price = !empty($_POST['price']) ? $_POST['price'] : $price;
 $category = !empty($_POST['category']) ? $_POST['category'] : $category;
-$metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$description";
+$metadata = "skuX78615h=$sku|category=[\"$category\"]|price=$price|description=$description";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];

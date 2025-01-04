@@ -18,10 +18,12 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 
 $api = new AdminAPI($config);
 
+error_reporting(E_ALL & ~E_DEPRECATED);
+
 // Assuming $api is your Cloudinary API instance
 try {
     // Attempt to fetch the metadata field by its ID
-    $metadataField = $api->MetadataFieldByFieldId("sku");
+    $metadataField = $api->MetadataFieldByFieldId("skuX78615h");
 
     // If no exception is thrown, proceed with the rest of your app logic
 
@@ -42,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $price = $_POST['price'];
     $category = $_POST['category'];
     // Set up metadata entries for submission to cloudinary
-    $metadata = "sku=$sku|category=[\"$category\"]|price=$price|description=$description";
+    $metadata = "skuX78615h=$sku|category=[\"$category\"]|price=$price|description=$description";
 
     if (!empty($_POST['image_url'])) {
         $product_image_url = $_POST['image_url']; // Retrieve the secure URL from the form submission

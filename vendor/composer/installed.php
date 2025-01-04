@@ -3,7 +3,7 @@
         'name' => 'sharonyelenik/php-user-profiles',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8a2b3ffff3109c1f43f6f8e97f557281ac289446',
+        'reference' => '6aaa34c98a571f85d2a10843671a80ea6af8c969',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -154,7 +154,7 @@
         'sharonyelenik/php-user-profiles' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8a2b3ffff3109c1f43f6f8e97f557281ac289446',
+            'reference' => '6aaa34c98a571f85d2a10843671a80ea6af8c969',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

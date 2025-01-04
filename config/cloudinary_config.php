@@ -16,9 +16,6 @@ use Cloudinary\Tag\ImageTag;
 use Cloudinary\Transformation\Background;
 
 
-
-
-
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
