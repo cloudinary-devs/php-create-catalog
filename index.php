@@ -21,11 +21,19 @@ $api = new AdminAPI($config);
 $metadataFieldExists = false;
 
 try {
-    // Attempt to fetch the metadata field by its ID
+    // Attempt to fetch the metadata fields + upload preset by ID
     $metadataField = $api->MetadataFieldByFieldId("skuX78615h");
+    $categoryField = $api->MetadataFieldByFieldId("category4gT7pV1");
+    $descriptionField = $api->MetadataFieldByFieldId("descriptionb9ZqP6J");
+    $priceField = $api->MetadataFieldByFieldId("priceF2vK8tA");
+    $uploadPreset = $api->uploadPreset("php_demo_preset");
     
-    // If no exception is thrown, the metadata field exists
-    $metadataFieldExists = true;
+    // If all fields exist, set metadataFieldExists to true
+    if ($categoryField && $descriptionField && $priceField) {
+        $metadataFieldExists = true;
+    } else {
+        $metadataFieldExists = false;
+    }
 
 } catch (Exception $e) {
     // Handle the exception if needed
@@ -81,7 +89,7 @@ try {
 
 <body>
 <!-- Navigation Bar -->
-<nav>
+<nav id="nav">
     <ul>
         <li><a style="font-size:1.3rem;font-weight:75;color:white;" href="">Catalog Creation App</a></li>
         <li style="margin-left:60px;"><a href="public/products.php">View Products</a></li>
@@ -94,8 +102,10 @@ try {
 <div id="setupSequence" class="action-buttons" style="display:flex;justify-content:center;flex-direction:column;margin-top:-10px;">
         <h4 id="setupMsg">You must click this button before running the app for the first time</h4>
         <button id="setupButton" onclick="window.location.href='../config/setup_metadata.php'">Set Up Metadata and Upload Samples</button>
+        <p style="font-size:15px;margin-left:160px;color:black;" id="metadataMsg">Your metadata is all set up!</p>
         <div id="spinner" style="display:none;margin-top:20px;justify-content:center; align-items:center;">
         <div class="loader"></div>
+        
 </div>
     </div>
     
@@ -105,8 +115,17 @@ try {
 
     if (metadataFieldExists) {
         // Hide the setup button if the metadata field exists
-        document.getElementById('setupButton').style.display = 'none';
-        document.getElementById('setupMsg').style.display = 'none';
+        document.getElementById('setupButton').style.disabled = true;
+        document.getElementById('setupButton').style.pointerEvents = 'none';
+        document.getElementById('setupButton').style.opacity = '0.3';
+        document.getElementById('setupMsg').style.opacity = '0.3';
+        document.getElementById('metadataMsg').style.display=true;
+    } else {
+        document.getElementById('nav').style.disabled = true;
+        document.getElementById('nav').style.pointerEvents = 'none';
+        document.getElementById('nav').style.opacity = '0.5';
+        document.getElementById('metadataMsg').style.display='none';
+        
     }
     document.getElementById('setupButton').addEventListener('click', function () {
         // Show the spinner

@@ -19,21 +19,6 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $api = new AdminAPI($config);
 
 
-// Assuming $api is your Cloudinary API instance
-try {
-    // Attempt to fetch the metadata field by its ID
-    $metadataField = $api->MetadataFieldByFieldId("skuX78615h");
-
-    // If no exception is thrown, proceed with the rest of your app logic
-
-} catch (Exception $e) {
-    // If the metadata field doesn't exist or another error occurs
-    echo "You need to set up your Cloudinary metadata before using the app. ";
-    echo 'Go back to the <a href="../index.php">main page</a> and click <strong>Set Up Metadata and Upload Samples</strong>.';
-
-    // Stop further execution of the page
-    exit();
-}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Capture metadata values entered in the form.
@@ -43,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $price = $_POST['price'];
     $category = $_POST['category'];
     // Set up metadata entries for submission to cloudinary
-    $metadata = "skuX78615h=$sku|category=[\"$category\"]|price=$price|description=$description";
-
+    $metadata = "skuX78615h=$sku|category4gT7pV1=[\"$category\"]|priceF2vK8tA=$price|descriptionb9ZqP6J=$description";
+    
     if (!empty($_POST['image_url'])) {
         $product_image_url = $_POST['image_url']; // Retrieve the secure URL from the form submission
         $image_public_id = $_POST['image_id']; // Retrieve the public ID from the form submission

@@ -40,10 +40,10 @@ $video_public_id_temp = $product['video_public_id_temp'];
 
 // Get the exiting metadata values. Use those as defaults.
 $metadata_result = $api->asset($product['image_public_id']);
-$description = isset($metadata_result['metadata']['description']) ? $metadata_result['metadata']['description'] : '';
-$price = isset($metadata_result['metadata']['price']) ? $metadata_result['metadata']['price'] : '';
+$description = isset($metadata_result['metadata']['descriptionb9ZqP6J']) ? $metadata_result['metadata']['descriptionb9ZqP6J'] : '';
+$price = isset($metadata_result['metadata']['priceF2vK8tA']) ? $metadata_result['metadata']['priceF2vK8tA'] : '';
 $sku = isset($metadata_result['metadata']['skuX78615h']) ? $metadata_result['metadata']['skuX78615h'] : '';
-$category = isset($metadata_result['metadata']['category'][0]) ? $metadata_result['metadata']['category'][0] : '';
+$category = isset($metadata_result['metadata']['category4gT7pV1'][0]) ? $metadata_result['metadata']['category4gT7pV1'][0] : '';
 
 // Map list value external IDs to display values.
 $category_labels = [
@@ -59,7 +59,7 @@ $description = !empty($_POST['description']) ? $_POST['description'] : $descript
 $sku = !empty($_POST['sku']) ? $_POST['sku'] : $sku;
 $price = !empty($_POST['price']) ? $_POST['price'] : $price;
 $category = !empty($_POST['category']) ? $_POST['category'] : $category;
-$metadata = "skuX78615h=$sku|category=[\"$category\"]|price=$price|description=$description";
+$metadata = "skuX78615h=$sku|category4gT7pV1=[\"$category\"]|priceF2vK8tA=$price|descriptionb9ZqP6J=$description";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];

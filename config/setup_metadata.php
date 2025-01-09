@@ -20,9 +20,9 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $api = new AdminApi($config);
 try {
     // Prepare and add a "String" metadata field (e.g., Description)
-    $stringMetadataField = new StringMetadataField('description');
+    $stringMetadataField = new StringMetadataField('descriptionb9ZqP6J');
     $stringMetadataField->setLabel('Description');
-    $stringMetadataField->setExternalId('description');
+    $stringMetadataField->setExternalId('descriptionb9ZqP6J');
     $stringMetadataField->setMandatory(true); // Makes this field required
     $stringMetadataField->setDefaultValue('Product description'); // Sets a default value
     $api->addMetadataField($stringMetadataField);
@@ -43,9 +43,9 @@ try {
         ['value' => 'Home & Living', 'external_id' => 'home_and_living'],
         ['value' => 'Electronics', 'external_id' => 'electronics'],
     ];
-    $setMetadataField = new SetMetadataField('category', $datasourceValues);
+    $setMetadataField = new SetMetadataField('category4gT7pV1', $datasourceValues);
     $setMetadataField->setLabel('Category');
-    $setMetadataField->setExternalId('category');
+    $setMetadataField->setExternalId('category4gT7pV1');
     $setMetadataField->setMandatory(true); // Makes this field required
     $setMetadataField->setDefaultValue(['footwear']); // Sets a default value
     $api->addMetadataField($setMetadataField);
@@ -75,9 +75,9 @@ try {
 
 try {
     // Prepare and add an "Integer" metadata field (e.g., Price)
-    $intMetadataField = new IntMetadataField('price');
+    $intMetadataField = new IntMetadataField('priceF2vK8tA');
     $intMetadataField->setLabel('Price');
-    $intMetadataField->setExternalId('price');
+    $intMetadataField->setExternalId('priceF2vK8tA');
     $intMetadataField->setMandatory(true); // Makes this field required
     $intMetadataField->setDefaultValue(10); // Sets a default value
     $api->addMetadataField($intMetadataField);
@@ -89,18 +89,7 @@ try {
     echo 'Error (Integer field): ' . $e->getMessage();
 }
 
-try {
-    // List all metadata fields at the end
-    echo "Listing all metadata fields:\n";
-    $fields = $api->listMetadataFields();
-    echo '<pre><code>';
-    //print_r($fields);
-    echo '</code></pre>';
-} catch (ApiError $e) {
-    echo 'API Error (List fields): ' . $e->getMessage();
-} catch (Exception $e) {
-    echo 'Error (List fields): ' . $e->getMessage();
-}
+
 
 try {
     // Create upload preset if it doesn't yet exist.
@@ -129,7 +118,7 @@ $sku="9090";
 $category="footwear";
 $price=200;
 $description="Comfortable and durable shoes designed for style and all-day wear.";
-$metadata = "skuX78615h=$sku|category=[\"$category\"]|price=$price|description=$description";
+$metadata = "skuX78615h=$sku|category4gT7pV1=[\"$category\"]|priceF2vK8tA=$price|descriptionb9ZqP6J=$description";
 $response=$cld->uploadApi()->upload("https://github.com/cloudinary-devs/cld-docs-assets/blob/main/assets/images/shoes_image_sample.jpg?raw=true",['public_id' => 'yghbrqxh4jlozcluaq4c', "metadata" => $metadata]);
 
 // Redirect to the index page

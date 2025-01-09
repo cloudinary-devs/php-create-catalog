@@ -25,22 +25,6 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 $cld = new Cloudinary($config);
 $api = new AdminAPI($config);
 
-// Assuming $api is your Cloudinary API instance
-try {
-    // Attempt to fetch the metadata field by its ID
-    $metadataField = $api->MetadataFieldByFieldId("skuX78615h");
-
-    // If no exception is thrown, proceed with the rest of your app logic
-
-} catch (Exception $e) {
-    // If the metadata field doesn't exist or another error occurs
-    echo "You need to set up your Cloudinary metadata before using the app. ";
-    echo 'Go back to the <a href="../index.php">main page</a> and click <strong>Set Up Metadata and Upload Samples</strong>.';
-
-    // Stop further execution of the page
-    exit();
-}
-
 // Fetch all products from the database
 $products = getAllProducts($pdo);
 // If no products are found
@@ -202,10 +186,10 @@ if (!$products) {
         }
         // Get the metadata from Cloudianry to display.
         $metadata_result = $api->asset($product['image_public_id']);
-            $description=$metadata_result['metadata']['description'];
-            $price=$metadata_result['metadata']['price'];
+            $description=$metadata_result['metadata']['descriptionb9ZqP6J'];
+            $price=$metadata_result['metadata']['priceF2vK8tA'];
             $sku=$metadata_result['metadata']['skuX78615h'];
-            $category=$metadata_result['metadata']['category'][0];
+            $category=$metadata_result['metadata']['category4gT7pV1'][0];
             $category_labels = [
                 'clothes' => 'Clothes',
                 'accessories' => 'Accessories',
@@ -223,7 +207,7 @@ if (!$products) {
                 <p style="width:100%;height:auto;object-fit:contain;">Price: $<?php echo htmlspecialchars($price); ?></p>
                 <?php
                     // Get the category value for the product
-                    $category_value = $metadata_result['metadata']['category'][0];
+                    $category_value = $metadata_result['metadata']['category4gT7pV1'][0];
 
                     // Find the display text for the category using the mapping
                     $category_display = isset($category_labels[$category_value]) ? $category_labels[$category_value] : 'Unknown';
