@@ -1,6 +1,38 @@
 <?php
 error_reporting(E_ALL & ~E_DEPRECATED);
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/includes/database.php';
+require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/config/cloudinary_config.php';
+
+use Dotenv\Dotenv;
+use Cloudinary\Configuration\Configuration;
+use Cloudinary\Cloudinary;
+use Cloudinary\Api\Admin\AdminApi;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Initialize Configuration
+$config = new Configuration($_ENV['CLOUDINARY_URL']);
+
+$api = new AdminAPI($config);
+
+$metadataFieldExists = false;
+
+try {
+    // Attempt to fetch the metadata field by its ID
+    $metadataField = $api->MetadataFieldByFieldId("skuX78615h");
+    
+    // If no exception is thrown, the metadata field exists
+    $metadataFieldExists = true;
+
+} catch (Exception $e) {
+    // Handle the exception if needed
+    $metadataFieldExists = false;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,14 +91,23 @@ error_reporting(E_ALL & ~E_DEPRECATED);
 
 <p style="height:50px;"></p>
 <h2>Welcome to the Product Catalog Creation App!</h2>
-<div class="action-buttons" style="display:flex;justify-content:center;flex-direction:column;margin-top:-10px;">
-        <h4>You must click this button before running the app for the first time</h4>
+<div id="setupSequence" class="action-buttons" style="display:flex;justify-content:center;flex-direction:column;margin-top:-10px;">
+        <h4 id="setupMsg">You must click this button before running the app for the first time</h4>
         <button id="setupButton" onclick="window.location.href='../config/setup_metadata.php'">Set Up Metadata and Upload Samples</button>
         <div id="spinner" style="display:none;margin-top:20px;justify-content:center; align-items:center;">
         <div class="loader"></div>
 </div>
     </div>
+    
     <script>
+
+    var metadataFieldExists = <?php echo json_encode($metadataFieldExists); ?>;
+
+    if (metadataFieldExists) {
+        // Hide the setup button if the metadata field exists
+        document.getElementById('setupButton').style.display = 'none';
+        document.getElementById('setupMsg').style.display = 'none';
+    }
     document.getElementById('setupButton').addEventListener('click', function () {
         // Show the spinner
         document.getElementById('spinner').style.display = 'flex';

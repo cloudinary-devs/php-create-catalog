@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL & ~E_DEPRECATED);
 require_once __DIR__ . '/../config/cloudinary_config.php';  // Make sure this file sets up the Cloudinary API
 require_once __DIR__ . '/../includes/database.php';
 require_once __DIR__ . '/../includes/functions.php';
@@ -157,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="form-group" style="margin-left:-205px;margin-bottom:10px;">
             <label for="price">Product Price ($):</label>
-            <input type="number" id="price" name="price" value="<?php echo htmlspecialchars($price); ?>" placeholder="Enter product price" step="0.01">
+            <input type="number" id="price" name="price" value="<?php echo htmlspecialchars($price); ?>" placeholder="Enter product price" step="0.01" min="0.01">
         </div>
 
         <div class="form-group" style="margin-left:-295px;margin-bottom:15px;">

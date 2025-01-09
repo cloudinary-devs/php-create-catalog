@@ -28,7 +28,8 @@ try {
     $api->addMetadataField($stringMetadataField);
     echo "String metadata field added successfully.\n";
 } catch (ApiError $e) {
-    echo 'API Error (String field): ' . $e->getMessage();
+    echo "Your metadata is already set up in Cloudianry!";
+    echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
 } catch (Exception $e) {
     echo 'Error (String field): ' . $e->getMessage();
 }
@@ -50,7 +51,8 @@ try {
     $api->addMetadataField($setMetadataField);
     echo "Set metadata field added successfully.\n";
 } catch (ApiError $e) {
-    echo 'API Error (Set field): ' . $e->getMessage();
+    echo "Your metadata is already set up in Cloudianry!";
+    echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
 } catch (Exception $e) {
     echo 'Error (Set field): ' . $e->getMessage();
 }
@@ -65,7 +67,8 @@ try {
     $api->addMetadataField($stringMetadataField);
     echo "String metadata field added successfully.\n";
 } catch (ApiError $e) {
-    echo 'API Error (String field): ' . $e->getMessage();
+    echo "Your metadata is already set up in Cloudianry!";
+    echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
 } catch (Exception $e) {
     echo 'Error (String field): ' . $e->getMessage();
 }
@@ -80,7 +83,8 @@ try {
     $api->addMetadataField($intMetadataField);
     echo "Int metadata field added successfully.\n";
 } catch (ApiError $e) {
-    echo 'API Error (Integer field): ' . $e->getMessage();
+    echo "Your metadata is already set up in Cloudianry!";
+    echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
 } catch (Exception $e) {
     echo 'Error (Integer field): ' . $e->getMessage();
 }
@@ -108,7 +112,8 @@ try {
         "detection" => "captioning"
     ]);
 } catch (ApiError $e) {
-    echo 'API Error : ' . $e->getMessage();
+    echo "Your upload preset is already set up in Cloudianry!";
+    echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
 } catch (Exception $e) {
     echo 'Error: ' . $e->getMessage();
 }

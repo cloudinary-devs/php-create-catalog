@@ -64,7 +64,7 @@ try {
             ':updated_at' => date('Y-m-d H:i:s')
         ]);
 
-        echo "Table created (if it didn't exist) and sample row inserted successfully!<br>";
+
     } else {
 
     }

@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL & ~E_DEPRECATED);
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../includes/database.php';
 require_once __DIR__ . '/../includes/functions.php';
@@ -18,7 +18,6 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 
 $api = new AdminAPI($config);
 
-error_reporting(E_ALL & ~E_DEPRECATED);
 
 // Assuming $api is your Cloudinary API instance
 try {
@@ -149,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="form-group" style="margin-left:-175px;margin-bottom:10px;">
             <label for="price">Product Price ($):</label>
-            <input type="number" id="price" name="price" placeholder="Enter product price" step="0.01" required>
+            <input type="number" id="price" name="price" placeholder="Enter product price" step="0.01" min="0.01" required>
         </div>
 
         <div class="form-group" style="margin-left:-265px;margin-bottom:15px;">
@@ -184,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <!-- Submit the new product -->
-        <button type="submit">Submit Product</button>
+        <button id="update" type="submit">Submit Product</button>
     </form>
 </div>
 <div id="spinner" style="display:none;margin-top:20px;justify-content:center; align-items:center;">
@@ -261,26 +260,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     document.querySelector("form").addEventListener("submit", function (e) {
         const toast = document.getElementById("toast");
         const spinner = document.getElementById("spinner");
+        const updateButton = document.getElementById("update");
+        const image_url = document.getElementById("image_url").value; // Adjust for your widget
 
-        // Show the toast
-        toast.className = "toast show";
+        if (!image_url) {
+            e.preventDefault(); // Prevent form submission
+            showToast("An image is required to submit the product.");
+            setTimeout(() => {
+            hideToast();
+        }, 3000); // Toast disappears after 3 seconds
+            return;
+        }
 
-        // Show the spinner
+        // Proceed with submission
+        showToast("We're submitting your product. Please wait.");
+
         spinner.style.display = "flex";
+        updateButton.disabled = true;
 
-        // Disable the submit button to prevent multiple submissions
-        document.getElementById("update").disabled = true;
-
-        // Hide the toast after 3 seconds
         setTimeout(() => {
-            toast.className = toast.className.replace("show", "");
+            hideToast();
         }, 3000); // Toast disappears after 3 seconds
 
-        // Optionally, handle redirection after the spinner shows
         setTimeout(() => {
-            window.location.href = './products.php'; // Redirect after the spinner is shown
-        }, 1000); // Adjust delay to make sure the spinner has time to appear before redirecting
+            window.location.href = './products.php';
+        }, 1000);
+
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add("show"); // Add 'show' class
+        }
+
+        function hideToast() {
+            toast.classList.remove("show"); // Remove 'show' class
+        }
     });
+
 </script>
 
 </body>
