@@ -29,7 +29,7 @@ try {
     $uploadPreset = $api->uploadPreset("php_demo_preset");
     
     // If all fields exist, set metadataFieldExists to true
-    if ($categoryField && $descriptionField && $priceField) {
+    if ($categoryField && $descriptionField && $priceField && $metadataField) {
         $metadataFieldExists = true;
     } else {
         $metadataFieldExists = false;
@@ -100,9 +100,10 @@ try {
 <p style="height:50px;"></p>
 <h2>Welcome to the Product Catalog Creation App!</h2>
 <div id="setupSequence" class="action-buttons" style="display:flex;justify-content:center;flex-direction:column;margin-top:-10px;">
-        <h4 id="setupMsg">You must click this button before running the app for the first time</h4>
-        <button id="setupButton" onclick="window.location.href='../config/setup_metadata.php'">Set Up Metadata and Upload Samples</button>
-        <p style="font-size:15px;margin-left:160px;color:black;" id="metadataMsg">Your metadata is all set up!</p>
+        <h4 id="setupMsg" style="align-self:center;">Make sure you copied your <a href="https://console.cloudinary.com/settings/api-keys">credentials</a> into your .env file, then click this button to run setup:</h4>
+        <button id="setupButton" onclick="window.location.href='../config/setup_metadata.php'">Set Up Metadata, Create Upload Preset, Upload Samples</button>
+        <p style="align-self:center;color:black;font-size:15px;" id="metadataMsg">Your metadata and other configurations are all set!</p>
+        <h4 style="align-self:center;" id="addProduct" >Click <a href="public/product_submission.php">Add Product</a> to start.</h4>
         <div id="spinner" style="display:none;margin-top:20px;justify-content:center; align-items:center;">
         <div class="loader"></div>
         
@@ -119,11 +120,15 @@ try {
         document.getElementById('setupButton').style.pointerEvents = 'none';
         document.getElementById('setupButton').style.opacity = '0.3';
         document.getElementById('setupMsg').style.opacity = '0.3';
+        document.getElementById('setupMsg').style.pointerEvents = 'none';
         document.getElementById('metadataMsg').style.display=true;
     } else {
         document.getElementById('nav').style.disabled = true;
         document.getElementById('nav').style.pointerEvents = 'none';
         document.getElementById('nav').style.opacity = '0.5';
+        document.getElementById('addProduct').style.disabled = true;
+        document.getElementById('addProduct').style.pointerEvents = 'none';
+        document.getElementById('addProduct').style.opacity = '0.5';
         document.getElementById('metadataMsg').style.display='none';
         
     }
@@ -138,7 +143,7 @@ try {
         window.location.href = '../config/setup_metadata.php';
     });
 </script>
-<h4 >Click <a href="public/product_submission.php">Add Product</a> to start.</h4>
+
 <div class="container">
     <h4>Overview</h4>
 

@@ -186,17 +186,19 @@ if (!$products) {
         }
         // Get the metadata from Cloudianry to display.
         $metadata_result = $api->asset($product['image_public_id']);
-            $description=$metadata_result['metadata']['descriptionb9ZqP6J'];
-            $price=$metadata_result['metadata']['priceF2vK8tA'];
-            $sku=$metadata_result['metadata']['skuX78615h'];
-            $category=$metadata_result['metadata']['category4gT7pV1'][0];
-            $category_labels = [
-                'clothes' => 'Clothes',
-                'accessories' => 'Accessories',
-                'footwear' => 'Footwear',
-                'home_and_living' => 'Home & Living',
-                'electronics' => 'Electronics',
-            ];
+        $description = isset($metadata_result['metadata']['descriptionb9ZqP6J']) ? $metadata_result['metadata']['descriptionb9ZqP6J'] : 'No description available';
+        $price = isset($metadata_result['metadata']['priceF2vK8tA']) ? $metadata_result['metadata']['priceF2vK8tA'] : 0; // Default price
+        $sku = isset($metadata_result['metadata']['skuX78615h']) ? $metadata_result['metadata']['skuX78615h'] : 'Unknown SKU';
+        $category = isset($metadata_result['metadata']['category4gT7pV1'][0]) ? $metadata_result['metadata']['category4gT7pV1'][0] : 'clothes'; // Default category
+        $category_labels = [
+            'clothes' => 'Clothes',
+            'accessories' => 'Accessories',
+            'footwear' => 'Footwear',
+            'home_and_living' => 'Home & Living',
+            'electronics' => 'Electronics',
+        ];
+        // Find the display text for the category using the mapping
+        $category_display = isset($category_labels[$category]) ? $category_labels[$category] : 'Unknown';
         ?>
         
         <div class="product-card">
@@ -205,13 +207,6 @@ if (!$products) {
                 <p style="width:100%;height:auto;object-fit:contain;">Description: <?php echo htmlspecialchars($description); ?></p>
                 <p style="width:100%;height:auto;object-fit:contain;">SKU: <?php echo htmlspecialchars($sku); ?></p>
                 <p style="width:100%;height:auto;object-fit:contain;">Price: $<?php echo htmlspecialchars($price); ?></p>
-                <?php
-                    // Get the category value for the product
-                    $category_value = $metadata_result['metadata']['category4gT7pV1'][0];
-
-                    // Find the display text for the category using the mapping
-                    $category_display = isset($category_labels[$category_value]) ? $category_labels[$category_value] : 'Unknown';
-                ?>
                 <p style="width:100%;height:auto;object-fit:contain;">Category: <?php echo htmlspecialchars($category_display); ?></p>
             </div>
             <div class="product-image" style="position:relative;margin:10px auto;max-width:99%;border:1px solid grey;">
