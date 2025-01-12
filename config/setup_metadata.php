@@ -15,9 +15,24 @@ use Cloudinary\Api\Metadata\IntMetadataField;
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
-// Initialize Cloudinary configuration using the CLOUDINARY_URL from environment variables
-$config = new Configuration($_ENV['CLOUDINARY_URL']);
-$api = new AdminApi($config);
+
+try {
+    // Initialize Cloudinary configuration using the CLOUDINARY_URL from environment variables
+    $config = new Configuration($_ENV['CLOUDINARY_URL']);
+    $api = new AdminApi($config);
+
+    // Example Cloudinary API operation
+    $metadata_result = $api->asset('sample_public_id'); // Replace with actual logic
+} catch (ApiError $e) {
+    echo 'A Cloudinary error occurred: ' . htmlspecialchars($e->getMessage());
+    echo "<br/>";
+    echo 'Please verify your credentials and return to the <a href="../index.php">main page</a> to complete the setup.';
+    exit;
+} catch (Exception $e) {
+    // Catching all general exceptions
+    echo 'A general error occurred: ' . htmlspecialchars($e->getMessage());
+    exit;
+}
 try {
     // Prepare and add a "String" metadata field (e.g., Description)
     $stringMetadataField = new StringMetadataField('descriptionb9ZqP6J');
