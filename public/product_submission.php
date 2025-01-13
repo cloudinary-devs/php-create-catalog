@@ -119,7 +119,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h2 style="margin-top:-10px;">Add a Product</h2>
     <form action="product_submission.php" method="POST" enctype="multipart/form-data">
         <!-- Add name and other metadata -->
-        <input type="text" name="name" placeholder="Name" required>
+        <div class="form-group">
+            <label  for="name">Product Name:</label>
+            <input style="width:340px;" type="text" name="name" placeholder="Name" required>
+        </div>
 
         <div class="form-group">
                 <label  for="description">Product Description:</label>

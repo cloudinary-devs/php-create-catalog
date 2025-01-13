@@ -80,3 +80,10 @@ Enable webhook notifications to automate video rendering after the asynchronous 
       * Make a note of your app's domain (for example, `a-b-c-d.ngrok-free.app` or `a-b-c-d.vercel.app`). 
       * By default, the app runs on port 8000. If you're using Docker, the default port is 80.
   
+## Run the app
+
+To start the app on a local server, open a terminal in the project directory and run: 
+
+```
+php -S localhost:8000
+```

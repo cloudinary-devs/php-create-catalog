@@ -22,7 +22,7 @@ try {
     $api = new AdminApi($config);
 
     // Example Cloudinary API operation
-    $metadata_result = $api->asset('sample_public_id'); // Replace with actual logic
+    $api->ping();
 } catch (ApiError $e) {
     echo 'A Cloudinary error occurred: ' . htmlspecialchars($e->getMessage());
     echo "<br/>";
@@ -36,7 +36,7 @@ try {
 try {
     // Prepare and add a "String" metadata field (e.g., Description)
     $stringMetadataField = new StringMetadataField('descriptionb9ZqP6J');
-    $stringMetadataField->setLabel('Description');
+    $stringMetadataField->setLabel('Description_b9ZqP6J');
     $stringMetadataField->setExternalId('descriptionb9ZqP6J');
     $stringMetadataField->setMandatory(true); // Makes this field required
     $stringMetadataField->setDefaultValue('Product description'); // Sets a default value
@@ -59,7 +59,7 @@ try {
         ['value' => 'Electronics', 'external_id' => 'electronics'],
     ];
     $setMetadataField = new SetMetadataField('category4gT7pV1', $datasourceValues);
-    $setMetadataField->setLabel('Category');
+    $setMetadataField->setLabel('Category_4gT7pV1');
     $setMetadataField->setExternalId('category4gT7pV1');
     $setMetadataField->setMandatory(true); // Makes this field required
     $setMetadataField->setDefaultValue(['footwear']); // Sets a default value
@@ -75,7 +75,7 @@ try {
 try {
     // Prepare and add a "String" metadata field (e.g., SKU)
     $stringMetadataField = new StringMetadataField('skuX78615h');
-    $stringMetadataField->setLabel('SKU');
+    $stringMetadataField->setLabel('Sku_X78615h');
     $stringMetadataField->setExternalId('skuX78615h');
     $stringMetadataField->setMandatory(true); // Makes this field required
     $stringMetadataField->setDefaultValue('1234'); // Sets a default value
@@ -91,7 +91,7 @@ try {
 try {
     // Prepare and add an "Integer" metadata field (e.g., Price)
     $intMetadataField = new IntMetadataField('priceF2vK8tA');
-    $intMetadataField->setLabel('Price');
+    $intMetadataField->setLabel('Price_F2vK8tA');
     $intMetadataField->setExternalId('priceF2vK8tA');
     $intMetadataField->setMandatory(true); // Makes this field required
     $intMetadataField->setDefaultValue(10); // Sets a default value
