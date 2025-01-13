@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- Add name and other metadata -->
         <div class="form-group">
             <label  for="name">Product Name:</label>
-            <input style="width:340px;" type="text" name="name" placeholder="Name" required>
+            <input style="width:340px;" type="text" name="name" placeholder="Enter product name" required>
         </div>
 
         <div class="form-group">
