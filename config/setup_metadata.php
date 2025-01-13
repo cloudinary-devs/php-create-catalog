@@ -21,50 +21,85 @@ try {
     $config = new Configuration($_ENV['CLOUDINARY_URL']);
     $api = new AdminApi($config);
 
-    // Example Cloudinary API operation
-    $api->ping();
+    // Fetch existing metadata fields
+    $allFieldsResponse = $api->listMetadataFields();
+    $allFields = $allFieldsResponse['metadata_fields'] ?? [];
 } catch (ApiError $e) {
     echo 'A Cloudinary error occurred: ' . htmlspecialchars($e->getMessage());
     echo "<br/>";
-    echo 'Please verify your credentials and return to the <a href="../index.php">main page</a> to complete the setup.';
+    echo 'Please verify your credentials and continue to the <a href="../index.php">main page</a> to complete the setup.';
     exit;
 } catch (Exception $e) {
     // Catching all general exceptions
     echo 'A general error occurred: ' . htmlspecialchars($e->getMessage());
     exit;
 }
-try {
-    // Prepare and add a "String" metadata field (e.g., Description)
-    $stringMetadataField = new StringMetadataField('descriptionb9ZqP6J');
-    $stringMetadataField->setLabel('Description_b9ZqP6J');
-    $stringMetadataField->setExternalId('descriptionb9ZqP6J');
-    $stringMetadataField->setMandatory(true); // Makes this field required
-    $stringMetadataField->setDefaultValue('Product description'); // Sets a default value
-    $api->addMetadataField($stringMetadataField);
-    echo "String metadata field added successfully.\n";
-} catch (ApiError $e) {
-    echo "Your metadata is already set up in Cloudianry!";
-    echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
-} catch (Exception $e) {
-    echo 'Error (String field): ' . $e->getMessage();
-}
+
 
 try {
-    // Prepare and add a "Set" metadata field with predefined categories
-    $datasourceValues = [
-        ['value' => 'Footwear', 'external_id' => 'footwear'],
-        ['value' => 'Clothes', 'external_id' => 'clothes'],
-        ['value' => 'Accessories', 'external_id' => 'accessories'],
-        ['value' => 'Home & Living', 'external_id' => 'home_and_living'],
-        ['value' => 'Electronics', 'external_id' => 'electronics'],
-    ];
-    $setMetadataField = new SetMetadataField('category4gT7pV1', $datasourceValues);
-    $setMetadataField->setLabel('Category_4gT7pV1');
-    $setMetadataField->setExternalId('category4gT7pV1');
-    $setMetadataField->setMandatory(true); // Makes this field required
-    $setMetadataField->setDefaultValue(['footwear']); // Sets a default value
-    $api->addMetadataField($setMetadataField);
-    echo "Set metadata field added successfully.\n";
+    // Define label and external ID for the new field
+    $newLabel = 'Description_b9ZqP6J';
+    $newExternalId = 'descriptionb9ZqP6J';
+    $exists = false;
+    // Check if the field already exists
+    foreach ($allFields as $field) {
+        if ($field['label'] === $newLabel || $field['external_id'] === $newExternalId) {
+            // Skip creation if field already exists
+            $exists = true;
+            break;
+        }
+    }
+
+    if (!$exists) {
+        // Prepare and add a "String" metadata field (e.g., Description)
+        $stringMetadataField = new StringMetadataField($newExternalId);
+        $stringMetadataField->setExternalId($newExternalId);
+        $stringMetadataField->setLabel($newLabel);
+        $stringMetadataField->setMandatory(true); // Makes this field required
+        $stringMetadataField->setDefaultValue('Product description'); // Sets a default value
+        $api->addMetadataField($stringMetadataField);
+        echo "String metadata field added successfully.\n";
+    }
+
+} catch (ApiError $e) {
+    echo 'A Cloudinary error occurred: ' . htmlspecialchars($e->getMessage());
+    exit;
+} catch (Exception $e) {
+    echo 'A general error occurred: ' . htmlspecialchars($e->getMessage());
+    exit;
+}
+
+
+try {
+    // Define label and external ID for the new field
+    $newLabel = 'Category_4gT7pV1';
+    $newExternalId = 'category4gT7pV1';
+    $exists = false;
+    // Check if the field already exists
+    foreach ($allFields as $field) {
+        if ($field['label'] === $newLabel || $field['external_id'] === $newExternalId) {
+            // Skip creation if field already exists
+            $exists = true;
+            break;
+        }
+    }
+    if (!$exists) {
+        // Prepare and add a "Set" metadata field with predefined categories
+        $datasourceValues = [
+            ['value' => 'Footwear', 'external_id' => 'footwear'],
+            ['value' => 'Clothes', 'external_id' => 'clothes'],
+            ['value' => 'Accessories', 'external_id' => 'accessories'],
+            ['value' => 'Home & Living', 'external_id' => 'home_and_living'],
+            ['value' => 'Electronics', 'external_id' => 'electronics'],
+        ];
+        $setMetadataField = new SetMetadataField($newExternalId, $datasourceValues);
+        $setMetadataField->setLabel($newLabel);
+        $setMetadataField->setExternalId($newExternalId);
+        $setMetadataField->setMandatory(true); // Makes this field required
+        $setMetadataField->setDefaultValue(['footwear']); // Sets a default value
+        $api->addMetadataField($setMetadataField);
+        echo "Set metadata field added successfully.\n";
+    }
 } catch (ApiError $e) {
     echo "Your metadata is already set up in Cloudianry!";
     echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
@@ -73,14 +108,28 @@ try {
 }
 
 try {
-    // Prepare and add a "String" metadata field (e.g., SKU)
-    $stringMetadataField = new StringMetadataField('skuX78615h');
-    $stringMetadataField->setLabel('Sku_X78615h');
-    $stringMetadataField->setExternalId('skuX78615h');
-    $stringMetadataField->setMandatory(true); // Makes this field required
-    $stringMetadataField->setDefaultValue('1234'); // Sets a default value
-    $api->addMetadataField($stringMetadataField);
-    echo "String metadata field added successfully.\n";
+     // Define label and external ID for the new field
+     $newLabel = 'Sku_X78615h';
+     $newExternalId = 'skuX78615h';
+     $exists = false;
+     // Check if the field already exists
+     foreach ($allFields as $field) {
+         if ($field['label'] === $newLabel || $field['external_id'] === $newExternalId) {
+             // Skip creation if field already exists
+            $exists = true;
+            break;
+         }
+     }
+     if (!$exists) {
+        // Prepare and add a "String" metadata field (e.g., SKU)
+        $stringMetadataField = new StringMetadataField($newExternalId);
+        $stringMetadataField->setLabel($newLabel);
+        $stringMetadataField->setExternalId($newExternalId);
+        $stringMetadataField->setMandatory(true); // Makes this field required
+        $stringMetadataField->setDefaultValue('1234'); // Sets a default value
+        $api->addMetadataField($stringMetadataField);
+        echo "String metadata field added successfully.\n";
+     }
 } catch (ApiError $e) {
     echo "Your metadata is already set up in Cloudianry!";
     echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
@@ -89,14 +138,28 @@ try {
 }
 
 try {
-    // Prepare and add an "Integer" metadata field (e.g., Price)
-    $intMetadataField = new IntMetadataField('priceF2vK8tA');
-    $intMetadataField->setLabel('Price_F2vK8tA');
-    $intMetadataField->setExternalId('priceF2vK8tA');
-    $intMetadataField->setMandatory(true); // Makes this field required
-    $intMetadataField->setDefaultValue(10); // Sets a default value
-    $api->addMetadataField($intMetadataField);
-    echo "Int metadata field added successfully.\n";
+     // Define label and external ID for the new field
+     $newLabel = 'Price_F2vK8tA';
+     $newExternalId = 'priceF2vK8tA';
+     $exists = false;
+     // Check if the field already exists
+     foreach ($allFields as $field) {
+         if ($field['label'] === $newLabel || $field['external_id'] === $newExternalId) {
+             // Skip creation if field already exists
+            $exists = true;
+            break;
+         }
+     }    
+     if (!$exists) {
+        // Prepare and add an "Integer" metadata field (e.g., Price)
+        $intMetadataField = new IntMetadataField('$newExternalId');
+        $intMetadataField->setLabel($newLabel);
+        $intMetadataField->setExternalId($newExternalId);
+        $intMetadataField->setMandatory(true); // Makes this field required
+        $intMetadataField->setDefaultValue(10); // Sets a default value
+        $api->addMetadataField($intMetadataField);
+        echo "Int metadata field added successfully.\n";
+     }
 } catch (ApiError $e) {
     echo "Your metadata is already set up in Cloudianry!";
     echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';
@@ -107,14 +170,28 @@ try {
 
 
 try {
-    // Create upload preset if it doesn't yet exist.
-    $result = $api
-    ->createUploadPreset([
-        "name" => "php_demo_preset", 
-        "unsigned" => true, 
-        "tags" => "php_demo",
-        "detection" => "captioning"
-    ]);
+    $presetsResponse = $api->uploadPresets(); // Fetch upload presets from Cloudinary
+    $presets = $presetsResponse['presets'] ?? [];
+
+    $presetNameToFind = 'php_demo_preset';
+    $presetExists = false;
+
+    foreach ($presets as $preset) {
+        if ($preset['name'] === $presetNameToFind) {
+            $presetExists = true;
+            break; // Exit loop once the matching preset is found
+        }
+    }
+
+    if (!$presetExists) {
+        // Create upload preset if it doesn't yet exist.
+        $result = $api->createUploadPreset([
+            "name" => "php_demo_preset", 
+            "unsigned" => true, 
+            "tags" => "php_demo",
+            "detection" => "captioning"
+        ]);
+    }
 } catch (ApiError $e) {
     echo "Your upload preset is already set up in Cloudianry!";
     echo 'Go back to the <a href="../index.php">main page</a> and start using the app.';

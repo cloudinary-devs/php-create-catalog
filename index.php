@@ -29,7 +29,7 @@ try {
     $uploadPreset = $api->uploadPreset("php_demo_preset");
     
     // If all fields exist, set metadataFieldExists to true
-    if ($categoryField && $descriptionField && $priceField && $metadataField) {
+    if ($categoryField && $descriptionField && $priceField && $metadataField && $uploadPreset) {
         $metadataFieldExists = true;
     } else {
         $metadataFieldExists = false;
