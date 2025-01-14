@@ -18,8 +18,6 @@ $config = new Configuration($_ENV['CLOUDINARY_URL']);
 
 $api = new AdminAPI($config);
 
-
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Capture metadata values entered in the form.
     $description = $_POST['description'];
@@ -27,8 +25,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sku = $_POST['sku'];
     $price = $_POST['price'];
     $category = $_POST['category'];
+
+    // Get external ids for metadata fields.
+    $allFieldsResponse = $api->listMetadataFields();
+    $allFields = $allFieldsResponse['metadata_fields'] ?? [];    
+    $externalIds=[];
+    $newLabel = "Description";
+    checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+    $newLabel = "SKU";
+    checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+    $newLabel = "Price";
+    checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+    $newLabel = "Category";
+    checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+
     // Set up metadata entries for submission to cloudinary
-    $metadata = "skuX78615h=$sku|category4gT7pV1=[\"$category\"]|priceF2vK8tA=$price|descriptionb9ZqP6J=$description";
+    $metadata = 
+    $externalIds['SKU'] . '=' . $sku . '|' .
+    $externalIds['Category'] . '=["' . $category . '"]|' .
+    $externalIds['Price'] . '=' . $price . '|' .
+    $externalIds['Description'] . '=' . $description;
     
     if (!empty($_POST['image_url'])) {
         $product_image_url = $_POST['image_url']; // Retrieve the secure URL from the form submission

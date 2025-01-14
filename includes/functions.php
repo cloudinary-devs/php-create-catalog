@@ -35,4 +35,17 @@ function getAllProducts($pdo) {
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function checkAndAppendExternalId($allFields, $label, &$externalIds) {
+    foreach ($allFields as $field) {
+        if ($field['label'] === $label) {
+            // Field with exact label and external ID found
+            $externalIds[$label] = $field['external_id']; // Append key-value pair directly
+            return true; // Indicate the field was found
+        }
+    }
+    return false; // Indicate the field was not found
+}
+
 ?>
+

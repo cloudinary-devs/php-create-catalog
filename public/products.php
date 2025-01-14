@@ -32,6 +32,7 @@ if (!$products) {
     echo 'No products found. Click <a href="product_submission.php">Add Product</a> to start.';
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -184,12 +185,43 @@ if (!$products) {
             $message="No valid video uploaded. Upload one if you want, or skip it.";
             $color="orange";
         }
+
+        // Get external ids for metadata fields.
+        $allFieldsResponse = $api->listMetadataFields();
+        $allFields = $allFieldsResponse['metadata_fields'] ?? [];    
+        $externalIds=[];
+        $newLabel = "Description";
+        checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+        $newLabel = "SKU";
+        checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+        $newLabel = "Price";
+        checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+        $newLabel = "Category";
+        checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+
+
         // Get the metadata from Cloudianry to display.
         $metadata_result = $api->asset($product['image_public_id']);
-        $description = isset($metadata_result['metadata']['descriptionb9ZqP6J']) ? $metadata_result['metadata']['descriptionb9ZqP6J'] : 'No description available';
-        $price = isset($metadata_result['metadata']['priceF2vK8tA']) ? $metadata_result['metadata']['priceF2vK8tA'] : 0; // Default price
-        $sku = isset($metadata_result['metadata']['skuX78615h']) ? $metadata_result['metadata']['skuX78615h'] : 'Unknown SKU';
-        $category = isset($metadata_result['metadata']['category4gT7pV1'][0]) ? $metadata_result['metadata']['category4gT7pV1'][0] : 'clothes'; // Default category
+        // Check if 'Description' exists in $externalIds and in metadata
+        $description = isset($externalIds['Description']) && isset($metadata_result['metadata'][$externalIds['Description']]) 
+        ? $metadata_result['metadata'][$externalIds['Description']] 
+        : 'No description available';
+
+        // Check if 'Price' exists in $externalIds and in metadata
+        $price = isset($externalIds['Price']) && isset($metadata_result['metadata'][$externalIds['Price']]) 
+        ? $metadata_result['metadata'][$externalIds['Price']] 
+        : 0; // Default price
+
+        // Check if 'SKU' exists in $externalIds and in metadata
+        $sku = isset($externalIds['SKU']) && isset($metadata_result['metadata'][$externalIds['SKU']]) 
+        ? $metadata_result['metadata'][$externalIds['SKU']] 
+        : 'Unknown SKU';
+
+        // Check if 'Category' exists in $externalIds and in metadata
+        $category = isset($externalIds['Category']) && isset($metadata_result['metadata'][$externalIds['Category']][0]) 
+        ? $metadata_result['metadata'][$externalIds['Category']][0] 
+        : 'clothes'; // Default category        
+        
         $category_labels = [
             'clothes' => 'Clothes',
             'accessories' => 'Accessories',

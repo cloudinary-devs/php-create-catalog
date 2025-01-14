@@ -1,6 +1,8 @@
 <?php
 // Include Cloudinary configuration
 require_once __DIR__ . '/cloudinary_config.php';
+require_once __DIR__ . '/../includes/functions.php';
+
 
 // Import necessary classes
 use Dotenv\Dotenv;
@@ -35,39 +37,22 @@ try {
     exit;
 }
 
-function checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId) {
-    foreach ($allFields as $field) {
-        if (($field['label'] === $newLabel && $field['external_id'] === $newExternalId) || ($field['label'] !== $newLabel && $field['external_id'] === $newExternalId)) {
-            // Field with exact label and external ID found
-            return true; // Skip creation
-        } elseif ($field['label'] === $newLabel && $field['external_id'] !== $newExternalId) {
-            // Update external ID for matching label
-            $metadataField = new StringMetadataField($field['external_id']);
-            $metadataField->setLabel($newLabel . 'XX');
-            $api->updateMetadataField($field['external_id'], $metadataField);
-        } 
-    }
-    return false; // No matching field found, proceed with creation
-}
-
-
+$externalIds=[];
+$exists=false;
 try {
-    // Define label and external ID for the new field
-    $newLabel = 'Description_b9ZqP6J';
-    $newExternalId = 'descriptionb9ZqP6J';
-    $exists = checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId);
-    
-
+    $newLabel = "Description";
+    $exists = checkAndAppendExternalId($allFields, $newLabel, $externalIds);
     if (!$exists) {
         // Prepare and add a "String" metadata field (e.g., Description)
-        $stringMetadataField = new StringMetadataField($newExternalId);
-        $stringMetadataField->setExternalId($newExternalId);
+        $stringMetadataField = new StringMetadataField($noExternalId);
         $stringMetadataField->setLabel($newLabel);
         $stringMetadataField->setMandatory(true); // Makes this field required
         $stringMetadataField->setDefaultValue('Product description'); // Sets a default value
-        $api->addMetadataField($stringMetadataField);
+        $newField = $api->addMetadataField($stringMetadataField);
+        $externalIds[] = [$newLabel => $newField['external_id']]; // Append key-value pair
         echo "String metadata field added successfully.\n";
     }
+
 
 } catch (ApiError $e) {
     echo 'A Cloudinary error occurred: ' . htmlspecialchars($e->getMessage());
@@ -77,12 +62,10 @@ try {
     exit;
 }
 
-
+$exists=false;
 try {
-    // Define label and external ID for the new field
-    $newLabel = 'Category_4gT7pV1';
-    $newExternalId = 'category4gT7pV1';
-    $exists = checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId);
+    $newLabel = "Category";
+    $exists = checkAndAppendExternalId($allFields, $newLabel, $externalIds);
 
     if (!$exists) {
         // Prepare and add a "Set" metadata field with predefined categories
@@ -93,12 +76,12 @@ try {
             ['value' => 'Home & Living', 'external_id' => 'home_and_living'],
             ['value' => 'Electronics', 'external_id' => 'electronics'],
         ];
-        $setMetadataField = new SetMetadataField($newExternalId, $datasourceValues);
+        $setMetadataField = new SetMetadataField($noExternalId, $datasourceValues);
         $setMetadataField->setLabel($newLabel);
-        $setMetadataField->setExternalId($newExternalId);
         $setMetadataField->setMandatory(true); // Makes this field required
         $setMetadataField->setDefaultValue(['footwear']); // Sets a default value
-        $api->addMetadataField($setMetadataField);
+        $newField = $api->addMetadataField($setMetadataField);
+        $externalIds[] = [$newLabel => $newField['external_id']]; // Append key-value pair
         echo "Set metadata field added successfully.\n";
     }
 } catch (ApiError $e) {
@@ -108,20 +91,19 @@ try {
     echo 'Error (Set field): ' . $e->getMessage();
 }
 
+$exists=false;
 try {
-     // Define label and external ID for the new field
-     $newLabel = 'Sku_X78615h';
-     $newExternalId = 'skuX78615h';
-     $exists = checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId);
+    $newLabel = "SKU";
+    $exists = checkAndAppendExternalId($allFields, $newLabel, $externalIds);
 
-     if (!$exists) {
+    if (!$exists) {
         // Prepare and add a "String" metadata field (e.g., SKU)
-        $stringMetadataField = new StringMetadataField($newExternalId);
+        $stringMetadataField = new StringMetadataField($noExternalId);
         $stringMetadataField->setLabel($newLabel);
-        $stringMetadataField->setExternalId($newExternalId);
         $stringMetadataField->setMandatory(true); // Makes this field required
         $stringMetadataField->setDefaultValue('1234'); // Sets a default value
-        $api->addMetadataField($stringMetadataField);
+        $newField = $api->addMetadataField($stringMetadataField);
+        $externalIds[] = [$newLabel => $newField['external_id']]; // Append key-value pair
         echo "String metadata field added successfully.\n";
      }
 } catch (ApiError $e) {
@@ -132,19 +114,17 @@ try {
 }
 
 try {
-     // Define label and external ID for the new field
-     $newLabel = 'Price_F2vK8tA';
-     $newExternalId = 'priceF2vK8tA';
-     $exists = checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId);
+    $newLabel = "Price";
+    $exists = checkAndAppendExternalId($allFields, $newLabel, $externalIds);
 
      if (!$exists) {
         // Prepare and add an "Integer" metadata field (e.g., Price)
-        $intMetadataField = new IntMetadataField('$newExternalId');
+        $intMetadataField = new IntMetadataField($noExternalId);
         $intMetadataField->setLabel($newLabel);
-        $intMetadataField->setExternalId($newExternalId);
         $intMetadataField->setMandatory(true); // Makes this field required
         $intMetadataField->setDefaultValue(10); // Sets a default value
-        $api->addMetadataField($intMetadataField);
+        $newField = $api->addMetadataField($intMetadataField);
+        $externalIds[] = [$newLabel => $newField['external_id']]; // Append key-value pair
         echo "Int metadata field added successfully.\n";
      }
 } catch (ApiError $e) {
@@ -167,7 +147,9 @@ try {
         if ($preset['name'] === $presetNameToFind) {
             $presetExists = true;
             $api->updateUploadPreset($presetNameToFind, 
-                ["unsigned" => true]);
+                ["unsigned" => true,
+                    "tags" => "php_demo",
+                    "detection" => "captioning"]);
             break; // Exit loop once the matching preset is found
         }
     }
@@ -199,7 +181,13 @@ $sku="9090";
 $category="footwear";
 $price=200;
 $description="Comfortable and durable shoes designed for style and all-day wear.";
-$metadata = "skuX78615h=$sku|category4gT7pV1=[\"$category\"]|priceF2vK8tA=$price|descriptionb9ZqP6J=$description";
+
+$metadata = 
+    $externalIds['sku'] . '=' . $sku . '|' .
+    $externalIds['category'] . '=["' . $category . '"]|' .
+    $externalIds['price'] . '=' . $price . '|' .
+    $externalIds['description'] . '=' . $description;
+
 $response=$cld->uploadApi()->upload("https://github.com/cloudinary-devs/cld-docs-assets/blob/main/assets/images/shoes_image_sample.jpg?raw=true",['public_id' => 'yghbrqxh4jlozcluaq4c', "metadata" => $metadata]);
 
 // Redirect to the index page

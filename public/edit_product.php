@@ -38,12 +38,41 @@ $image_caption = $product['image_caption'];
 $video_moderation_status = $product['video_moderation_status'];
 $video_public_id_temp = $product['video_public_id_temp'];
 
-// Get the exiting metadata values. Use those as defaults.
+// Get external ids for metadata fields.
+$allFieldsResponse = $api->listMetadataFields();
+$allFields = $allFieldsResponse['metadata_fields'] ?? [];    
+$externalIds=[];
+$newLabel = "Description";
+checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+$newLabel = "SKU";
+checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+$newLabel = "Price";
+checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+$newLabel = "Category";
+checkAndAppendExternalId($allFields, $newLabel, $externalIds);
+
+
+// Get the metadata from Cloudianry to display.
 $metadata_result = $api->asset($product['image_public_id']);
-$description = isset($metadata_result['metadata']['descriptionb9ZqP6J']) ? $metadata_result['metadata']['descriptionb9ZqP6J'] : '';
-$price = isset($metadata_result['metadata']['priceF2vK8tA']) ? $metadata_result['metadata']['priceF2vK8tA'] : '';
-$sku = isset($metadata_result['metadata']['skuX78615h']) ? $metadata_result['metadata']['skuX78615h'] : '';
-$category = isset($metadata_result['metadata']['category4gT7pV1'][0]) ? $metadata_result['metadata']['category4gT7pV1'][0] : '';
+// Check if 'Description' exists in $externalIds and in metadata
+$description = isset($externalIds['Description']) && isset($metadata_result['metadata'][$externalIds['Description']]) 
+? $metadata_result['metadata'][$externalIds['Description']] 
+: 'No description available';
+
+// Check if 'Price' exists in $externalIds and in metadata
+$price = isset($externalIds['Price']) && isset($metadata_result['metadata'][$externalIds['Price']]) 
+? $metadata_result['metadata'][$externalIds['Price']] 
+: 0; // Default price
+
+// Check if 'SKU' exists in $externalIds and in metadata
+$sku = isset($externalIds['SKU']) && isset($metadata_result['metadata'][$externalIds['SKU']]) 
+? $metadata_result['metadata'][$externalIds['SKU']] 
+: 'Unknown SKU';
+
+// Check if 'Category' exists in $externalIds and in metadata
+$category = isset($externalIds['Category']) && isset($metadata_result['metadata'][$externalIds['Category']][0]) 
+? $metadata_result['metadata'][$externalIds['Category']][0] 
+: 'clothes'; // Default category    
 
 // Map list value external IDs to display values.
 $category_labels = [
@@ -59,7 +88,12 @@ $description = !empty($_POST['description']) ? $_POST['description'] : $descript
 $sku = !empty($_POST['sku']) ? $_POST['sku'] : $sku;
 $price = !empty($_POST['price']) ? $_POST['price'] : $price;
 $category = !empty($_POST['category']) ? $_POST['category'] : $category;
-$metadata = "skuX78615h=$sku|category4gT7pV1=[\"$category\"]|priceF2vK8tA=$price|descriptionb9ZqP6J=$description";
+// Set up metadata entries for submission to cloudinary
+$metadata = 
+$externalIds['SKU'] . '=' . $sku . '|' .
+$externalIds['Category'] . '=["' . $category . '"]|' .
+$externalIds['Price'] . '=' . $price . '|' .
+$externalIds['Description'] . '=' . $description;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
@@ -143,16 +177,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h2>Update This product</h2>
     <!--Initialize the form with current values-->
     <form action="edit_product.php?id=<?php echo $product['id']; ?>" method="POST" enctype="multipart/form-data">
-        <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" placeholder="Name">   
-        
+        <div class="form-group">
+            <label for="name">Product Name:</label>
+            <input style="width:370px;" type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" placeholder="Name">   
+        </div>
+
         <div class="form-group">
             <label for="description">Product Description:</label>
-            <input style="width:340px;" type="text" id="description" name="description" value="<?php echo htmlspecialchars($description); ?>" placeholder="Enter product description">
+            <input style="width:338px;" type="text" id="description" name="description" value="<?php echo htmlspecialchars($description); ?>" placeholder="Enter product description">
         </div>
         
-        <div class="form-group" style="margin-left:-115px;margin-bottom:10px;">
-            <label style="margin-left:-100px;" for="sku">Product SKU:</label>
-            <input type="text" id="sku" name="sku" value="<?php echo htmlspecialchars($sku); ?>" placeholder="Enter product SKU">
+        <div class="form-group">
+            <label for="sku">Product SKU:</label>
+            <input style="width:378px;" type="text" id="sku" name="sku" value="<?php echo htmlspecialchars($sku); ?>" placeholder="Enter product SKU">
         </div>
 
         <div class="form-group" style="margin-left:-205px;margin-bottom:10px;">

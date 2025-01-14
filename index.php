@@ -21,15 +21,46 @@ $api = new AdminAPI($config);
 $metadataFieldExists = false;
 
 try {
-    // Attempt to fetch the metadata fields + upload preset by ID
-    $metadataField = $api->MetadataFieldByFieldId("skuX78615h");
-    $categoryField = $api->MetadataFieldByFieldId("category4gT7pV1");
-    $descriptionField = $api->MetadataFieldByFieldId("descriptionb9ZqP6J");
-    $priceField = $api->MetadataFieldByFieldId("priceF2vK8tA");
     $uploadPreset = $api->uploadPreset("php_demo_preset");
+
+    // Attempt to fetch the metadata fields + upload preset by ID
+    $allFieldsResponse = $api->listMetadataFields();
+    $allFields = $allFieldsResponse['metadata_fields'] ?? [];
+    $categoryField = false;
+    $descriptionField = false;
+    $priceField = false;
+    $skuField = false;
+    foreach ($allFields as $field) {
+        if ($field['label'] === "Description") {
+            $descriptionField = true;
+            if ($priceField && $categoryField && $skuField) {
+                break;
+            }
+        }
+        if ($field['label'] === "Price") {
+            $priceField = true;
+            if ($descriptionField && $categoryField&& $skuField) {
+                break;
+            }
+        }
+        if ($field['label'] === "Category") {
+            // Field with exact label and external ID found
+            $categoryField = true;
+            if ($priceField && $descriptionField && $skuField) {
+                break;
+            }
+        }
+        if ($field['label'] === "SKU") {
+            $skuField = true;
+            if ($priceField === true && $categoryField === true && $descriptionField === true) {
+                break;
+            }
+        }
+    }
     
-    // If all fields exist, set metadataFieldExists to true
-    if ($categoryField && $descriptionField && $priceField && $metadataField && $uploadPreset) {
+    
+    // If all fields exist, set skuFieldExists to true
+    if ($categoryField && $descriptionField && $priceField && $skuField && $uploadPreset) {
         $metadataFieldExists = true;
     } else {
         $metadataFieldExists = false;
