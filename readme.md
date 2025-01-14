@@ -51,7 +51,7 @@ You can:
 ## Setup instructions
 
 * **Credentials**
-  * In the `.env` file within your app's root directory of your project, update the credentials with your actual values:
+  * Go to the `.env` file within the root directory of your project. Update the credentials with your actual values:
     * **API environment variable**:<br/>Paste the **API environment variable** format from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console, replacing placeholders with your API key and secret.
     * **Cloud name**: Copy and paste your cloud name from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
   
