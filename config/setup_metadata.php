@@ -35,20 +35,28 @@ try {
     exit;
 }
 
+function checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId) {
+    foreach ($allFields as $field) {
+        if (($field['label'] === $newLabel && $field['external_id'] === $newExternalId) || ($field['label'] !== $newLabel && $field['external_id'] === $newExternalId)) {
+            // Field with exact label and external ID found
+            return true; // Skip creation
+        } elseif ($field['label'] === $newLabel && $field['external_id'] !== $newExternalId) {
+            // Update external ID for matching label
+            $metadataField = new StringMetadataField($field['external_id']);
+            $metadataField->setLabel($newLabel . 'XX');
+            $api->updateMetadataField($field['external_id'], $metadataField);
+        } 
+    }
+    return false; // No matching field found, proceed with creation
+}
+
 
 try {
     // Define label and external ID for the new field
     $newLabel = 'Description_b9ZqP6J';
     $newExternalId = 'descriptionb9ZqP6J';
-    $exists = false;
-    // Check if the field already exists
-    foreach ($allFields as $field) {
-        if ($field['label'] === $newLabel || $field['external_id'] === $newExternalId) {
-            // Skip creation if field already exists
-            $exists = true;
-            break;
-        }
-    }
+    $exists = checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId);
+    
 
     if (!$exists) {
         // Prepare and add a "String" metadata field (e.g., Description)
@@ -74,15 +82,8 @@ try {
     // Define label and external ID for the new field
     $newLabel = 'Category_4gT7pV1';
     $newExternalId = 'category4gT7pV1';
-    $exists = false;
-    // Check if the field already exists
-    foreach ($allFields as $field) {
-        if ($field['label'] === $newLabel || $field['external_id'] === $newExternalId) {
-            // Skip creation if field already exists
-            $exists = true;
-            break;
-        }
-    }
+    $exists = checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId);
+
     if (!$exists) {
         // Prepare and add a "Set" metadata field with predefined categories
         $datasourceValues = [
@@ -111,15 +112,8 @@ try {
      // Define label and external ID for the new field
      $newLabel = 'Sku_X78615h';
      $newExternalId = 'skuX78615h';
-     $exists = false;
-     // Check if the field already exists
-     foreach ($allFields as $field) {
-         if ($field['label'] === $newLabel || $field['external_id'] === $newExternalId) {
-             // Skip creation if field already exists
-            $exists = true;
-            break;
-         }
-     }
+     $exists = checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId);
+
      if (!$exists) {
         // Prepare and add a "String" metadata field (e.g., SKU)
         $stringMetadataField = new StringMetadataField($newExternalId);
@@ -141,15 +135,8 @@ try {
      // Define label and external ID for the new field
      $newLabel = 'Price_F2vK8tA';
      $newExternalId = 'priceF2vK8tA';
-     $exists = false;
-     // Check if the field already exists
-     foreach ($allFields as $field) {
-         if ($field['label'] === $newLabel || $field['external_id'] === $newExternalId) {
-             // Skip creation if field already exists
-            $exists = true;
-            break;
-         }
-     }    
+     $exists = checkAndUpdateMetadataField($api, $allFields, $newLabel, $newExternalId);
+
      if (!$exists) {
         // Prepare and add an "Integer" metadata field (e.g., Price)
         $intMetadataField = new IntMetadataField('$newExternalId');
@@ -179,6 +166,8 @@ try {
     foreach ($presets as $preset) {
         if ($preset['name'] === $presetNameToFind) {
             $presetExists = true;
+            $api->updateUploadPreset($presetNameToFind, 
+                ["unsigned" => true]);
             break; // Exit loop once the matching preset is found
         }
     }
