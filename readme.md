@@ -51,15 +51,8 @@ You can:
 ## Setup instructions
 
 * **Credentials**
-  * Create a `.env` file with your app's credentials in the root directory of your project. Include:
+  * In the `.env` file within your app's root directory of your project, update the credentials with your actual values:
     * **API environment variable**:<br/>Paste the **API environment variable** format from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console, replacing placeholders with your API key and secret.
-    * **Database configuration**:
-        ```
-        DB_NAME=<your_database_name>
-        DB_USER=<your_database_user>
-        DB_PASS=<your_database_password>
-        DB_HOST=<your_database_host>
-        ```
     * **Cloud name**: Copy and paste your cloud name from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
   
 * **Cloudinary add-ons**: Go to the [Add-ons](https://console.cloudinary.com/settings/addons) page of your Cloudinary Console Settings and register for the Cloudinary AI Content Analysis and Rekognition AI Video Moderation add-ons.
