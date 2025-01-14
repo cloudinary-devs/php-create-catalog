@@ -51,9 +51,7 @@ You can:
 ## Setup instructions
 
 * **Credentials**
-  * Go to the `.env` file within the root directory of your project. Update the credentials with your actual values:
-    * **API environment variable**:<br/>Paste the **API environment variable** format from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console, replacing placeholders with your API key and secret.
-    * **Cloud name**: Copy and paste your cloud name from the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
+  * Go to the `.env` file within the root directory of your project. To set up the **CLOUDINARY_URL** and **CLOUDINARY_CLOUD_NAME** credentials, replace the `<your_api_key>`, `<your_api_secret>`, and `<your_cloud_name>` placeholders with the actual values on the [API Keys](https://console.cloudinary.com/settings/api-keys) page of the Cloudinary Console.
   
 * **Cloudinary add-ons**
   * Go to the [Add-ons](https://console.cloudinary.com/settings/addons) page of your Cloudinary Console Settings and register for the Cloudinary AI Content Analysis and Rekognition AI Video Moderation add-ons.
